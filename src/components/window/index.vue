@@ -13,8 +13,8 @@
             </div>
             <a
                 role="button"
+                @click="close()"
                 class="window__close"
-                @click="opened = false"
                 href="javascript: void(0)"
             ></a>
         </div>
@@ -40,6 +40,10 @@ export default {
         })
     },
     methods: {
+        close() {
+            this.opened = false
+            this.$router.push('/')
+        },
         appearAnimationBefore(el) {
             el.style.opacity = 0
         },
