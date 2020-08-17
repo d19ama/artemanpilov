@@ -2,12 +2,12 @@ const App = {
     components: {
         navigation: [{
                 id: 'about',
-                link: '/',
+                link: 'javascript: void(0);',
                 name: 'Эбаут'
             },
             {
                 id: 'contacts',
-                link: '/',
+                link: 'javascript: void(0);',
                 name: 'Контакты'
             }
         ],
