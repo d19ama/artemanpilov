@@ -41,7 +41,8 @@ module.exports = {
                                 options: {
                                     sourceMap: true,
                                     resources: [
-                                        './src/styles/vars.scss'
+                                        './src/styles/vars.scss',
+                                        './src/styles/mixins.scss'
                                     ]
                                 }
                             }
@@ -56,7 +57,7 @@ module.exports = {
             },
             {
                 test: /\.css$/,
-                loaders: 'style-loader!css-loader'
+                loaders: 'style-loader!css-loader!postcss-loader'
             },
             {
                 test: /\.scss$/,
@@ -74,10 +75,12 @@ module.exports = {
                         options: {
                             sourceMap: true,
                             resources: [
-                                './src/styles/vars.scss'
+                                './src/styles/vars.scss',
+                                './src/styles/mixins.scss'
                             ]
                         }
-                    }
+                    },
+                    'postcss-loader'
                 ]
             }
         ]
