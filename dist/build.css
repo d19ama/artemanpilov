@@ -193,6 +193,7 @@ ul {
   -ms-flex: 1 1 100%;
   flex: 1 1 100%; }
 
+
 .header {
   display: -webkit-box;
   display: -webkit-flex;
@@ -297,6 +298,7 @@ ul {
       -ms-transform: translate(-50%, -50%) rotate(-45deg);
       transform: translate(-50%, -50%) rotate(-45deg);
 }
+
 
 .portfolio {
   display: -webkit-box;

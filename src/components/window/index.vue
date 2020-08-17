@@ -8,7 +8,9 @@
             v-if="opened"
             class="window"
         >
-            <div class="window__inner"></div>
+            <div class="window__inner">
+                <router-view />
+            </div>
             <a
                 role="button"
                 class="window__close"

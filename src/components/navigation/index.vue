@@ -5,15 +5,15 @@
             'is-active': active
         }"
     >
-        <a
+        <router-link
             :key="item.id"
-            :href="item.link"
+            :to="item.link"
             class="navigation__link"
             v-for="item in navigation"
-            @click="callWindow(item.id)"
+            @click.native="callWindow()"
         >
             <span>{{ item.name }}</span>
-        </a>
+        </router-link>
     </nav>
 </template>
 
@@ -29,8 +29,8 @@ export default {
         }
     },
     methods: {
-        callWindow(target) {
-            this.$root.$bus.$emit('open-window', target)
+        callWindow() {
+            this.$root.$bus.$emit('open-window')
         }
     }
 }
