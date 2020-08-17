@@ -245,6 +245,55 @@ ul {
     transition: border-radius .3s;
 }
 
+.window {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 90;
+  background-color: #fff;
+}
+.window__close {
+    width: 3rem;
+    height: 3rem;
+    padding: 0;
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    z-index: 2;
+    border: 0;
+    outline: 0;
+    background-color: transparent;
+    -webkit-transition: opacity .3s;
+    -o-transition: opacity .3s;
+    transition: opacity .3s;
+    cursor: pointer;
+}
+.window__close:hover {
+      opacity: .5;
+}
+.window__close:after, .window__close:before {
+      content: '';
+      display: block;
+      width: 3rem;
+      height: 2px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      background-color: #2d2d2d;
+}
+.window__close:before {
+      -webkit-transform: translate(-50%, -50%) rotate(45deg);
+      -ms-transform: translate(-50%, -50%) rotate(45deg);
+      transform: translate(-50%, -50%) rotate(45deg);
+}
+.window__close:after {
+      -webkit-transform: translate(-50%, -50%) rotate(-45deg);
+      -ms-transform: translate(-50%, -50%) rotate(-45deg);
+      transform: translate(-50%, -50%) rotate(-45deg);
+}
+
 .portfolio {
   display: -webkit-box;
   display: -webkit-flex;

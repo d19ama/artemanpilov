@@ -14,7 +14,7 @@
 <script>
 export default {
 	name: 'app-portfolio',
-	data () {
+	data() {
 		return {
 			portfolio: this.$root.app.components.portfolio
 		}

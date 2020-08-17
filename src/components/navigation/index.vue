@@ -22,7 +22,7 @@ export default {
 	props: {
 		active: Boolean
 	},
-	data () {
+	data() {
 		return {
 			navigation: this.$root.app.components.navigation
 		}

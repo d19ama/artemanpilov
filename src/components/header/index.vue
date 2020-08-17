@@ -17,7 +17,7 @@
 <script>
 export default {
     name: 'app-header',
-    data () {
+    data() {
         return {
             hovered: false
         }
