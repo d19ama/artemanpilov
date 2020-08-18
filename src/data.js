@@ -90,9 +90,9 @@ const App = {
                     ]
                 },
                 {
-                    title: 'Хобби:',
+                    title: 'Hobby:',
                     data: [
-                        'Musician / Composer',
+                        'Music',
                         'Travel',
                         '3D printing'
                     ]
@@ -102,7 +102,7 @@ const App = {
         contacts: [
             {
                 id: 'vk',
-                name: 'vk',
+                name: 'vkontakte',
                 link: 'https://vk.com/blind_resist',
                 src: './src/images/icons/vk.svg'
             },
@@ -121,7 +121,7 @@ const App = {
             {
                 id: 'gmail',
                 name: 'gmail',
-                link: 'blind.resist@gmail.com',
+                link: 'mailto:blind.resist@gmail.com',
                 src: './src/images/icons/gmail.svg'
             }
         ]

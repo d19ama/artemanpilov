@@ -8,6 +8,7 @@
                 v-for="item in contacts"
             >
                 <a
+                    target="_blank"
                     :href="item.link"
                     :title="item.name"
                     class="contacts__link"
@@ -36,15 +37,15 @@ export default {
 
 <style lang="scss">
 .contacts {
+    display: flex;
+    flex-flow: row wrap;
 
     &__item {
         display: flex;
         align-items: center;
         flex-flow: row nowrap;
-
-        &+& {
-            margin-top: 2rem;
-        }
+        width: 50%;
+        margin-top: 3rem;
     }
 
     &__icon {
@@ -62,8 +63,12 @@ export default {
         flex-flow: row nowrap;
         align-items: center;
         justify-content: flex-start;
-        color: $red;
         font-size: 2rem;
+        transition: color .3s;
+
+        &:hover {
+            color: $red;
+        }
     }
 }
 </style>

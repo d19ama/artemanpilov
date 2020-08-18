@@ -103,13 +103,13 @@ export default {
     &__inner {
         max-width: 77.5rem;
         height: 100%;
-        overflow: auto;
         padding-top: 3rem;
         margin: auto;
 
         @include breakpoint(tablet) {
             max-width: none;
             width: 100%;
+            overflow: auto;
             padding: 3rem 9rem;
         }
 
