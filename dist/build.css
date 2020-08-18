@@ -157,6 +157,9 @@ h1 {
   font-weight: 700;
   line-height: 3rem;
   text-transform: uppercase; }
+  @media only screen and (max-width: 480px) {
+    h1 {
+      margin: 0 0 1rem; } }
   h1 span {
     position: relative;
     top: -1px;
@@ -213,7 +216,11 @@ ul {
 .content ul li {
   padding-left: 2rem;
   position: relative;
+  line-height: 1.5;
   font-size: .875rem; }
+  @media only screen and (max-width: 1024px) {
+    .content ul li {
+      font-size: .75rem; } }
   .content ul li:before {
     content: '// ';
     position: absolute;
@@ -224,7 +231,7 @@ ul {
     color: #E6E6E6; }
 
 .content ul li + li {
-  margin: 1rem 0 0; }
+  margin: .5rem 0 0; }
 
 .content p {
   margin: 0; }
@@ -239,9 +246,9 @@ ul {
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-  -webkit-flex-flow: row nowrap;
-  -ms-flex-flow: row nowrap;
-  flex-flow: row nowrap;
+  -webkit-flex-flow: row wrap;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
   -webkit-box-align: start;
   -webkit-align-items: flex-start;
   -ms-flex-align: start;
@@ -254,6 +261,16 @@ ul {
 .about__info {
     width: 50%;
 }
+@media only screen and (max-width: 768px) {
+.about__info {
+        width: 100%;
+}
+}
+@media only screen and (max-width: 480px) {
+.about__info {
+        padding: 0 1rem;
+}
+}
 .about__info-block + .about__info-block {
       margin-top: 2rem;
 }
@@ -261,6 +278,17 @@ ul {
     width: -webkit-calc(50% - 3rem);
     width: calc(50% - 3rem);
     overflow: hidden;
+}
+@media only screen and (max-width: 768px) {
+.about__image {
+        width: 100%;
+        margin-bottom: 3rem;
+}
+}
+@media only screen and (max-width: 480px) {
+.about__image {
+        margin-bottom: 1rem;
+}
 }
 .about__image img {
       vertical-align: middle;
@@ -295,6 +323,12 @@ ul {
   -o-transition: border-radius .3s .3s;
   transition: border-radius .3s .3s;
 }
+@media only screen and (max-width: 480px) {
+.header {
+      top: 0;
+      left: 0;
+}
+}
 .header .logo {
     display: block;
     width: 6rem;
@@ -323,7 +357,6 @@ ul {
 .window {
   width: 100vw;
   height: 100vh;
-  padding-top: 4rem;
   position: fixed;
   top: 0;
   left: 0;
@@ -331,8 +364,25 @@ ul {
   background-color: #fff;
 }
 .window__inner {
-    max-width: 1240px;
+    max-width: 77.5rem;
+    height: 100%;
+    overflow: auto;
+    padding-top: 4rem;
     margin: auto;
+}
+@media only screen and (max-width: 1024px) {
+.window__inner {
+        max-width: none;
+        width: 100%;
+        padding: 3rem 9rem;
+}
+}
+@media only screen and (max-width: 480px) {
+.window__inner {
+        max-width: none;
+        width: 100%;
+        padding: 5rem 0;
+}
 }
 .window__close {
     width: 3rem;

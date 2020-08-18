@@ -40,6 +40,11 @@ export default {
     box-shadow: 0 0 40px rgba($dark-grey, .2);
     transition: border-radius .3s .3s;
 
+    @include breakpoint(v-mobile) {
+        top: 0;
+        left: 0;
+    }
+
     .logo {
         display: block;
         width: 6rem;

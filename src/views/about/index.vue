@@ -41,12 +41,20 @@ export default {
 <style lang="scss">
 .about {
     display: flex;
-    flex-flow: row nowrap;
+    flex-flow: row wrap;
     align-items: flex-start;
     justify-content: space-between;
 
     &__info {
         width: 50%;
+
+        @include breakpoint(mobile) {
+            width: 100%;
+        }
+
+        @include breakpoint(v-mobile) {
+            padding: 0 1rem;
+        }
 
         &-block {
 
@@ -59,6 +67,15 @@ export default {
     &__image {
         width: calc(50% - 3rem);
         overflow: hidden;
+
+        @include breakpoint(mobile) {
+            width: 100%;
+            margin-bottom: 3rem;
+        }
+
+        @include breakpoint(v-mobile) {
+            margin-bottom: 1rem;
+        }
 
         img {
             vertical-align: middle;

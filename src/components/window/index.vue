@@ -8,7 +8,7 @@
             v-if="opened"
             class="window"
         >
-            <div class="window__inner content">
+            <div class="window__inner">
                 <router-view />
             </div>
             <a
@@ -37,14 +37,27 @@ export default {
         }
     },
     mounted() {
-        this.$root.$bus.$on('open-window', () => {
-            this.opened = true
-        })
+        this.$root.$bus.$on('open-window', () => this.openWindow())
     },
     methods: {
+        openWindow() {
+            this.opened = true
+            this.disableScroll()
+        },
         closeWindow() {
             this.opened = false
+            this.enableScroll()
             this.$router.push('/')
+        },
+        disableScroll () {
+            this.scrollY = window.pageYOffset
+            document.body.style.position = 'fixed'
+            document.body.style.top = `-${this.scrollY}px`
+        },
+        enableScroll () {
+            document.body.style.position = ''
+            document.body.style.top = ''
+            window.scroll(0, this.scrollY)
         },
         appearAnimationBefore(el) {
             el.style.opacity = 0
@@ -79,7 +92,6 @@ export default {
 .window {
     width: 100vw;
     height: 100vh;
-    padding-top: 4rem;
     position: fixed;
     top: 0;
     left: 0;
@@ -87,8 +99,23 @@ export default {
     background-color: $white;
 
     &__inner {
-        max-width: 1240px;
+        max-width: 77.5rem;
+        height: 100%;
+        overflow: auto;
+        padding-top: 4rem;
         margin: auto;
+
+        @include breakpoint(tablet) {
+            max-width: none;
+            width: 100%;
+            padding: 3rem 9rem;
+        }
+
+        @include breakpoint(v-mobile) {
+            max-width: none;
+            width: 100%;
+            padding: 5rem 0;
+        }
     }
 
     &__close {
