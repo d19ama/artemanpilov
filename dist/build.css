@@ -371,7 +371,7 @@ ul {
     max-width: 77.5rem;
     height: 100%;
     overflow: auto;
-    padding-top: 4rem;
+    padding-top: 3rem;
     margin: auto;
 }
 @media only screen and (max-width: 1024px) {
@@ -426,6 +426,24 @@ ul {
       -webkit-transform: translate(-50%, -50%) rotate(-45deg);
       -ms-transform: translate(-50%, -50%) rotate(-45deg);
       transform: translate(-50%, -50%) rotate(-45deg);
+}
+.window .fade-enter-active,
+  .window .fade-leave-active {
+    -webkit-transition-property: opacity;
+    -o-transition-property: opacity;
+    transition-property: opacity;
+    -webkit-transition-duration: .25s;
+    -o-transition-duration: .25s;
+    transition-duration: .25s;
+}
+.window .fade-enter-active {
+    -webkit-transition-delay: .25s;
+    -o-transition-delay: .25s;
+    transition-delay: .25s;
+}
+.window .fade-enter,
+  .window .fade-leave-active {
+    opacity: 0;
 }
 
 .portfolio {

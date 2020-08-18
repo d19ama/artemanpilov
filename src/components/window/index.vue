@@ -9,7 +9,9 @@
             class="window"
         >
             <div class="window__inner">
-                <router-view />
+                <transition name="fade">
+                    <router-view />
+                </transition>
             </div>
             <a
                 role="button"
@@ -102,7 +104,7 @@ export default {
         max-width: 77.5rem;
         height: 100%;
         overflow: auto;
-        padding-top: 4rem;
+        padding-top: 3rem;
         margin: auto;
 
         @include breakpoint(tablet) {
@@ -155,6 +157,21 @@ export default {
         &:after {
             transform: translate(-50%, -50%) rotate(-45deg);
         }
+    }
+
+    .fade-enter-active,
+    .fade-leave-active {
+        transition-property: opacity;
+        transition-duration: .25s;
+    }
+
+    .fade-enter-active {
+        transition-delay: .25s;
+    }
+
+    .fade-enter,
+    .fade-leave-active {
+        opacity: 0;
     }
 }
 </style>
