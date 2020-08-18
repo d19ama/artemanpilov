@@ -1,17 +1,19 @@
 const App = {
     components: {
-        navigation: [{
+        navigation: [
+            {
                 id: 'about',
                 link: '/about',
-                name: 'Эбаут'
+                name: 'about'
             },
             {
                 id: 'contacts',
                 link: '/contacts',
-                name: 'Контакты'
+                name: 'contacts'
             }
         ],
-        portfolio: [{
+        portfolio: [
+            {
                 id: 'magnit',
                 link: 'https://www.magnit.com/ru/',
                 image: './src/images/logos/logo-magnit.png'
@@ -61,7 +63,42 @@ const App = {
                 link: 'http://plus47.ru/',
                 image: './src/images/logos/logo-plus47.png'
             }
-        ]
+        ],
+        about: {
+            image: {
+                src: './src/images/itsme.jpg',
+                alt: 'Its me :)'
+            },
+            info: [
+                {
+                    title: 'Персональные:',
+                    data: [
+                        'Анпилов Артем Михайлович',
+                        '1987 года рождения',
+                        'Санкт-Петербург',
+                        'front-end с 2014'
+                    ]
+                },
+                {
+                    title: 'Скилы:',
+                    data: [
+                        'javascript / vuejs / react / sass / html',
+                        'webpack / gulp / git / docker',
+                        'базовый php',
+                        'cross browser, adaptive, responsive',
+                        'Adobe Ps, Adobe Ai, Figma'
+                    ]
+                },
+                {
+                    title: 'Хобби:',
+                    data: [
+                        'Музыкант/композитор',
+                        'Путешествия',
+                        '3D печать'
+                    ]
+                }
+            ]
+        }
     }
 }
 

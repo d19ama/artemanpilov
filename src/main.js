@@ -10,10 +10,10 @@ import Data from './data.js'
 import VueRouter from 'vue-router'
 
 // components
-import About from './components/about/index.vue'
+import About from './views/about/index.vue'
+import Contacts from './views/contacts/index.vue'
 import Header from './components/header/index.vue'
 import Window from './components/window/index.vue'
-import Contacts from './components/contacts/index.vue'
 import Portfolio from './components/portfolio/index.vue'
 import Navigation from './components/navigation/index.vue'
 
@@ -49,5 +49,15 @@ new Vue({
         app: Data,
         bus: new Vue({})
     },
-    router
+    router,
+    mounted() {
+        this.checkRoute()
+    },
+    methods: {
+        checkRoute() {
+            let isRouteOpened = this.$router.options.routes.filter(item => item.path === this.$router.history.current.path).length
+
+            isRouteOpened ? this.$bus.$emit('open-window') : false
+        }
+    }
 })

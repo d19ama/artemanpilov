@@ -8,13 +8,14 @@
             v-if="opened"
             class="window"
         >
-            <div class="window__inner">
+            <div class="window__inner content">
                 <router-view />
             </div>
             <a
                 role="button"
-                @click="close()"
+                title="close"
                 class="window__close"
+                @click="closeWindow()"
                 href="javascript: void(0)"
             ></a>
         </div>
@@ -31,6 +32,7 @@ export default {
     },
     data() {
         return {
+            duration: 300,
             opened: this.active
         }
     },
@@ -40,7 +42,7 @@ export default {
         })
     },
     methods: {
-        close() {
+        closeWindow() {
             this.opened = false
             this.$router.push('/')
         },
@@ -48,11 +50,26 @@ export default {
             el.style.opacity = 0
         },
         appearAnimationEnter(el, done) {
-            Velocity(el, { opacity: 1 }, { duration: this.duration }, { complete: done })
+            Velocity(el, {
+                opacity: 1
+            }, {
+                duration: this.duration,
+                delay: this.duration
+            }, {
+                complete: done
+            })
         },
         appearAnimationLeave(el, done) {
-            Velocity(el, { opacity: 0 }, { duration: this.duration })
-            Velocity(el, { display: 'none' }, { complete: done })
+            Velocity(el, {
+                opacity: 0
+            }, {
+                duration: this.duration
+            })
+            Velocity(el, {
+                display: 'none'
+            }, {
+                complete: done
+            })
         }
     }
 }
@@ -62,6 +79,7 @@ export default {
 .window {
     width: 100vw;
     height: 100vh;
+    padding-top: 4rem;
     position: fixed;
     top: 0;
     left: 0;
