@@ -121,12 +121,12 @@ export default {
     }
 
     &__close {
-        width: 3rem;
-        height: 3rem;
+        width: 6rem;
+        height: 6rem;
         padding: 0;
         position: absolute;
-        top: 2rem;
-        right: 2rem;
+        top: 1.25rem;
+        right: 1.25rem;
         z-index: 2;
         border: 0;
         outline: 0;

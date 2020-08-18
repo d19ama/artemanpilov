@@ -71,20 +71,20 @@ const App = {
             },
             info: [
                 {
-                    title: 'Персональные:',
+                    title: 'Personal:',
                     data: [
-                        'Анпилов Артем Михайлович',
-                        '1987 года рождения',
-                        'Санкт-Петербург',
-                        'front-end с 2014'
+                        'Anpilov Artem Mihajlovich',
+                        'Born in 1987',
+                        'St. Petersburg',
+                        'front-end since 2014'
                     ]
                 },
                 {
-                    title: 'Скилы:',
+                    title: 'Skills:',
                     data: [
                         'javascript / vuejs / react / sass / html',
                         'webpack / gulp / git / docker',
-                        'базовый php',
+                        'basic php',
                         'cross browser, adaptive, responsive',
                         'Adobe Ps, Adobe Ai, Figma'
                     ]
@@ -92,13 +92,39 @@ const App = {
                 {
                     title: 'Хобби:',
                     data: [
-                        'Музыкант/композитор',
-                        'Путешествия',
-                        '3D печать'
+                        'Musician / Composer',
+                        'Travel',
+                        '3D printing'
                     ]
                 }
             ]
-        }
+        },
+        contacts: [
+            {
+                id: 'vk',
+                name: 'vk',
+                link: 'https://vk.com/blind_resist',
+                src: './src/images/icons/vk.svg'
+            },
+            {
+                id: 'instagram',
+                name: 'instagram',
+                link: 'https://www.instagram.com/artem.anpilov/',
+                src: './src/images/icons/instagram.svg'
+            },
+            {
+                id: 'telegram',
+                name: 'telegram',
+                link: 'https://t.me/BlindResist',
+                src: './src/images/icons/telegram.svg'
+            },
+            {
+                id: 'gmail',
+                name: 'gmail',
+                link: 'blind.resist@gmail.com',
+                src: './src/images/icons/gmail.svg'
+            }
+        ]
     }
 }
 

@@ -15,7 +15,7 @@
                     v-for="(item, index) in about.info"
                 >
                     <h2>{{ item.title }}</h2>
-                    <ul>
+                    <ul class="ul-list">
                         <li
                             :key="index2"
                             v-for="(data, index2) in item.data"

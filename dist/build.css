@@ -207,24 +207,30 @@ ul {
     #app {
       padding-top: 6rem; } }
 
-.content a {
+.content p {
+  margin: 0; }
+
+.content p + p {
+  margin: 1rem 0 0; }
+
+.link {
   color: #ed174b;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5rem;
   border-bottom: 1px solid rgba(237, 23, 75, 0.5); }
-  .content a:hover {
+  .link:hover {
     border-bottom-color: transparent; }
 
-.content ul li {
+.ul-list li {
   padding-left: 2rem;
   position: relative;
   line-height: 1.5;
   font-size: .875rem; }
   @media only screen and (max-width: 1024px) {
-    .content ul li {
+    .ul-list li {
       font-size: .75rem; } }
-  .content ul li:before {
+  .ul-list li:before {
     content: '// ';
     position: absolute;
     top: 0;
@@ -233,14 +239,8 @@ ul {
     font-weight: 700;
     color: #E6E6E6; }
 
-.content ul li + li {
+.ul-list li + li {
   margin: .5rem 0 0; }
-
-.content p {
-  margin: 0; }
-
-.content p + p {
-  margin: 1rem 0 0; }
 
 .about {
   display: -webkit-box;
@@ -298,6 +298,55 @@ ul {
       max-width: 100%;
 }
 
+.contacts__item {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-flow: row nowrap;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+}
+.contacts__item + .contacts__item {
+    margin-top: 2rem;
+}
+.contacts__icon {
+  display: block;
+  width: 5rem;
+  height: 5rem;
+  margin-right: 2rem;
+  background-position: center;
+  background-repeat: no-repeat;
+  -webkit-filter: drop-shadow(0 0.2rem 0.25rem rgba(45, 45, 45, 0.2));
+  filter: drop-shadow(0 0.2rem 0.25rem rgba(45, 45, 45, 0.2));
+}
+.contacts__link {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-flow: row nowrap;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  color: #ed174b;
+  font-size: 2rem;
+}
 
 .header {
   display: -webkit-box;
@@ -389,12 +438,12 @@ ul {
 }
 }
 .window__close {
-    width: 3rem;
-    height: 3rem;
+    width: 6rem;
+    height: 6rem;
     padding: 0;
     position: absolute;
-    top: 2rem;
-    right: 2rem;
+    top: 1.25rem;
+    right: 1.25rem;
     z-index: 2;
     border: 0;
     outline: 0;
