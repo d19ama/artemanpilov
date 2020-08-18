@@ -15,11 +15,28 @@
 </template>
 
 <script>
+import verge from 'verge'
+
 export default {
     name: 'app-header',
     data() {
         return {
+            viewportW: 0,
             hovered: false
+        }
+    },
+    mounted() {
+        this.getViewportW()
+        window.addEventListener('resize', () => this.getViewportW())
+    },
+    watch: {
+        viewportW(newValue) {
+            this.hovered = newValue < 480 ? true : false
+        }
+    },
+    methods: {
+        getViewportW() {
+            this.viewportW = verge.viewportW()
         }
     }
 }
@@ -41,6 +58,7 @@ export default {
     transition: border-radius .3s .3s;
 
     @include breakpoint(v-mobile) {
+        width: 100%;
         top: 0;
         left: 0;
     }

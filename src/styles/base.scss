@@ -23,12 +23,12 @@ h1 {
     text-transform: uppercase;
 
     @include breakpoint(v-mobile) {
+        padding: 0 1rem;
         margin: 0 0 1rem;
+        text-align: center;
     }
 
     span {
-        position: relative;
-        top: -1px;
         color: $middle-grey;
 
         &:first-of-type {
@@ -72,6 +72,10 @@ ul {
     display: flex;
     flex-direction: column;
     flex: 1 1 100%;
+
+    @include breakpoint(v-mobile) {
+        padding-top: 6rem;
+    }
 }
 
 .content {

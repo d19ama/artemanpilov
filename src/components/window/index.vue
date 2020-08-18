@@ -114,7 +114,7 @@ export default {
         @include breakpoint(v-mobile) {
             max-width: none;
             width: 100%;
-            padding: 5rem 0;
+            padding: 7rem 0 3rem;
         }
     }
 
