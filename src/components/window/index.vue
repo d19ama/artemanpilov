@@ -77,23 +77,29 @@ export default {
 .window {
     width: 100vw;
     height: 100vh;
+    overflow: auto;
+    padding-left: 9rem;
+    padding-right: 9rem;
     position: fixed;
     top: 0;
     left: 0;
     z-index: 90;
     background-color: $white;
 
+    @include breakpoint(v-mobile) {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
     &__inner {
         max-width: 77.5rem;
-        height: 100%;
         padding-top: 3rem;
         margin: auto;
 
         @include breakpoint(tablet) {
             max-width: none;
             width: 100%;
-            overflow: auto;
-            padding: 3rem 9rem;
+            padding: 3rem 0;
         }
 
         @include breakpoint(v-mobile) {
@@ -107,7 +113,7 @@ export default {
         width: 6rem;
         height: 6rem;
         padding: 0;
-        position: absolute;
+        position: fixed;
         top: 1.25rem;
         right: 1.25rem;
         z-index: 2;

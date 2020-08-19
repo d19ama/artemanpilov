@@ -58,7 +58,7 @@ const App = new Vue({
             let current = this.$router.history.current
             let isRouteOpened = routes.filter(item => item.path === current.path).length > 0
 
-            this.windowOpened = isRouteOpened
+            isRouteOpened ? this.openWindow() : false
         },
         getViewportW() {
             this.viewportW = verge.viewportW()
@@ -68,8 +68,6 @@ const App = new Vue({
             this.windowOpened = true
         },
         closeWindow() {
-            if (!this.windowOpened) return
-
             this.enableScroll()
             this.$router.push('/')
             this.windowOpened = false

@@ -161,6 +161,7 @@ h1 {
     h1 {
       padding: 0 1rem;
       margin: 0 0 1rem;
+      font-size: 1.5rem;
       text-align: center; } }
   h1 span {
     color: #E6E6E6; }
@@ -309,7 +310,7 @@ ul {
   -ms-flex-flow: row wrap;
   flex-flow: row wrap;
 }
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 480px) {
 .contacts {
       padding: 0 2rem;
 }
@@ -346,7 +347,7 @@ ul {
     -webkit-filter: drop-shadow(0 0.2rem 0.25rem rgba(45, 45, 45, 0.2));
     filter: drop-shadow(0 0.2rem 0.25rem rgba(45, 45, 45, 0.2));
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 768px) {
 .contacts__icon {
         width: 2rem;
         height: 2rem;
@@ -375,7 +376,7 @@ ul {
     -o-transition: color .3s;
     transition: color .3s;
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 768px) {
 .contacts__link {
         font-size: 1.5rem;
 }
@@ -434,7 +435,6 @@ ul {
     -webkit-transition: background-color .3s .3s;
     -o-transition: background-color .3s .3s;
     transition: background-color .3s .3s;
-    cursor: pointer;
 }
 .header.is-hovered {
     overflow: hidden;
@@ -447,15 +447,23 @@ ul {
 .window {
   width: 100vw;
   height: 100vh;
+  overflow: auto;
+  padding-left: 9rem;
+  padding-right: 9rem;
   position: fixed;
   top: 0;
   left: 0;
   z-index: 90;
   background-color: #fff;
 }
+@media only screen and (max-width: 480px) {
+.window {
+      padding-left: 0;
+      padding-right: 0;
+}
+}
 .window__inner {
     max-width: 77.5rem;
-    height: 100%;
     padding-top: 3rem;
     margin: auto;
 }
@@ -463,8 +471,7 @@ ul {
 .window__inner {
         max-width: none;
         width: 100%;
-        overflow: auto;
-        padding: 3rem 9rem;
+        padding: 3rem 0;
 }
 }
 @media only screen and (max-width: 480px) {
@@ -478,7 +485,7 @@ ul {
     width: 6rem;
     height: 6rem;
     padding: 0;
-    position: absolute;
+    position: fixed;
     top: 1.25rem;
     right: 1.25rem;
     z-index: 2;
@@ -623,21 +630,21 @@ ul {
 .navigation__link {
     opacity: 0;
     padding: 0 .75rem;
+    color: #212121;
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 3rem;
     -webkit-transition: opacity .1s;
     -o-transition: opacity .1s;
     transition: opacity .1s;
 }
 .navigation__link span {
-      color: #212121;
-      font-size: 1rem;
-      font-weight: 700;
-      line-height: 3rem;
       border-bottom: 1px solid rgba(33, 33, 33, 0.5);
       -webkit-transition: border-bottom-color .3s;
       -o-transition: border-bottom-color .3s;
       transition: border-bottom-color .3s;
 }
-.navigation__link:hover span {
+.navigation__link:hover span, .navigation__link.is-current span {
       border-bottom-color: transparent;
 }
 .navigation.is-active {

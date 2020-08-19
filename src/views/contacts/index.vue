@@ -40,7 +40,7 @@ export default {
     display: flex;
     flex-flow: row wrap;
 
-    @include breakpoint(mobile) {
+    @include breakpoint(v-mobile) {
         padding: 0 2rem;
     }
 
@@ -65,7 +65,7 @@ export default {
         background-repeat: no-repeat;
         filter: drop-shadow(0 0.2rem 0.25rem rgba($dark-grey, 0.2));
 
-        @include breakpoint(v-mobile) {
+        @include breakpoint(mobile) {
             width: 2rem;
             height: 2rem;
         }
@@ -79,7 +79,7 @@ export default {
         font-size: 2rem;
         transition: color .3s;
 
-        @include breakpoint(v-mobile) {
+        @include breakpoint(mobile) {
             font-size: 1.5rem;
         }
 

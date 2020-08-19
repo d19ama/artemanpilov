@@ -7,6 +7,7 @@ import PageContacts from './views/contacts/index.vue'
 Vue.use(VueRouter)
 
 export default new VueRouter({
+    linkActiveClass: 'is-current',
     routes: [
     	{
             path: '/about',

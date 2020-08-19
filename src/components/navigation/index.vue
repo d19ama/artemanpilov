@@ -6,6 +6,7 @@
         }"
     >
         <router-link
+            exact
             :key="item.id"
             :to="item.link"
             class="navigation__link"
@@ -46,18 +47,19 @@ export default {
     &__link {
         opacity: 0;
         padding: 0 .75rem;
+        color: $black;
+        font-size: 1rem;
+        font-weight: 700;
+        line-height: 3rem;
         transition: opacity .1s;
 
         span {
-            color: $black;
-            font-size: 1rem;
-            font-weight: 700;
-            line-height: 3rem;
             border-bottom: 1px solid rgba($black, .5);
             transition: border-bottom-color .3s;
         }
 
-        &:hover {
+        &:hover,
+        &.is-current {
 
             span {
                 border-bottom-color: transparent;
