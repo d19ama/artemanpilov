@@ -17,8 +17,8 @@
                 role="button"
                 title="close"
                 class="window__close"
-                @click="closeWindow()"
                 href="javascript: void(0)"
+                @click="$root.$bus.$emit('window:close')"
             ></a>
         </div>
     </transition>
@@ -38,29 +38,12 @@ export default {
             opened: this.active
         }
     },
-    mounted() {
-        this.$root.$bus.$on('open-window', () => this.openWindow())
+    watch: {
+        active(newValue) {
+            this.opened = newValue
+        }
     },
     methods: {
-        openWindow() {
-            this.opened = true
-            this.disableScroll()
-        },
-        closeWindow() {
-            this.opened = false
-            this.enableScroll()
-            this.$router.push('/')
-        },
-        disableScroll () {
-            this.scrollY = window.pageYOffset
-            document.body.style.position = 'fixed'
-            document.body.style.top = `-${this.scrollY}px`
-        },
-        enableScroll () {
-            document.body.style.position = ''
-            document.body.style.top = ''
-            window.scroll(0, this.scrollY)
-        },
         appearAnimationBefore(el) {
             el.style.opacity = 0
         },

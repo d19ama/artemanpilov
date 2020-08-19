@@ -10,7 +10,7 @@
             :to="item.link"
             class="navigation__link"
             v-for="item in navigation"
-            @click.native="callWindow()"
+            @click.native="$root.$bus.$emit('window:open')"
         >
             <span>{{ item.name }}</span>
         </router-link>
@@ -26,11 +26,6 @@ export default {
     data() {
         return {
             navigation: this.$root.app.components.navigation
-        }
-    },
-    methods: {
-        callWindow() {
-            this.$root.$bus.$emit('open-window')
         }
     }
 }

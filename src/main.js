@@ -6,12 +6,10 @@ import './styles/base.scss'
 
 // base
 import Vue from 'vue'
-import Data from './data.js'
-import VueRouter from 'vue-router'
+import data from './data.js'
+import router from './router.js'
 
 // components
-import About from './views/about/index.vue'
-import Contacts from './views/contacts/index.vue'
 import Header from './components/header/index.vue'
 import Window from './components/window/index.vue'
 import Portfolio from './components/portfolio/index.vue'
@@ -28,36 +26,46 @@ Object.defineProperty(Vue.prototype, '$bus', {
     }
 })
 
-Vue.use(VueRouter)
-
-const routes = [
-    {
-        path: '/about',
-        component: About
-    },
-    {
-        path: '/contacts',
-        component: Contacts
-    }
-]
-
-const router = new VueRouter({ routes })
-
-new Vue({
+const App = new Vue({
     el: '#app',
     data: {
-        app: Data,
-        bus: new Vue({})
+        app: data,
+        bus: new Vue({}),
+        windowOpened: false
     },
     router,
     mounted() {
         this.checkRoute()
+
+        this.$bus.$on('window:open', () => this.openWindow())
+        this.$bus.$on('window:close', () => this.closeWindow())
     },
     methods: {
         checkRoute() {
-            let isRouteOpened = this.$router.options.routes.filter(item => item.path === this.$router.history.current.path).length
+            let routes = this.$router.options.routes
+            let current = this.$router.history.current
+            let isRouteOpened = routes.filter(item => item.path === current.path).length > 0
 
-            isRouteOpened ? this.$bus.$emit('open-window') : false
+            this.windowOpened = isRouteOpened
+        },
+        openWindow() {
+            this.disableScroll()
+            this.windowOpened = true
+        },
+        closeWindow() {
+            this.enableScroll()
+            this.$router.push('/')
+            this.windowOpened = false
+        },
+        disableScroll () {
+            this.scrollY = window.pageYOffset
+            document.body.style.position = 'fixed'
+            document.body.style.top = `-${this.scrollY}px`
+        },
+        enableScroll () {
+            document.body.style.position = ''
+            document.body.style.top = ''
+            window.scroll(0, this.scrollY)
         }
     }
 })
