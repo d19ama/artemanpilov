@@ -6,6 +6,7 @@ import './styles/base.scss'
 
 // base
 import Vue from 'vue'
+import verge from 'verge'
 import data from './data.js'
 import router from './router.js'
 
@@ -30,15 +31,26 @@ const App = new Vue({
     el: '#app',
     data: {
         app: data,
+        scrollY: 0,
+        viewportW: 0,
+        mobile: false,
         bus: new Vue({}),
         windowOpened: false
     },
     router,
     mounted() {
         this.checkRoute()
+        this.getViewportW()
 
         this.$bus.$on('window:open', () => this.openWindow())
         this.$bus.$on('window:close', () => this.closeWindow())
+
+        window.addEventListener('resize', () => this.getViewportW())
+    },
+    watch: {
+        viewportW(newValue) {
+            this.mobile = newValue < 480 ? true : false
+        }
     },
     methods: {
         checkRoute() {
@@ -48,24 +60,29 @@ const App = new Vue({
 
             this.windowOpened = isRouteOpened
         },
+        getViewportW() {
+            this.viewportW = verge.viewportW()
+        },
         openWindow() {
             this.disableScroll()
             this.windowOpened = true
         },
         closeWindow() {
+            if (!this.windowOpened) return
+
             this.enableScroll()
             this.$router.push('/')
             this.windowOpened = false
-        },
-        disableScroll () {
-            this.scrollY = window.pageYOffset
-            document.body.style.position = 'fixed'
-            document.body.style.top = `-${this.scrollY}px`
         },
         enableScroll () {
             document.body.style.position = ''
             document.body.style.top = ''
             window.scroll(0, this.scrollY)
+        },
+        disableScroll () {
+            this.scrollY = window.pageYOffset
+            document.body.style.position = 'fixed'
+            document.body.style.top = `-${this.scrollY}px`
         }
     }
 })
