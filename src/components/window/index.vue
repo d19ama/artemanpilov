@@ -5,7 +5,7 @@
         @leave="appearAnimationLeave"
     >
         <div
-            v-if="opened"
+            v-if="active"
             class="window"
         >
             <div class="window__inner">
@@ -34,13 +34,7 @@ export default {
     },
     data() {
         return {
-            duration: 300,
-            opened: this.active
-        }
-    },
-    watch: {
-        active(newValue) {
-            this.opened = newValue
+            duration: 300
         }
     },
     methods: {
@@ -77,7 +71,6 @@ export default {
 .window {
     width: 100vw;
     height: 100vh;
-    overflow: auto;
     padding-left: 9rem;
     padding-right: 9rem;
     position: fixed;
@@ -85,6 +78,10 @@ export default {
     left: 0;
     z-index: 90;
     background-color: $white;
+
+    @include breakpoint(mobile) {
+        overflow: auto;
+    }
 
     @include breakpoint(v-mobile) {
         padding-left: 0;
@@ -105,7 +102,7 @@ export default {
         @include breakpoint(v-mobile) {
             max-width: none;
             width: 100%;
-            padding: 7rem 0 3rem;
+            padding: 6rem 0 3rem;
         }
     }
 
@@ -123,6 +120,13 @@ export default {
         transition: opacity .3s;
         cursor: pointer;
 
+        @include breakpoint(v-mobile) {
+            width: 2rem;
+            height: 2rem;
+            top: 2rem;
+            right: 1rem;
+        }
+
         &:hover {
             opacity: .5;
         }
@@ -131,7 +135,7 @@ export default {
         &:before {
             content: '';
             display: block;
-            width: 3rem;
+            width: 100%;
             height: 2px;
             position: absolute;
             top: 50%;

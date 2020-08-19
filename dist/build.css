@@ -414,9 +414,8 @@ ul {
 }
 @media only screen and (max-width: 480px) {
 .header {
-      width: 100%;
-      top: 0;
-      left: 0;
+      top: 1rem;
+      left: 1rem;
 }
 }
 .header .logo {
@@ -436,6 +435,12 @@ ul {
     -o-transition: background-color .3s .3s;
     transition: background-color .3s .3s;
 }
+@media only screen and (max-width: 480px) {
+.header .logo {
+        width: 4rem;
+        height: 4rem;
+}
+}
 .header.is-hovered {
     overflow: hidden;
     border-radius: 0%;
@@ -447,7 +452,6 @@ ul {
 .window {
   width: 100vw;
   height: 100vh;
-  overflow: auto;
   padding-left: 9rem;
   padding-right: 9rem;
   position: fixed;
@@ -455,6 +459,11 @@ ul {
   left: 0;
   z-index: 90;
   background-color: #fff;
+}
+@media only screen and (max-width: 768px) {
+.window {
+      overflow: auto;
+}
 }
 @media only screen and (max-width: 480px) {
 .window {
@@ -478,7 +487,7 @@ ul {
 .window__inner {
         max-width: none;
         width: 100%;
-        padding: 7rem 0 3rem;
+        padding: 6rem 0 3rem;
 }
 }
 .window__close {
@@ -497,13 +506,21 @@ ul {
     transition: opacity .3s;
     cursor: pointer;
 }
+@media only screen and (max-width: 480px) {
+.window__close {
+        width: 2rem;
+        height: 2rem;
+        top: 2rem;
+        right: 1rem;
+}
+}
 .window__close:hover {
       opacity: .5;
 }
 .window__close:after, .window__close:before {
       content: '';
       display: block;
-      width: 3rem;
+      width: 100%;
       height: 2px;
       position: absolute;
       top: 50%;
@@ -638,6 +655,11 @@ ul {
     -o-transition: opacity .1s;
     transition: opacity .1s;
 }
+@media only screen and (max-width: 480px) {
+.navigation__link {
+        font-size: .875rem;
+}
+}
 .navigation__link span {
       border-bottom: 1px solid rgba(33, 33, 33, 0.5);
       -webkit-transition: border-bottom-color .3s;
@@ -656,6 +678,11 @@ ul {
     -o-transition: width .3s .3s, box-shadow .3s .3s;
     transition: width .3s .3s, box-shadow .3s .3s;
     transition: width .3s .3s, box-shadow .3s .3s, -webkit-box-shadow .3s .3s;
+}
+@media only screen and (max-width: 480px) {
+.navigation.is-active {
+        width: 11rem;
+}
 }
 .navigation.is-active a {
       opacity: 1;

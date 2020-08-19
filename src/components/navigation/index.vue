@@ -53,6 +53,10 @@ export default {
         line-height: 3rem;
         transition: opacity .1s;
 
+        @include breakpoint(v-mobile) {
+            font-size: .875rem;
+        }
+
         span {
             border-bottom: 1px solid rgba($black, .5);
             transition: border-bottom-color .3s;
@@ -71,6 +75,10 @@ export default {
         width: 16rem;
         box-shadow: inset 2px 0 0 0 $middle-grey;
         transition: width .3s .3s, box-shadow .3s .3s;
+
+        @include breakpoint(v-mobile) {
+            width: 11rem;
+        }
 
         a {
             opacity: 1;
