@@ -460,7 +460,7 @@ ul {
   z-index: 90;
   background-color: #fff;
 }
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1024px) {
 .window {
       overflow: auto;
 }

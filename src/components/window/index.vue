@@ -79,7 +79,7 @@ export default {
     z-index: 90;
     background-color: $white;
 
-    @include breakpoint(mobile) {
+    @include breakpoint(tablet) {
         overflow: auto;
     }
 
