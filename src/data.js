@@ -97,7 +97,11 @@ const App = {
                         '3D printing'
                     ]
                 }
-            ]
+            ],
+            cv: {
+                name: 'Full CV',
+                link: ''
+            }
         },
         contacts: [
             {
