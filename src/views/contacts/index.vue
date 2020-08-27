@@ -58,14 +58,14 @@ export default {
 
     &__icon {
         display: block;
-        width: 5rem;
-        height: 5rem;
+        width: 4rem;
+        height: 4rem;
         margin-right: 2rem;
         background-position: center;
         background-repeat: no-repeat;
         filter: drop-shadow(0 0.2rem 0.25rem rgba($dark-grey, 0.2));
 
-        @include breakpoint(mobile) {
+        @include breakpoint(v-mobile) {
             width: 2rem;
             height: 2rem;
         }
@@ -79,7 +79,7 @@ export default {
         font-size: 2rem;
         transition: color .3s;
 
-        @include breakpoint(mobile) {
+        @include breakpoint(v-mobile) {
             font-size: 1.5rem;
         }
 

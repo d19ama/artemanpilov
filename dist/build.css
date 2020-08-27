@@ -339,15 +339,15 @@ ul {
 }
 .contacts__icon {
     display: block;
-    width: 5rem;
-    height: 5rem;
+    width: 4rem;
+    height: 4rem;
     margin-right: 2rem;
     background-position: center;
     background-repeat: no-repeat;
     -webkit-filter: drop-shadow(0 0.2rem 0.25rem rgba(45, 45, 45, 0.2));
     filter: drop-shadow(0 0.2rem 0.25rem rgba(45, 45, 45, 0.2));
 }
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 480px) {
 .contacts__icon {
         width: 2rem;
         height: 2rem;
@@ -376,7 +376,7 @@ ul {
     -o-transition: color .3s;
     transition: color .3s;
 }
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 480px) {
 .contacts__link {
         font-size: 1.5rem;
 }
