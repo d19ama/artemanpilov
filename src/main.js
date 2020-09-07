@@ -11,10 +11,10 @@ import data from './data.js'
 import router from './router.js'
 
 // components
-import Header from './components/header/index.vue'
-import Window from './components/window/index.vue'
-import Portfolio from './components/portfolio/index.vue'
-import Navigation from './components/navigation/index.vue'
+import Header from './components/Header/index.vue'
+import Window from './components/Window/index.vue'
+import Portfolio from './views/Portfolio/index.vue'
+import Navigation from './components/Navigation/index.vue'
 
 Vue.component('app-header', Header)
 Vue.component('app-window', Window)
