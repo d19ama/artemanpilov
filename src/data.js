@@ -83,7 +83,7 @@ const App = {
                     title: 'Skills:',
                     data: [
                         'javascript / vuejs / react / sass / html',
-                        'webpack / gulp / git / docker',
+                        'webpack / gulp / git / docker / jest',
                         'basic php',
                         'cross browser, adaptive, responsive',
                         'Adobe Ps, Adobe Ai, Figma'
@@ -127,6 +127,18 @@ const App = {
                 name: 'gmail',
                 link: 'mailto:blind.resist@gmail.com',
                 src: './src/images/icons/gmail.svg'
+            },
+            {
+                id: 'github',
+                name: 'github',
+                link: 'https://github.com/BlindResist',
+                src: './src/images/icons/github.svg'
+            },
+            {
+                id: 'facebook',
+                name: 'facebook',
+                link: 'https://www.facebook.com/profile.php?id=100002158603006',
+                src: './src/images/icons/facebook.svg'
             }
         ]
     }

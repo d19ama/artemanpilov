@@ -151,32 +151,6 @@ body {
   font-family: 'Roboto Mono', Arial, Helvetica, sans-serif;
   background-color: #fff; }
 
-h1 {
-  margin: 0 0 5rem;
-  font-size: 2rem;
-  font-weight: 700;
-  line-height: 3rem;
-  text-transform: uppercase; }
-  @media only screen and (max-width: 480px) {
-    h1 {
-      padding: 0 1rem;
-      margin: 0 0 1rem;
-      font-size: 1.5rem;
-      text-align: center; } }
-  h1 span {
-    color: #E6E6E6; }
-    h1 span:first-of-type {
-      margin-right: 1.25rem; }
-    h1 span:last-of-type {
-      margin-left: 1.25rem; }
-
-h2 {
-  margin: 0 0 1rem;
-  font-size: 1rem;
-  font-weight: 700;
-  color: #2d2d2d;
-  line-height: 1.5rem; }
-
 a {
   color: #212121;
   text-decoration: none; }
@@ -337,11 +311,17 @@ ul {
         width: 100%;
 }
 }
+@media only screen and (max-width: 480px) {
+.contacts__item {
+        margin-top: 1.5rem;
+}
+}
 .contacts__icon {
     display: block;
     width: 4rem;
     height: 4rem;
     margin-right: 2rem;
+    background-size: 90%;
     background-position: center;
     background-repeat: no-repeat;
     -webkit-filter: drop-shadow(0 0.2rem 0.25rem rgba(45, 45, 45, 0.2));
@@ -383,6 +363,55 @@ ul {
 }
 .contacts__link:hover {
       color: #ed174b;
+}
+
+.title {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-flow: row wrap;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
+  -webkit-box-align: baseline;
+  -webkit-align-items: baseline;
+  -ms-flex-align: baseline;
+  align-items: baseline;
+}
+.title--h1 {
+    margin: 0 0 5rem;
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 3rem;
+    text-transform: uppercase;
+}
+@media only screen and (max-width: 480px) {
+.title--h1 {
+        padding: 0 1rem;
+        margin: 0 0 1rem;
+        font-size: 1.5rem;
+        text-align: center;
+}
+}
+.title--h1:before {
+      content: '/*';
+      margin-right: 1.25rem;
+}
+.title--h1:after {
+      content: '*/';
+      margin-left: 1.25rem;
+}
+.title--h1:before, .title--h1:after {
+      color: #E6E6E6;
+}
+.title--h2 {
+    margin: 0 0 1rem;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #2d2d2d;
+    line-height: 1.5rem;
 }
 
 .header {
