@@ -44,6 +44,7 @@ export default {
     font-size: 1rem;
     line-height: 1.5rem;
     background-color: $lite-grey;
+    box-shadow: .5rem .5rem rgba($dark-grey, .2);
 
     &--bold {
         font-weight: 700;

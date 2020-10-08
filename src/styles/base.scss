@@ -53,6 +53,14 @@ ul {
     p+p {
         margin: 1rem 0 0;
     }
+
+    .row {
+        margin-top: -1.875rem;
+
+        &>[class^="col"] {
+            margin-top: 1.875rem;
+        }
+    }
 }
 
 .link {

@@ -71,6 +71,7 @@ export default {
 .app-window {
     width: 100vw;
     height: 100vh;
+    overflow: auto;
     padding-left: 9rem;
     padding-right: 9rem;
     position: fixed;
@@ -78,10 +79,6 @@ export default {
     left: 0;
     z-index: 90;
     background-color: $white;
-
-    @include breakpoint(tablet) {
-        overflow: auto;
-    }
 
     @include breakpoint(v-mobile) {
         padding-left: 0;

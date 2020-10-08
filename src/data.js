@@ -115,7 +115,8 @@ const App = {
             country: 'Russia',
             city: 'Saint-Petersburg',
             summary: [
-                'Front-end Developer with 5+&nbsp;years of&nbsp;experience designing, developing, and managing websites and internal frameworks. Specializes in&nbsp;VueJS, ReactJs and responsive design'
+                'Front-end Developer with 5+&nbsp;years of&nbsp;experience designing and developing websites and internal frameworks.',
+                'Specializes in&nbsp;Vue.js, React and responsive design'
             ],
             education: {
                 institution: 'Voronezh Institute of Economics and Law, Russia',
@@ -128,11 +129,54 @@ const App = {
                 '3D printing'
             ],
             skills: [
-                'Javascript / Vuejs / React / Sass / HTML',
-                'Webpack / Gulp / Git / Docker / Jest',
-                'Сrossbrowser, adaptive and responsive development',
-                'Knowledge of basic php',
-                'Figma, Zeplin, Adobe Photoshop, Adobe Illustrator'
+                {
+                    name: 'JavaScript',
+                    experience: '4 years'
+                },
+                {
+                    name: 'Vue.js',
+                    experience: '2 years'
+                },
+                {
+                    name: 'React',
+                    experience: '1 year'
+                },
+                {
+                    name: 'Webpack',
+                    experience: '2 years'
+                },
+                {
+                    name: 'Sass',
+                    experience: '3 years'
+                },
+                {
+                    name: 'Git',
+                    experience: '5 years'
+                },
+                {
+                    name: 'Docker',
+                    experience: '2 years'
+                },
+                {
+                    name: 'Jest',
+                    experience: '3 months'
+                },
+                {
+                    name: 'HTML',
+                    experience: '6 years'
+                },
+                // 'Javascript / Vuejs / React / Sass / HTML',
+                // 'Webpack / Gulp / Git / Docker / Jest',
+                // 'Сrossbrowser, adaptive and responsive development',
+                // 'Knowledge of basic php',
+                // 'Figma, Zeplin, Adobe Photoshop, Adobe Illustrator'
+            ],
+            conferences: [
+                {
+                    name: 'Frontend Conf',
+                    year: '2019',
+                    location: 'Moscow'
+                }
             ]
         },
         contacts: [{

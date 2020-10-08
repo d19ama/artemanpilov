@@ -1743,6 +1743,11 @@ ul {
 .content p + p {
   margin: 1rem 0 0; }
 
+.content .row {
+  margin-top: -1.875rem; }
+  .content .row > [class^="col"] {
+    margin-top: 1.875rem; }
+
 .link {
   color: #ed174b;
   font-size: 1rem;
@@ -1772,8 +1777,8 @@ ul {
 .ul-list li + li {
   margin: .5rem 0 0; }
 
-.page-cv__info + .page-cv__info {
-  margin-top: 2rem;
+.page-cv__block + .page-cv__block {
+  margin-top: 5rem;
 }
 .page-cv__image {
   width: 100%;
@@ -1950,6 +1955,7 @@ ul {
 .app-window {
   width: 100vw;
   height: 100vh;
+  overflow: auto;
   padding-left: 9rem;
   padding-right: 9rem;
   position: fixed;
@@ -1957,11 +1963,6 @@ ul {
   left: 0;
   z-index: 90;
   background-color: #fff;
-}
-@media only screen and (max-width: 1024px) {
-.app-window {
-      overflow: auto;
-}
 }
 @media only screen and (max-width: 480px) {
 .app-window {
@@ -2246,6 +2247,10 @@ ul {
 .heading--brackets:before, .heading--brackets:after {
     color: #E6E6E6;
 }
+.heading--bordered {
+    padding-bottom: 1rem;
+    border-bottom: 3px solid #f1f1f1;
+}
 .heading--h1 {
     line-height: 1;
     font-size: 3rem;
@@ -2284,11 +2289,30 @@ ul {
     font-size: 1.125rem;
 }
 
+.info-block__value {
+  display: block;
+}
+.info-block__value + .info-block__value {
+    margin-top: 1rem;
+}
+.info-block__value--first {
+    font-weight: 700;
+    font-size: 1.25rem;
+}
+.info-block__value--second {
+    font-size: 1.125rem;
+}
+.info-block__value--third {
+    font-size: .875rem;
+}
+
 .text-block {
   padding: 1.5rem 2rem;
   font-size: 1rem;
   line-height: 1.5rem;
   background-color: #f1f1f1;
+  -webkit-box-shadow: 0.5rem 0.5rem rgba(45, 45, 45, 0.2);
+  box-shadow: 0.5rem 0.5rem rgba(45, 45, 45, 0.2);
 }
 .text-block--bold {
     font-weight: 700;
@@ -2361,5 +2385,24 @@ ul {
       filter: grayscale(0%);
       -webkit-box-shadow: 0 1.875rem 4.75rem 0.25rem rgba(4, 20, 38, 0.1);
       box-shadow: 0 1.875rem 4.75rem 0.25rem rgba(4, 20, 38, 0.1);
+}
+
+.key-indicator {
+  padding: 2rem;
+  background-color: #f1f1f1;
+  -webkit-box-shadow: 0.5rem 0.5rem rgba(45, 45, 45, 0.2);
+  box-shadow: 0.5rem 0.5rem rgba(45, 45, 45, 0.2);
+}
+.key-indicator__name {
+    display: block;
+    margin-bottom: 1.25rem;
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: #2d2d2d;
+}
+.key-indicator__value {
+    display: block;
+    font-size: 1rem;
+    color: rgba(45, 45, 45, 0.8);
 }
 

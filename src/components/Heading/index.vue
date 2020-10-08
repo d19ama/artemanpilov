@@ -19,14 +19,16 @@ export default {
             type: String,
             default: ''
         },
-        brackets: Boolean
+        brackets: Boolean,
+        bordered: Boolean
     },
     computed: {
         classObject() {
             return [
                 `heading heading--${this.tag}`,
                 {
-                    'heading--brackets': this.brackets
+                    'heading--brackets': this.brackets,
+                    'heading--bordered': this.bordered
                 }
             ]
         }
@@ -56,6 +58,11 @@ export default {
         &:after {
             color: $middle-grey;
         }
+    }
+
+    &--bordered {
+        padding-bottom: 1rem;
+        border-bottom: 3px solid $lite-grey;
     }
 
     &--h1 {
