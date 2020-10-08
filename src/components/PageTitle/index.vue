@@ -1,7 +1,7 @@
 <template>
     <component
         :is="tag"
-        :class="`title title--${tag}`"
+        :class="`page-title page-title--${tag}`"
     >
         <slot />
     </component>
@@ -9,7 +9,7 @@
 
 <script>
 export default {
-    name: 'app-title',
+    name: 'page-title',
     props: {
         tag: {
             type: String,
@@ -24,7 +24,7 @@ export default {
 </script>
 
 <style lang="scss">
-.title {
+.page-title {
     $parent: &;
 
     display: flex;

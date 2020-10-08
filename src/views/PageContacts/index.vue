@@ -1,21 +1,21 @@
 <template>
     <div class="content">
-        <app-title>contacts</app-title>
-        <ul class="contacts">
+        <page-title>contacts</page-title>
+        <ul class="page-contacts">
             <li
                 :key="item.id"
-                class="contacts__item"
-                v-for="item in contacts"
+                v-for="item in data"
+                class="page-contacts__item"
             >
                 <a
                     target="_blank"
                     :href="item.link"
                     :title="item.name"
-                    class="contacts__link"
+                    class="page-contacts__link"
                 >
                     <span
-                        class="contacts__icon"
-                        :style="`background-image: url(${item.src})`"
+                        class="page-contacts__icon"
+                        :style="buildStyle(item.src)"
                     ></span>
                     <span>{{ item.name }}</span>
                 </a>
@@ -26,17 +26,24 @@
 
 <script>
 export default {
-    name: 'app-contacts',
+    name: 'page-contacts',
     data() {
         return {
-            contacts: this.$root.app.components.contacts
+            data: this.$root.app.components.contacts
+        }
+    },
+    methods: {
+        buildStyle(src) {
+            return {
+                backgroundImage: `url(${src})`
+            }
         }
     }
 }
 </script>
 
 <style lang="scss">
-.contacts {
+.page-contacts {
     display: flex;
     flex-flow: row wrap;
 

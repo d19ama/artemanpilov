@@ -1,37 +1,45 @@
 <template>
-    <section class="portfolio">
+    <section class="page-portfolio">
         <a
             :key="item.id"
             target="_blank"
             :href="item.link"
-            class="portfolio__item"
-            v-for="item in portfolio"
-            :style="`background-image: url(${item.image})`"
+            v-for="item in data"
+            class="page-portfolio__item"
+            :style="buildStyle(item.image)"
         ></a>
     </section>
 </template>
 
 <script>
 export default {
-    name: 'app-portfolio',
+    name: 'page-portfolio',
     data() {
         return {
-            portfolio: this.$root.app.components.portfolio
+            data: this.$root.app.components.portfolio
+        }
+    },
+    methods: {
+        buildStyle(image) {
+            return {
+                backgroundImage: `url(${image})`
+            }
         }
     }
 }
 </script>
 
 <style lang="scss">
-.portfolio {
+.page-portfolio {
     display: flex;
     flex-flow: row wrap;
+    min-height: 100vh;
     padding: 0;
 
     &__item {
         display: block;
-        width: 20%;
-        height: 50vh;
+        width: calc(100%/3);
+        height: 100vh;
         overflow: hidden;
         position: relative;
         border-right: 2px solid $lite-grey;
@@ -44,10 +52,10 @@ export default {
         transition: all .2s;
 
         @include breakpoint(tablet) {
-            width: calc(100%/3);
             filter: grayscale(0%);
 
             @media screen and (orientation: portrait) {
+                width: 100%;
                 height: calc(100vh/3);
             }
         }

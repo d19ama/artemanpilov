@@ -1,13 +1,13 @@
 <template>
     <header
-        class="header"
+        class="app-header"
         :class="{
             'is-hovered': hovered
         }"
         @mouseenter="toggle(true)"
         @mouseleave="toggle(false)"
     >
-        <div class="logo"></div>
+        <div class="app-logo"></div>
         <app-navigation
             :active="hovered"
         />
@@ -42,7 +42,7 @@ export default {
 </script>
 
 <style lang="scss">
-.header {
+.app-header {
     display: flex;
     align-items: center;
     flex-flow: row nowrap;
@@ -61,7 +61,7 @@ export default {
         left: 1rem;
     }
 
-    .logo {
+    .app-logo {
         display: block;
         width: 6rem;
         height: 6rem;

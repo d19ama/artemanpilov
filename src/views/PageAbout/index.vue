@@ -1,20 +1,22 @@
 <template>
     <div class="content">
-        <app-title>about</app-title>
-        <div class="about">
-            <div class="about__image">
+        <page-title>about</page-title>
+        <div class="page-about">
+            <div class="page-about__image">
                 <img
-                    :src="about.image.src"
-                    :alt="about.image.alt"
+                    :src="data.image.src"
+                    :alt="data.image.alt"
                 />
             </div>
-            <div class="about__info">
+            <div class="page-about__info">
                 <div
                     :key="index"
-                    class="about__info-block"
-                    v-for="(item, index) in about.info"
+                    class="page-about__info-block"
+                    v-for="(item, index) in data.info"
                 >
-                    <app-title tag="h2">{{ item.title }}</app-title>
+                    <page-title
+                        tag="h2"
+                    >{{ item.title }}</page-title>
                     <ul class="ul-list">
                         <li
                             :key="index2"
@@ -29,17 +31,17 @@
 
 <script>
 export default {
-    name: 'app-about',
+    name: 'page-about',
     data() {
         return {
-            about: this.$root.app.components.about
+            data: this.$root.app.components.about
         }
     }
 }
 </script>
 
 <style lang="scss">
-.about {
+.page-about {
     display: flex;
     flex-flow: row wrap;
     align-items: flex-start;

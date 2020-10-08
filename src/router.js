@@ -1,8 +1,8 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
-import PageAbout from './views/About/index.vue'
-import PageContacts from './views/Contacts/index.vue'
+import PageAbout from './views/PageAbout/index.vue'
+import PageContacts from './views/PageContacts/index.vue'
 
 Vue.use(VueRouter)
 

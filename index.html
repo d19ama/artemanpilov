@@ -12,9 +12,13 @@
 </head>
 <body>
     <div id="app">
-        <app-header :mobile="mobile"></app-header>
-        <app-portfolio></app-portfolio>
-        <app-window :active="windowOpened"></app-window>
+        <app-header
+            :mobile="mobile"
+        ></app-header>
+        <page-portfolio></page-portfolio>
+        <app-window
+            :active="windowOpened"
+        ></app-window>
     </div>
     <script src="./dist/build.js"></script>
 </body>

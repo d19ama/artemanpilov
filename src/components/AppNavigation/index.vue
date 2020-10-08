@@ -1,6 +1,6 @@
 <template>
     <nav
-        class="navigation"
+        class="app-navigation"
         :class="{
             'is-active': active
         }"
@@ -9,8 +9,8 @@
             exact
             :key="item.id"
             :to="item.link"
-            class="navigation__link"
-            v-for="item in navigation"
+            v-for="item in data"
+            class="app-navigation__link"
             @click.native="$root.$bus.$emit('window:open')"
         >
             <span>{{ item.name }}</span>
@@ -26,14 +26,14 @@ export default {
     },
     data() {
         return {
-            navigation: this.$root.app.components.navigation
+            data: this.$root.app.components.navigation
         }
     }
 }
 </script>
 
 <style lang="scss">
-.navigation {
+.app-navigation {
     display: flex;
     align-items: center;
     justify-content: space-evenly;

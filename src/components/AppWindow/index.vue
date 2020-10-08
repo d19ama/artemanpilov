@@ -6,9 +6,9 @@
     >
         <div
             v-if="active"
-            class="window"
+            class="app-window"
         >
-            <div class="window__inner">
+            <div class="app-window__inner">
                 <transition name="fade">
                     <router-view />
                 </transition>
@@ -16,7 +16,7 @@
             <a
                 role="button"
                 title="close"
-                class="window__close"
+                class="app-window__close"
                 href="javascript: void(0)"
                 @click="$root.$bus.$emit('window:close')"
             ></a>
@@ -68,7 +68,7 @@ export default {
 </script>
 
 <style lang="scss">
-.window {
+.app-window {
     width: 100vw;
     height: 100vh;
     padding-left: 9rem;
