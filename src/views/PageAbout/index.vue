@@ -1,6 +1,8 @@
 <template>
     <div class="content">
-        <page-title>about</page-title>
+        <heading
+            brackets
+        >about</heading>
         <div class="page-about">
             <div class="page-about__image">
                 <img
@@ -14,9 +16,9 @@
                     class="page-about__info-block"
                     v-for="(item, index) in data.info"
                 >
-                    <page-title
+                    <heading
                         tag="h2"
-                    >{{ item.title }}</page-title>
+                    >{{ item.title }}</heading>
                     <ul class="ul-list">
                         <li
                             :key="index2"

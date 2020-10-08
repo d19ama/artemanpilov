@@ -1,10 +1,15 @@
 const App = {
     components: {
         navigation: [
+            // {
+            //     id: 'about',
+            //     link: '/about',
+            //     name: 'about'
+            // },
             {
-                id: 'about',
-                link: '/about',
-                name: 'about'
+                id: 'cv',
+                link: '/cv',
+                name: 'CV'
             },
             {
                 id: 'contacts',
@@ -12,8 +17,7 @@ const App = {
                 name: 'contacts'
             }
         ],
-        portfolio: [
-            {
+        portfolio: [{
                 id: 'magnit',
                 link: 'https://www.magnit.com/ru/',
                 image: './src/images/logos/logo-magnit.png'
@@ -70,8 +74,7 @@ const App = {
                 src: './src/images/itsme.jpg',
                 alt: 'Its me :)'
             },
-            info: [
-                {
+            info: [{
                     title: 'Personal:',
                     data: [
                         'Anpilov Artem Mihajlovich',
@@ -104,8 +107,35 @@ const App = {
                 link: ''
             }
         },
-        contacts: [
-            {
+        cv: {
+            photo: './src/images/itsme.jpg',
+            firstName: 'Artem',
+            lastName: 'Anpilov',
+            dateOfBirth: 548539200,
+            country: 'Russia',
+            city: 'Saint-Petersburg',
+            summary: [
+                'Front-end Developer with 5+&nbsp;years of&nbsp;experience designing, developing, and managing websites and internal frameworks. Specializes in&nbsp;VueJS, ReactJs and responsive design'
+            ],
+            education: {
+                institution: 'Voronezh Institute of Economics and Law, Russia',
+                specification: 'Master of Arts in Computer Science',
+                period: 'August 2004 to August 2009'
+            },
+            hobby: [
+                'Music',
+                'Travel',
+                '3D printing'
+            ],
+            skills: [
+                'Javascript / Vuejs / React / Sass / HTML',
+                'Webpack / Gulp / Git / Docker / Jest',
+                'Сrossbrowser, adaptive and responsive development',
+                'Knowledge of basic php',
+                'Figma, Zeplin, Adobe Photoshop, Adobe Illustrator'
+            ]
+        },
+        contacts: [{
                 id: 'vk',
                 name: 'vkontakte',
                 link: 'https://vk.com/blind_resist',

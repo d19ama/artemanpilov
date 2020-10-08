@@ -2,6 +2,8 @@
 import './styles/reset.scss'
 import './styles/vars.scss'
 import './styles/mixins.scss'
+import './styles/grid.scss'
+import './styles/spacers.scss'
 import './styles/base.scss'
 
 // base
@@ -16,10 +18,16 @@ import AppHeader from '@/components/AppHeader/index.vue'
 import AppNavigation from '@/components/AppNavigation/index.vue'
 
 // components
-import PageTitle from '@/components/PageTitle/index.vue'
+import List from '@/components/List/index.vue'
+import Heading from '@/components/Heading/index.vue'
+import ListItem from '@/components/ListItem/index.vue'
+import TextBlock from '@/components/TextBlock/index.vue'
 import PagePortfolio from '@/views/PagePortfolio/index.vue'
 
-Vue.component('page-title', PageTitle)
+Vue.component('list', List)
+Vue.component('heading', Heading)
+Vue.component('list-item', ListItem)
+Vue.component('text-block', TextBlock)
 Vue.component('app-window', AppWindow)
 Vue.component('app-header', AppHeader)
 Vue.component('app-navigation', AppNavigation)

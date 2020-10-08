@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
+import PageCV from './views/PageCV/index.vue'
 import PageAbout from './views/PageAbout/index.vue'
 import PageContacts from './views/PageContacts/index.vue'
 
@@ -12,6 +13,10 @@ export default new VueRouter({
     	{
             path: '/about',
             component: PageAbout
+        },
+        {
+            path: '/cv',
+            component: PageCV
         },
         {
             path: '/contacts',

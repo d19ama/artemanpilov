@@ -1,6 +1,8 @@
 <template>
     <div class="content">
-        <page-title>contacts</page-title>
+        <heading
+            brackets
+        >contacts</heading>
         <ul class="page-contacts">
             <li
                 :key="item.id"
