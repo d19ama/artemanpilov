@@ -5,7 +5,7 @@
             class="margin-bottom--xl"
         >CV</heading>
         <div class="page-cv row">
-            <div class="col-default-4">
+            <div class="col-default-3 col-mobile-4 col-v-mobile-12">
                 <div class="page-cv__image">
                     <img
                         :src="data.photo"
@@ -23,7 +23,7 @@
                     >{{ item }}</list-item>
                 </list>
             </div>
-            <div class="col-default-8">
+            <div class="col-default-9 col-mobile-8 col-v-mobile-12">
                 <section class="page-cv__block">
                     <heading
                         tag="h3"

@@ -2289,20 +2289,20 @@ ul {
     font-size: 1.125rem;
 }
 
-.info-block__value {
+.info-block__row {
   display: block;
 }
-.info-block__value + .info-block__value {
+.info-block__row + .info-block__row {
     margin-top: 1rem;
 }
-.info-block__value--first {
+.info-block__row--first {
     font-weight: 700;
     font-size: 1.25rem;
 }
-.info-block__value--second {
+.info-block__row--second {
     font-size: 1.125rem;
 }
-.info-block__value--third {
+.info-block__row--third {
     font-size: .875rem;
 }
 
@@ -2319,6 +2319,25 @@ ul {
 }
 .text-block--italic {
     font-style: italic;
+}
+
+.key-indicator {
+  padding: 2rem;
+  background-color: #f1f1f1;
+  -webkit-box-shadow: 0.5rem 0.5rem rgba(45, 45, 45, 0.2);
+  box-shadow: 0.5rem 0.5rem rgba(45, 45, 45, 0.2);
+}
+.key-indicator__name {
+    display: block;
+    margin-bottom: 1.25rem;
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: #2d2d2d;
+}
+.key-indicator__value {
+    display: block;
+    font-size: 1rem;
+    color: rgba(45, 45, 45, 0.8);
 }
 
 .page-portfolio {
@@ -2385,24 +2404,5 @@ ul {
       filter: grayscale(0%);
       -webkit-box-shadow: 0 1.875rem 4.75rem 0.25rem rgba(4, 20, 38, 0.1);
       box-shadow: 0 1.875rem 4.75rem 0.25rem rgba(4, 20, 38, 0.1);
-}
-
-.key-indicator {
-  padding: 2rem;
-  background-color: #f1f1f1;
-  -webkit-box-shadow: 0.5rem 0.5rem rgba(45, 45, 45, 0.2);
-  box-shadow: 0.5rem 0.5rem rgba(45, 45, 45, 0.2);
-}
-.key-indicator__name {
-    display: block;
-    margin-bottom: 1.25rem;
-    font-weight: 700;
-    font-size: 1.25rem;
-    color: #2d2d2d;
-}
-.key-indicator__value {
-    display: block;
-    font-size: 1rem;
-    color: rgba(45, 45, 45, 0.8);
 }
 

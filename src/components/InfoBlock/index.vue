@@ -1,8 +1,17 @@
 <template>
     <div class="info-block">
-        <span class="info-block__value info-block__value--first">{{ first }}</span>
-        <span class="info-block__value info-block__value--second">{{ second }}</span>
-        <span class="info-block__value info-block__value--third">{{ third }}</span>
+        <span
+            v-if="first"
+            class="info-block__row info-block__row--first"
+        >{{ first }}</span>
+        <span
+            v-if="second"
+            class="info-block__row info-block__row--second"
+        >{{ second }}</span>
+        <span
+            v-if="third"
+            class="info-block__row info-block__row--third"
+        >{{ third }}</span>
     </div>
 </template>
 
@@ -29,7 +38,7 @@ export default {
 <style lang="scss">
 .info-block {
 
-    &__value {
+    &__row {
         display: block;
 
         &+& {

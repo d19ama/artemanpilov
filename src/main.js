@@ -23,18 +23,24 @@ import Heading from '@/components/Heading/index.vue'
 import ListItem from '@/components/ListItem/index.vue'
 import InfoBlock from '@/components/InfoBlock/index.vue'
 import TextBlock from '@/components/TextBlock/index.vue'
-import PagePortfolio from '@/views/PagePortfolio/index.vue'
 import KeyIndicator from '@/components/KeyIndicator/index.vue'
+
+// pages
+import PageCV from '@/views/PageCV/index.vue'
+import PagePortfolio from '@/views/PagePortfolio/index.vue'
+
+Vue.component('app-window', AppWindow)
+Vue.component('app-header', AppHeader)
+Vue.component('app-navigation', AppNavigation)
 
 Vue.component('list', List)
 Vue.component('heading', Heading)
 Vue.component('list-item', ListItem)
 Vue.component('info-block', InfoBlock)
 Vue.component('text-block', TextBlock)
-Vue.component('app-window', AppWindow)
-Vue.component('app-header', AppHeader)
 Vue.component('key-indicator', KeyIndicator)
-Vue.component('app-navigation', AppNavigation)
+
+Vue.component('page-cv', PageCV)
 Vue.component('page-portfolio', PagePortfolio)
 
 Object.defineProperty(Vue.prototype, '$bus', {
