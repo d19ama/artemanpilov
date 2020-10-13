@@ -1,10 +1,5 @@
 <template>
-    <nav
-        class="app-navigation"
-        :class="{
-            'is-active': active
-        }"
-    >
+    <nav class="app-navigation">
         <router-link
             exact
             :key="item.id"
@@ -36,26 +31,20 @@ export default {
 .app-navigation {
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
-    width: 0;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
     text-align: center;
     white-space: nowrap;
-    background-color: $white;
-    box-shadow: inset 2px 0 0 0 transparent;
-    transition: width .3s;
+    background-color: $grey;
 
     &__link {
-        opacity: 0;
-        padding: 0 .75rem;
+        flex-grow: 1;
         color: $black;
-        font-size: 1rem;
-        font-weight: 700;
+        font-weight: 400;
         line-height: 3rem;
-        transition: opacity .1s;
-
-        @include breakpoint(v-mobile) {
-            font-size: .875rem;
-        }
+        font-size: .875rem;
+        transition: background-color .1s;
 
         span {
             border-bottom: 1px solid rgba($black, .5);
@@ -64,25 +53,11 @@ export default {
 
         &:hover,
         &.is-current {
+            background-color: rgba($white, .5);
 
             span {
                 border-bottom-color: transparent;
             }
-        }
-    }
-
-    &.is-active {
-        width: 16rem;
-        box-shadow: inset 2px 0 0 0 $middle-grey;
-        transition: width .3s .3s, box-shadow .3s .3s;
-
-        @include breakpoint(v-mobile) {
-            width: 11rem;
-        }
-
-        a {
-            opacity: 1;
-            transition: opacity .3s .5s;
         }
     }
 }

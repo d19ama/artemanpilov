@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>LNK:place | Portfolio</title>
+    <title>Artem Anpilov | CV | Portfolio</title>
     <meta charset="UTF-8">
     <meta name="format-detection" content="telephone=no">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
@@ -12,13 +12,16 @@
 </head>
 <body>
     <div id="app">
-        <app-header
-            :mobile="mobile"
-        ></app-header>
-        <page-portfolio></page-portfolio>
-        <app-window
+        <app-aside></app-aside>
+        <div class="container">
+            <app-navigation></app-navigation>
+            <main class="content">
+                <page-cv></page-cv>
+            </main>
+        </div>
+        <!-- <app-window
             :active="windowOpened"
-        ></app-window>
+        ></app-window> -->
     </div>
     <script src="./dist/build.js"></script>
 </body>

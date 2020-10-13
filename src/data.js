@@ -1,20 +1,73 @@
 const App = {
     components: {
-        navigation: [
-            // {
-            //     id: 'about',
-            //     link: '/about',
-            //     name: 'about'
-            // },
-            {
-                id: 'cv',
-                link: '/cv',
-                name: 'CV'
+        aside: {
+            photo: './src/images/itsme.jpg',
+            firstName: 'Artem',
+            lastName: 'Anpilov',
+            specialization: 'Frontend developer',
+            location: {
+                name: 'Saint-Petersburg, Russia',
+                src: './src/images/icons/location.svg'
+            },
+            email: {
+                link: 'blind.resist@gmail.com',
+                src: './src/images/icons/gmail.svg'
+            },
+            contacts: [{
+                    id: 'vk',
+                    name: 'vkontakte',
+                    link: 'https://vk.com/blind_resist',
+                    src: './src/images/icons/vk.svg'
+                },
+                {
+                    id: 'instagram',
+                    name: 'instagram',
+                    link: 'https://www.instagram.com/artem.anpilov/',
+                    src: './src/images/icons/instagram.svg'
+                },
+                {
+                    id: 'telegram',
+                    name: 'telegram',
+                    link: 'https://t.me/BlindResist',
+                    src: './src/images/icons/telegram.svg'
+                },
+                {
+                    id: 'github',
+                    name: 'github',
+                    link: 'https://github.com/BlindResist',
+                    src: './src/images/icons/github.svg'
+                },
+                {
+                    id: 'facebook',
+                    name: 'facebook',
+                    link: 'https://www.facebook.com/profile.php?id=100002158603006',
+                    src: './src/images/icons/facebook.svg'
+                }
+            ]
+        },
+        navigation: [{
+                link: '#summary',
+                name: 'Summary'
             },
             {
-                id: 'contacts',
-                link: '/contacts',
-                name: 'contacts'
+                link: '#skills',
+                name: 'Skills'
+            },
+            {
+                link: '#experience',
+                name: 'Experience'
+            },
+            {
+                link: '#education',
+                name: 'Education'
+            },
+            {
+                link: '#conferences',
+                name: 'Conferences'
+            },
+            {
+                link: '#projects',
+                name: 'Projects'
             }
         ],
         portfolio: [{
@@ -108,12 +161,6 @@ const App = {
             }
         },
         cv: {
-            photo: './src/images/itsme.jpg',
-            firstName: 'Artem',
-            lastName: 'Anpilov',
-            dateOfBirth: 548539200,
-            country: 'Russia',
-            city: 'Saint-Petersburg',
             summary: [
                 'Front-end Developer with 5+&nbsp;years of&nbsp;experience designing and developing websites and internal frameworks.',
                 'Specializes in&nbsp;Vue.js, React and responsive design'
@@ -128,94 +175,58 @@ const App = {
                 'Travel',
                 '3D printing'
             ],
-            skills: [
-                {
-                    name: 'JavaScript',
-                    experience: '4 years'
-                },
-                {
-                    name: 'Vue.js',
-                    experience: '2 years'
-                },
-                {
-                    name: 'React',
-                    experience: '1 year'
-                },
-                {
-                    name: 'Webpack',
-                    experience: '2 years'
-                },
-                {
-                    name: 'Sass',
-                    experience: '3 years'
-                },
-                {
-                    name: 'Git',
-                    experience: '5 years'
-                },
-                {
-                    name: 'Docker',
-                    experience: '2 years'
-                },
-                {
-                    name: 'Jest',
-                    experience: '3 months'
-                },
-                {
-                    name: 'HTML',
-                    experience: '6 years'
-                },
-                // 'Javascript / Vuejs / React / Sass / HTML',
-                // 'Webpack / Gulp / Git / Docker / Jest',
-                // 'Сrossbrowser, adaptive and responsive development',
-                // 'Knowledge of basic php',
-                // 'Figma, Zeplin, Adobe Photoshop, Adobe Illustrator'
-            ],
-            conferences: [
-                {
-                    name: 'Frontend Conf',
-                    year: '2019',
-                    location: 'Moscow'
-                }
-            ]
-        },
-        contacts: [{
-                id: 'vk',
-                name: 'vkontakte',
-                link: 'https://vk.com/blind_resist',
-                src: './src/images/icons/vk.svg'
+            skills: {
+                basic: [{
+                        name: 'JavaScript',
+                        experience: '4 years'
+                    },
+                    {
+                        name: 'Vue.js',
+                        experience: '2 years'
+                    },
+                    {
+                        name: 'React',
+                        experience: '1 year'
+                    },
+                    {
+                        name: 'Webpack',
+                        experience: '2 years'
+                    },
+                    {
+                        name: 'Sass',
+                        experience: '3 years'
+                    },
+                    {
+                        name: 'Git',
+                        experience: '5 years'
+                    },
+                    {
+                        name: 'Docker',
+                        experience: '2 years'
+                    },
+                    {
+                        name: 'Jest',
+                        experience: '3 months'
+                    },
+                    {
+                        name: 'HTML',
+                        experience: '6 years'
+                    }
+                ],
+                additional: [
+                    'Сrossbrowser, adaptive and responsive development',
+                    'Basic Knowledge of PHP, NodeJs, GraphQL',
+                    'Figma, Zeplin, Adobe Photoshop, Adobe Illustrator',
+                    'Worked with CSR, SSR, JAMStack',
+                    'Has experience in training employees in frontend skills, managing outsource employees within the project'
+                ]
             },
-            {
-                id: 'instagram',
-                name: 'instagram',
-                link: 'https://www.instagram.com/artem.anpilov/',
-                src: './src/images/icons/instagram.svg'
-            },
-            {
-                id: 'telegram',
-                name: 'telegram',
-                link: 'https://t.me/BlindResist',
-                src: './src/images/icons/telegram.svg'
-            },
-            {
-                id: 'gmail',
-                name: 'gmail',
-                link: 'mailto:blind.resist@gmail.com',
-                src: './src/images/icons/gmail.svg'
-            },
-            {
-                id: 'github',
-                name: 'github',
-                link: 'https://github.com/BlindResist',
-                src: './src/images/icons/github.svg'
-            },
-            {
-                id: 'facebook',
-                name: 'facebook',
-                link: 'https://www.facebook.com/profile.php?id=100002158603006',
-                src: './src/images/icons/facebook.svg'
-            }
-        ]
+            conferences: [{
+                name: 'Frontend Conf',
+                year: '2019',
+                location: 'Moscow'
+            }]
+        }
     }
 }
 

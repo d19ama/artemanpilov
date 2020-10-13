@@ -2,7 +2,7 @@
     <component
         :is="tag"
         class="list"
-        :class="`list--${this.tag}`"
+        :class="classObject"
     >
         <slot />
     </component>
@@ -14,8 +14,18 @@ export default {
     props: {
         tag: {
             type: String,
-            default: 'ul',
-            validator: prop => ['ul', 'ol'].includes(prop)
+            default: 'ul'
+        },
+        noMarkers: Boolean
+    },
+    computed: {
+        classObject () {
+            return [
+                `list--${this.tag}`,
+                {
+                    'list--no-markers': this.noMarkers
+                }
+            ]
         }
     }
 }
@@ -67,6 +77,17 @@ export default {
                 text-align: left;
                 font-weight: 500;
                 color: $middle-grey;
+            }
+        }
+    }
+
+    &--no-markers {
+
+        .list__item {
+            padding-left: 0;
+
+            &:before {
+                display: none;
             }
         }
     }

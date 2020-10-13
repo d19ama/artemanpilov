@@ -41,6 +41,9 @@ export default {
     display: flex;
     flex-flow: row wrap;
     align-items: baseline;
+    line-height: 1;
+    font-weight: 700;
+    color: $dark-grey;
 
     &--brackets {
 
@@ -66,9 +69,7 @@ export default {
     }
 
     &--h1 {
-        line-height: 1;
         font-size: 3rem;
-        font-weight: 700;
         text-transform: uppercase;
 
         @include breakpoint(v-mobile) {
@@ -79,31 +80,23 @@ export default {
     }
 
     &--h2 {
-        line-height: 1;
-        font-weight: 700;
-        color: $dark-grey;
         font-size: 2rem;
     }
 
     &--h3 {
-        line-height: 1;
-        font-weight: 700;
         font-size: 1.5rem;
-        color: $dark-grey;
     }
 
     &--h4 {
-        line-height: 1;
-        font-weight: 700;
-        color: $dark-grey;
         font-size: 1.25rem;
     }
 
     &--h5 {
-        line-height: 1;
-        font-weight: 700;
-        color: $dark-grey;
         font-size: 1.125rem;
+    }
+
+    &--h6 {
+        font-size: 1rem;
     }
 }
 </style>

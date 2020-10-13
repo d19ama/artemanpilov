@@ -1,53 +1,35 @@
 <template>
-    <div class="content padding-bottom--xl">
-        <heading
-            brackets
-            class="margin-bottom--xl"
-        >CV</heading>
-        <div class="page-cv row">
-            <div class="col-default-3 col-mobile-4 col-v-mobile-12">
-                <div class="page-cv__image">
-                    <img
-                        :src="data.photo"
-                        :alt="`${data.firstName} ${data.lastName}`"
-                    />
-                </div>
-                <heading
-                    tag="h2"
-                    class="margin-bottom--s"
-                >{{ data.firstName }} {{ data.lastName }}</heading>
-                <list>
-                    <list-item
-                        :key="index"
-                        v-for="(item, index) in data.hobby"
-                    >{{ item }}</list-item>
-                </list>
-            </div>
-            <div class="col-default-9 col-mobile-8 col-v-mobile-12">
-                <section class="page-cv__block">
+    <div class="page-cv">
+        <section class="page-cv__block">
+            <heading
+                tag="h3"
+                brackets
+                bordered
+                class="margin-bottom--s"
+            >Summary</heading>
+            <text-block
+                italic
+                :text="data.summary"
+            />
+        </section>
+        <section class="page-cv__block">
+            <heading
+                tag="h3"
+                brackets
+                bordered
+                class="margin-bottom--s"
+            >Skills</heading>
+            <div class="row">
+                <div class="col-default-6">
                     <heading
-                        tag="h3"
-                        brackets
-                        bordered
-                        class="margin-bottom--s"
-                    >Summary</heading>
-                    <text-block
-                        italic
-                        :text="data.summary"
-                    />
-                </section>
-                <section class="page-cv__block">
-                    <heading
-                        tag="h3"
-                        brackets
-                        bordered
-                        class="margin-bottom--s"
-                    >Skills</heading>
+                        tag="h4"
+                        class="margin-bottom--xs"
+                    >Basic:</heading>
                     <div class="row">
                         <div
                             :key="key.name"
                             class="col-default-4"
-                            v-for="key in data.skills"
+                            v-for="key in data.skills.basic"
                         >
                             <key-indicator
                                 :name="key.name"
@@ -55,45 +37,59 @@
                             />
                         </div>
                     </div>
-                </section>
-                <section class="page-cv__block">
+                </div>
+                <div class="col-default-6">
                     <heading
-                        tag="h3"
-                        brackets
-                        bordered
-                        class="margin-bottom--s"
-                    >Experience</heading>
-                </section>
-                <section class="page-cv__block">
-                    <heading
-                        tag="h3"
-                        brackets
-                        bordered
-                        class="margin-bottom--s"
-                    >Education</heading>
-                    <info-block
-                        :third="data.education.period"
-                        :second="data.education.institution"
-                        :first="data.education.specification"
-                    />
-                </section>
-                <section class="page-cv__block">
-                    <heading
-                        tag="h3"
-                        brackets
-                        bordered
-                        class="margin-bottom--s"
-                    >Conferences</heading>
-                    <info-block
-                        :key="index"
-                        :third="item.year"
-                        :first="item.name"
-                        :second="item.location"
-                        v-for="(item, index) in data.conferences"
-                    />
-                </section>
+                        tag="h4"
+                        class="margin-bottom--xs"
+                    >Additional:</heading>
+                    <list>
+                        <list-item
+                            :key="index"
+                            v-for="(item, index) in data.skills.additional"
+                        >
+                            <span>{{ item }}</span>
+                        </list-item>
+                    </list>
+                </div>
             </div>
-        </div>
+        </section>
+        <section class="page-cv__block">
+            <heading
+                tag="h3"
+                brackets
+                bordered
+                class="margin-bottom--s"
+            >Experience</heading>
+        </section>
+        <section class="page-cv__block">
+            <heading
+                tag="h3"
+                brackets
+                bordered
+                class="margin-bottom--s"
+            >Education</heading>
+            <info-block
+                :third="data.education.period"
+                :second="data.education.institution"
+                :first="data.education.specification"
+            />
+        </section>
+        <section class="page-cv__block">
+            <heading
+                tag="h3"
+                brackets
+                bordered
+                class="margin-bottom--s"
+            >Conferences</heading>
+            <info-block
+                :key="index"
+                :third="item.year"
+                :first="item.name"
+                :second="item.location"
+                v-for="(item, index) in data.conferences"
+            />
+        </section>
     </div>
 </template>
 

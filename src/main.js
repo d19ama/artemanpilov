@@ -4,6 +4,7 @@ import './styles/vars.scss'
 import './styles/mixins.scss'
 import './styles/grid.scss'
 import './styles/spacers.scss'
+import './styles/colors.scss'
 import './styles/base.scss'
 
 // base
@@ -13,6 +14,7 @@ import router from '@/router.js'
 import dataStatic from '@/data.js'
 
 // App
+import AppAside from '@/components/AppAside/index.vue'
 import AppWindow from '@/components/AppWindow/index.vue'
 import AppHeader from '@/components/AppHeader/index.vue'
 import AppNavigation from '@/components/AppNavigation/index.vue'
@@ -29,6 +31,7 @@ import KeyIndicator from '@/components/KeyIndicator/index.vue'
 import PageCV from '@/views/PageCV/index.vue'
 import PagePortfolio from '@/views/PagePortfolio/index.vue'
 
+Vue.component('app-aside', AppAside)
 Vue.component('app-window', AppWindow)
 Vue.component('app-header', AppHeader)
 Vue.component('app-navigation', AppNavigation)
