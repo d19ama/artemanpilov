@@ -2,14 +2,19 @@ const App = {
     components: {
         navigation: [
             {
+                id: 'my projects',
+                link: '/my projects',
+                name: 'my_projects'
+            },
+            {
+                id: 'work projects',
+                link: '/work projects',
+                name: 'work_projects'
+            },
+            {
                 id: 'about',
                 link: '/about',
                 name: 'about'
-            },
-            {
-                id: 'contacts',
-                link: '/contacts',
-                name: 'contacts'
             }
         ],
         portfolio: [

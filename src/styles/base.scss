@@ -38,6 +38,12 @@ ul {
     display: flex;
     flex-direction: column;
     flex: 1 1 100%;
+    opacity: 0;
+    transition: opacity .5s 1s ease;
+
+    &.loaded {
+        opacity: 1;
+    }
 
     @include breakpoint(v-mobile) {
         padding-top: 6rem;

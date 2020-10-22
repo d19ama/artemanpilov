@@ -39,10 +39,12 @@ const App = new Vue({
         mobile: false,
         app: dataStatic,
         bus: new Vue({}),
-        windowOpened: false
+        windowOpened: false,
+        loaded: false
     },
     router,
     mounted() {
+        this.loaded = true
         this.checkRoute()
         this.getViewportW()
 

@@ -1,32 +1,73 @@
 <template>
-    <nav
-        class="app-navigation"
-        :class="{
-            'is-active': active
-        }"
-    >
-        <router-link
-            exact
-            :key="item.id"
-            :to="item.link"
-            v-for="item in data"
-            class="app-navigation__link"
-            @click.native="$root.$bus.$emit('window:open')"
+    <nav class="app-navigation">
+        <div
+            role="button"
+            @click="toggleNav"
+            class="app-navigation__button"
+            style="background-image: url('./src/images/icons/hamburger.svg')"
+        ></div>
+        <transition-group
+            tag="ul"
+            @enter="animationEnter"
+            @leave="animationLeave"
+            class="app-navigation__list"
+            @before-enter="animationBefore"
         >
-            <span>{{ item.name }}</span>
-        </router-link>
+            <li
+                v-if="active"
+                :key="item.id"
+                :data-index="index"
+                v-for="(item, index) in data"
+            >
+                <router-link
+                    exact
+                    :to="item.link"
+                    class="app-navigation__link"
+                    @click.native="$root.$bus.$emit('window:open')"
+                >
+                    <span>{{ item.name }}</span>
+                </router-link>
+            </li>
+        </transition-group>
     </nav>
 </template>
 
 <script>
+import Velocity from 'velocity-animate'
+
 export default {
     name: 'app-navigation',
-    props: {
-        active: Boolean
-    },
-    data() {
+    data () {
         return {
+            delay: 0,
+            step: 200,
+            active: false,
             data: this.$root.app.components.navigation
+        }
+    },
+    methods: {
+        toggleNav () {
+            this.active = !this.active
+        },
+        animate (el, value, delay, done) {
+            setTimeout(() => {
+                Velocity(el, { opacity: value }, { complete: done })
+            }, delay)
+        },
+        animationBefore (el) {
+            el.style.opacity = 0
+        },
+        animationEnter (el, done) {
+            let delay = el.dataset.index * this.step
+
+            this.animate(el, 1, delay, done)
+            this.delay = this.delay + this.step
+        },
+        animationLeave (el, done) {
+            let delay = this.delay - this.step
+
+            this.animate(el, 0, delay, done)
+            this.delay = this.delay - this.step
         }
     }
 }
@@ -34,55 +75,54 @@ export default {
 
 <style lang="scss">
 .app-navigation {
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    width: 0;
-    text-align: center;
-    white-space: nowrap;
-    background-color: $white;
-    box-shadow: inset 2px 0 0 0 transparent;
-    transition: width .3s;
+    position: relative;
+    z-index: 2;
+
+    &__button {
+        display: block;
+        width: 6rem;
+        height: 6rem;
+        position: relative;
+        z-index: 2;
+        text-align: center;
+        text-decoration: none;
+        border-radius: 50%;
+        background-size: 44%;
+        background-color: $white;
+        background-position: center;
+        background-repeat: no-repeat;
+        box-shadow: 0 0 40px rgba($dark-grey, .2);
+        transition: transform .3s;
+        transform: scale(.9);
+        cursor: pointer;
+
+        &:hover {
+            transform: scale(1);
+        }
+    }
+
+    &__list {
+        display: flex;
+        flex-flow: row-reverse nowrap;
+        align-items: center;
+        margin: auto;
+        position: absolute;
+        top: 0;
+        right: 7rem;
+        bottom: 0;
+        z-index: 1;
+    }
 
     &__link {
-        opacity: 0;
         padding: 0 .75rem;
         color: $black;
         font-size: 1rem;
-        font-weight: 700;
         line-height: 3rem;
+        white-space: nowrap;
         transition: opacity .1s;
 
         @include breakpoint(v-mobile) {
             font-size: .875rem;
-        }
-
-        span {
-            border-bottom: 1px solid rgba($black, .5);
-            transition: border-bottom-color .3s;
-        }
-
-        &:hover,
-        &.is-current {
-
-            span {
-                border-bottom-color: transparent;
-            }
-        }
-    }
-
-    &.is-active {
-        width: 16rem;
-        box-shadow: inset 2px 0 0 0 $middle-grey;
-        transition: width .3s .3s, box-shadow .3s .3s;
-
-        @include breakpoint(v-mobile) {
-            width: 11rem;
-        }
-
-        a {
-            opacity: 1;
-            transition: opacity .3s .5s;
         }
     }
 }

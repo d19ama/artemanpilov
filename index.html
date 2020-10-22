@@ -11,11 +11,16 @@
     <link rel="stylesheet" type="text/css" href="./dist/build.css">
 </head>
 <body>
-    <div id="app">
+    <div
+        id="app"
+        :class="{
+            loaded: loaded
+        }"
+    >
         <app-header
             :mobile="mobile"
         ></app-header>
-        <page-portfolio></page-portfolio>
+        <!-- <page-portfolio></page-portfolio> -->
         <app-window
             :active="windowOpened"
         ></app-window>
