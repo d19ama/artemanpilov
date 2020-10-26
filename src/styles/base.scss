@@ -11,7 +11,8 @@ body {
     min-width: 20rem;
     width: 100%;
     color: $black;
-    font-family: 'Roboto Mono', Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    font-family: 'jb', Arial, Helvetica, sans-serif;
     background-color: $white;
 }
 
@@ -48,6 +49,11 @@ ul {
     @include breakpoint(v-mobile) {
         padding-top: 6rem;
     }
+}
+
+.container {
+    max-width: 1240px;
+    margin: auto;
 }
 
 .content {

@@ -3,9 +3,15 @@
         <div
             role="button"
             @click="toggleNav"
+            :class="{ active: active }"
             class="app-navigation__button"
-            style="background-image: url('./src/images/icons/hamburger.svg')"
-        ></div>
+        >
+            <div class="app-navigation__button-inner">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
         <transition-group
             tag="ul"
             @enter="animationEnter"
@@ -17,6 +23,7 @@
                 v-if="active"
                 :key="item.id"
                 :data-index="index"
+                class="app-navigation__item"
                 v-for="(item, index) in data"
             >
                 <router-link
@@ -79,9 +86,12 @@ export default {
     z-index: 2;
 
     &__button {
-        display: block;
-        width: 6rem;
-        height: 6rem;
+        display: flex;
+        align-items: center;
+        flex-flow: row nowrap;
+        justify-content: center;
+        width: 5.5rem;
+        height: 5.5rem;
         position: relative;
         z-index: 2;
         text-align: center;
@@ -92,12 +102,68 @@ export default {
         background-position: center;
         background-repeat: no-repeat;
         box-shadow: 0 0 40px rgba($dark-grey, .2);
-        transition: transform .3s;
-        transform: scale(.9);
         cursor: pointer;
 
         &:hover {
-            transform: scale(1);
+
+            span {
+                background-color: $red;
+            }
+        }
+
+        &-inner {
+            width: 3rem;
+            height: 2.5rem;
+            position: relative;
+        }
+
+        span {
+            display: block;
+            height: .5rem;
+            width: 100%;
+            opacity: 1;
+            position: absolute;
+            left: 0;
+            border-radius: 9px;
+            background-color: $black;
+            transform: rotate(0deg);
+            transition: .25s ease-in-out;
+
+            &:nth-child(1) {
+                top: 0;
+                transform-origin: left top;
+            }
+
+            &:nth-child(2) {
+                top: 1rem;
+                transform-origin: left top;
+            }
+
+            &:nth-child(3) {
+                top: 2rem;
+                transform-origin: left bottom;
+            }
+        }
+
+        &.active {
+
+            span {
+
+                &:nth-child(1) {
+                    left: .65rem;
+                    transform: rotate(45deg);
+                }
+
+                &:nth-child(2) {
+                    width: 0%;
+                    opacity: 0;
+                }
+
+                &:nth-child(3) {
+                    left: .65rem;
+                    transform: rotate(-45deg);
+                }
+            }
         }
     }
 
@@ -113,16 +179,43 @@ export default {
         z-index: 1;
     }
 
-    &__link {
+    &__item {
         padding: 0 .75rem;
+    }
+
+    &__link {
+        display: block;
+        position: relative;
         color: $black;
-        font-size: 1rem;
-        line-height: 3rem;
+        font-weight: 300;
+        font-size: .875rem;
+        line-height: 1.5rem;
         white-space: nowrap;
         transition: opacity .1s;
 
         @include breakpoint(v-mobile) {
             font-size: .875rem;
+        }
+
+        &:after {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 2px;
+            opacity: 0;
+            position: absolute;
+            left: 0;
+            top: 70%;
+            background-color: $red;
+            transition: top .3s, opacity .3s;
+        }
+
+        &:hover {
+
+            &:after {
+                opacity: 1;
+                top: 100%;
+            }
         }
     }
 }

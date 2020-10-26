@@ -3,12 +3,12 @@ const App = {
         navigation: [
             {
                 id: 'my projects',
-                link: '/my projects',
+                link: '/my_projects',
                 name: 'my_projects'
             },
             {
                 id: 'work projects',
-                link: '/work projects',
+                link: '/work_projects',
                 name: 'work_projects'
             },
             {

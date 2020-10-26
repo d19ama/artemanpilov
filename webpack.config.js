@@ -15,7 +15,7 @@ module.exports = {
         extensions: ['.js', '.vue', '.json', '.scss'],
         alias: {
             'vue$': 'vue/dist/vue.esm.js',
-            '@': path.resolve(__dirname, 'src'),
+            '@': path.resolve(__dirname, './src'),
         }
     },
     module: {
@@ -82,6 +82,22 @@ module.exports = {
                     },
                     'postcss-loader'
                 ]
+            },
+            {
+                test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
+                loader: 'url-loader',
+                options: {
+                    limit: 10000,
+                    esModule: false
+                }
+            },
+            {
+                test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
+                loader: 'url-loader',
+                options: {
+                    limit: 10000,
+                    esModule: false
+                }
             }
         ]
     },
