@@ -91,8 +91,8 @@ export default {
         align-items: center;
         flex-flow: row nowrap;
         justify-content: center;
-        width: 5.5rem;
-        height: 5.5rem;
+        width: 5rem;
+        height: 5rem;
         position: relative;
         z-index: 2;
         text-align: center;
@@ -113,8 +113,8 @@ export default {
         }
 
         &-inner {
-            width: 3rem;
-            height: 2.5rem;
+            width: 2.5rem;
+            height: 2rem;
             position: relative;
         }
 
@@ -123,35 +123,50 @@ export default {
             height: .5rem;
             width: 100%;
             opacity: 1;
+            margin: auto;
             position: absolute;
             left: 0;
             border-radius: 9px;
             background-color: $black;
             transform: rotate(0deg);
-            transition: .25s ease-in-out;
+            transition:
+                bottom .25s .25s ease-in-out,
+                width .25s .25s ease-in-out,
+                transform .25s ease-in-out,
+                top .25s .25s ease-in-out,
+                opacity .25s ease-in-out;
 
             &:nth-child(1) {
                 top: 0;
-                transform-origin: left top;
+                transform-origin: center;
             }
 
             &:nth-child(2) {
-                top: 1rem;
-                transform-origin: left top;
+                width: 100%;
+                opacity: 1;
+                top: 0;
+                bottom: 0;
+                transform-origin: center;
             }
 
             &:nth-child(3) {
-                top: 2rem;
-                transform-origin: left bottom;
+                bottom: 0;
+                transform-origin: center;
             }
         }
 
         &.active {
 
             span {
+                transition:
+                    transform .25s .25s ease-in-out,
+                    opacity .25s .25s ease-in-out,
+                    width .25s ease-in-out,
+                    bottom .25s ease-in-out,
+                    top .25s ease-in-out;
 
                 &:nth-child(1) {
-                    left: .65rem;
+                    top: calc(50% - .25rem);
                     transform: rotate(45deg);
                 }
 
@@ -161,7 +176,7 @@ export default {
                 }
 
                 &:nth-child(3) {
-                    left: .65rem;
+                    bottom: calc(50% - .25rem);
                     transform: rotate(-45deg);
                 }
             }
@@ -182,6 +197,8 @@ export default {
 
     &__item {
         padding: 0 .75rem;
+        background-color: $white;
+        box-shadow: 0 0 24px 8px $white;
     }
 
     &__link {

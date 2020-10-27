@@ -1,9 +1,11 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
-import PageAbout from './views/PageAbout/index.vue'
-import PageContacts from './views/PageContacts/index.vue'
-import PagePortfolio from '@/views/PagePortfolio/index.vue'
+import Main from './views/Main/index.vue'
+import About from './views/About/index.vue'
+import Contacts from './views/Contacts/index.vue'
+import MyProjects from '@/views/MyProjects/index.vue'
+import WorkProjects from '@/views/WorkProjects/index.vue'
 
 Vue.use(VueRouter)
 
@@ -11,16 +13,24 @@ export default new VueRouter({
     linkActiveClass: 'is-current',
     routes: [
         {
+            path: '/',
+            component: Main
+        },
+        {
             path: '/about',
-            component: PageAbout
+            component: About
         },
         {
             path: '/contacts',
-            component: PageContacts
+            component: Contacts
         },
         {
-            path: '/portfolio',
-            component: PagePortfolio
+            path: '/work_projects',
+            component: WorkProjects
+        },
+        {
+            path: '/my_projects',
+            component: MyProjects
         }
     ]
 })

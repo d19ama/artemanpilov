@@ -1,49 +1,40 @@
 <template>
-    <section class="page-portfolio">
+    <section class="portfolio">
         <a
             :key="item.id"
             target="_blank"
             :href="item.link"
             v-for="item in data"
-            class="page-portfolio__item"
-            :style="buildStyle(item.image)"
+            class="portfolio__item"
+            :style="`background-image: url(${item.image})`"
         ></a>
     </section>
 </template>
 
 <script>
 export default {
-    name: 'page-portfolio',
+    name: 'portfolio',
     data () {
         return {
-            data: this.$root.app.components.portfolio
-        }
-    },
-    methods: {
-        buildStyle (image) {
-            return {
-                backgroundImage: `url(${image})`
-            }
+            data: this.$root.app.pages.portfolio
         }
     }
 }
 </script>
 
 <style lang="scss">
-.page-portfolio {
+.portfolio {
     display: flex;
     flex-flow: row wrap;
-    min-height: 100vh;
+    height: 100%;
     padding: 0;
 
     &__item {
         display: block;
-        width: calc(100%/3);
-        height: 100vh;
+        width: 50%;
+        height: 50%;
         overflow: hidden;
         position: relative;
-        border-right: 2px solid $lite-grey;
-        border-bottom: 2px solid $lite-grey;
         background-color: $white;
         background-position: center;
         background-repeat: no-repeat;

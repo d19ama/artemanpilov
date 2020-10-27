@@ -1,9 +1,10 @@
 <template>
-    <component
-        :is="tag"
+    <router-link
+        exact
+        to="/"
         class="app-logo"
-        :href="tag === 'a' ? '/' : false"
-    ></component>
+        @click.native="$root.$bus.$emit('window:open')"
+    ></router-link>
 </template>
 
 <script>
@@ -12,19 +13,15 @@ export default {
     data () {
         return {}
     },
-    computed: {
-        tag () {
-            return 'a'
-        }
-    }
+    computed: {}
 }
 </script>
 
 <style lang="scss">
 .app-logo {
     display: block;
-    width: 5.5rem;
-    height: 5.5rem;
+    width: 5rem;
+    height: 5rem;
     position: relative;
     z-index: 2;
     text-align: center;

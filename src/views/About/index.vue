@@ -1,24 +1,24 @@
 <template>
     <div class="content">
-        <heading
+        <app-title
             brackets
-        >about</heading>
-        <div class="page-about">
-            <div class="page-about__image">
+        >about</app-title>
+        <div class="about">
+            <div class="about__image">
                 <img
                     :src="data.image.src"
                     :alt="data.image.alt"
                 />
             </div>
-            <div class="page-about__info">
+            <div class="about__info">
                 <div
                     :key="index"
-                    class="page-about__info-block"
+                    class="about__info-block"
                     v-for="(item, index) in data.info"
                 >
-                    <heading
+                    <app-title
                         tag="h2"
-                    >{{ item.title }}</heading>
+                    >{{ item.title }}</app-title>
                     <ul class="ul-list">
                         <li
                             :key="index2"
@@ -33,17 +33,17 @@
 
 <script>
 export default {
-    name: 'page-about',
+    name: 'about',
     data () {
         return {
-            data: this.$root.app.components.about
+            data: this.$root.app.pages.about
         }
     }
 }
 </script>
 
 <style lang="scss">
-.page-about {
+.about {
     display: flex;
     flex-flow: row wrap;
     align-items: flex-start;

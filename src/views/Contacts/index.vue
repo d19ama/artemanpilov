@@ -1,22 +1,22 @@
 <template>
     <div class="content">
-        <heading
+        <app-title
             brackets
-        >contacts</heading>
-        <ul class="page-contacts">
+        >contacts</app-title>
+        <ul class="contacts">
             <li
                 :key="item.id"
                 v-for="item in data"
-                class="page-contacts__item"
+                class="contacts__item"
             >
                 <a
                     target="_blank"
                     :href="item.link"
                     :title="item.name"
-                    class="page-contacts__link"
+                    class="contacts__link"
                 >
                     <span
-                        class="page-contacts__icon"
+                        class="contacts__icon"
                         :style="buildStyle(item.src)"
                     ></span>
                     <span>{{ item.name }}</span>
@@ -28,10 +28,10 @@
 
 <script>
 export default {
-    name: 'page-contacts',
+    name: 'contacts',
     data () {
         return {
-            data: this.$root.app.components.contacts
+            data: this.$root.app.pages.contacts
         }
     },
     methods: {
@@ -45,7 +45,7 @@ export default {
 </script>
 
 <style lang="scss">
-.page-contacts {
+.contacts {
     display: flex;
     flex-flow: row wrap;
 

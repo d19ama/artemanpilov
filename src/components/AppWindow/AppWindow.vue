@@ -8,18 +8,18 @@
             v-if="active"
             class="app-window"
         >
-            <div class="app-window__inner">
+            <div class="app-window__inner content">
                 <transition name="fade">
                     <router-view />
                 </transition>
             </div>
-            <a
+            <!-- <a
                 role="button"
                 title="close"
                 class="app-window__close"
                 href="javascript: void(0)"
                 @click="$root.$bus.$emit('window:close')"
-            ></a>
+            ></a> -->
         </div>
     </transition>
 </template>
@@ -90,7 +90,9 @@ export default {
 
     &__inner {
         max-width: 77.5rem;
+        height: 100%;
         padding-top: 3rem;
+        padding-bottom: 5rem;
         margin: auto;
 
         @include breakpoint(tablet) {

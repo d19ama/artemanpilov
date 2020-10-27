@@ -8,6 +8,9 @@ import data from '@/data.js'
 import router from '@/router.js'
 
 // components
+import Social from '@/components/Social'
+
+Vue.component('social', Social)
 
 const requireComponent = require.context(
     './components',

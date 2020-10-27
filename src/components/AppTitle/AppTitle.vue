@@ -9,7 +9,7 @@
 
 <script>
 export default {
-    name: 'heading',
+    name: 'app-title',
     props: {
         tag: {
             type: String,
@@ -20,15 +20,17 @@ export default {
             default: ''
         },
         brackets: Boolean,
-        bordered: Boolean
+        bordered: Boolean,
+        uppercase: Boolean
     },
     computed: {
         classObject () {
             return [
-                `heading heading--${this.tag}`,
+                `app-title app-title--${this.tag}`,
                 {
-                    'heading--brackets': this.brackets,
-                    'heading--bordered': this.bordered
+                    'app-title--brackets': this.brackets,
+                    'app-title--bordered': this.bordered,
+                    'app-title--uppercase': this.uppercase
                 }
             ]
         }
@@ -37,7 +39,7 @@ export default {
 </script>
 
 <style lang="scss">
-.heading {
+.app-title {
     display: flex;
     flex-flow: row wrap;
     align-items: baseline;
@@ -68,15 +70,12 @@ export default {
         border-bottom: 3px solid $lite-grey;
     }
 
-    &--h1 {
-        font-size: 3rem;
+    &--uppercase {
         text-transform: uppercase;
+    }
 
-        @include breakpoint(v-mobile) {
-            padding: 0 1rem;
-            font-size: 2rem;
-            text-align: center;
-        }
+    &--h1 {
+        font-size: 4rem;
     }
 
     &--h2 {

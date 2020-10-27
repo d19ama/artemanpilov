@@ -39,9 +39,7 @@ export default {
     top: 0;
     left: 0;
     z-index: 100;
-    background-color: $white;
     pointer-events: none;
-    transition: border-radius .3s .3s;
 
     @include breakpoint(v-mobile) {
         top: 1rem;

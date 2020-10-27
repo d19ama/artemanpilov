@@ -16,7 +16,32 @@ export default {
             name: 'about'
         }
     ],
-    components: {
+    social: [
+        {
+            name: 'vk',
+            link: 'https://vk.com/blind_resist'
+        },
+        {
+            name: 'facebook',
+            link: 'https://www.facebook.com/profile.php?id=100002158603006'
+        },
+        {
+            name: 'instagram',
+            link: 'https://www.instagram.com/artem.anpilov/'
+        },
+        {
+            name: 'telegram',
+            link: 'https://t.me/BlindResist'
+        },
+        {
+            name: 'github',
+            link: 'https://github.com/BlindResist'
+        }
+    ],
+    pages: {
+        main: {
+            image: './src/images/itsme.jpg'
+        },
         portfolio: [
             {
                 id: 'magnit',
@@ -76,45 +101,45 @@ export default {
             cv: {
                 name: 'Full CV',
                 link: ''
-            }
-        },
-        contacts: [
-            {
-                id: 'vk',
-                name: 'vkontakte',
-                link: 'https://vk.com/blind_resist',
-                src: './src/images/icons/vk.svg'
             },
-            {
-                id: 'instagram',
-                name: 'instagram',
-                link: 'https://www.instagram.com/artem.anpilov/',
-                src: './src/images/icons/instagram.svg'
-            },
-            {
-                id: 'telegram',
-                name: 'telegram',
-                link: 'https://t.me/BlindResist',
-                src: './src/images/icons/telegram.svg'
-            },
-            {
-                id: 'gmail',
-                name: 'gmail',
-                link: 'mailto:blind.resist@gmail.com',
-                src: './src/images/icons/gmail.svg'
-            },
-            {
-                id: 'github',
-                name: 'github',
-                link: 'https://github.com/BlindResist',
-                src: './src/images/icons/github.svg'
-            },
-            {
-                id: 'facebook',
-                name: 'facebook',
-                link: 'https://www.facebook.com/profile.php?id=100002158603006',
-                src: './src/images/icons/facebook.svg'
-            }
-        ]
+            contacts: [
+                {
+                    id: 'vk',
+                    name: 'vkontakte',
+                    link: 'https://vk.com/blind_resist',
+                    src: './src/images/icons/vk.svg'
+                },
+                {
+                    id: 'instagram',
+                    name: 'instagram',
+                    link: 'https://www.instagram.com/artem.anpilov/',
+                    src: './src/images/icons/instagram.svg'
+                },
+                {
+                    id: 'telegram',
+                    name: 'telegram',
+                    link: 'https://t.me/BlindResist',
+                    src: './src/images/icons/telegram.svg'
+                },
+                {
+                    id: 'gmail',
+                    name: 'gmail',
+                    link: 'mailto:blind.resist@gmail.com',
+                    src: './src/images/icons/gmail.svg'
+                },
+                {
+                    id: 'github',
+                    name: 'github',
+                    link: 'https://github.com/BlindResist',
+                    src: './src/images/icons/github.svg'
+                },
+                {
+                    id: 'facebook',
+                    name: 'facebook',
+                    link: 'https://www.facebook.com/profile.php?id=100002158603006',
+                    src: './src/images/icons/facebook.svg'
+                }
+            ]
+        }
     }
 }
