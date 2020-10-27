@@ -1,22 +1,22 @@
-const App = {
+export default {
+    navigation: [
+        {
+            id: 'my projects',
+            link: '/my_projects',
+            name: 'my_projects'
+        },
+        {
+            id: 'work projects',
+            link: '/work_projects',
+            name: 'work_projects'
+        },
+        {
+            id: 'about',
+            link: '/about',
+            name: 'about'
+        }
+    ],
     components: {
-        navigation: [
-            {
-                id: 'my projects',
-                link: '/my_projects',
-                name: 'my_projects'
-            },
-            {
-                id: 'work projects',
-                link: '/work_projects',
-                name: 'work_projects'
-            },
-            {
-                id: 'about',
-                link: '/about',
-                name: 'about'
-            }
-        ],
         portfolio: [
             {
                 id: 'magnit',
@@ -32,43 +32,12 @@ const App = {
                 id: 'gazprom',
                 link: 'https://ir.gazprom-neft.ru/',
                 image: './src/images/logos/logo-gazprom.png'
+            },
+            {
+                id: 'evraz',
+                link: 'https://www.evraz.com/',
+                image: './src/images/logos/logo-evraz.png'
             }
-            // too old for this shit =/
-            // {
-            //     id: 'evraz',
-            //     link: 'https://www.evraz.com/',
-            //     image: './src/images/logos/logo-evraz.png'
-            // },
-            // {
-            //     id: 'gvgold',
-            //     link: 'https://www.gvgold.ru/ru/',
-            //     image: './src/images/logos/logo-gvgold.png'
-            // },
-            // {
-            //     id: 'samoletlo',
-            //     link: 'https://samoletlo.ru/',
-            //     image: './src/images/logos/logo-samoletlo.png'
-            // },
-            // {
-            //     id: 'setlcity',
-            //     link: 'http://setlcity.ru/',
-            //     image: './src/images/logos/logo-setl.png'
-            // },
-            // {
-            //     id: 'spbrealty',
-            //     link: 'http://spbrealty.ru/',
-            //     image: './src/images/logos/logo-pn.png'
-            // },
-            // {
-            //     id: 'domplusoffice',
-            //     link: 'http://domplusoffice.ru/',
-            //     image: './src/images/logos/logo-dpo.png'
-            // },
-            // {
-            //     id: 'plus47',
-            //     link: 'http://plus47.ru/',
-            //     image: './src/images/logos/logo-plus47.png'
-            // }
         ],
         about: {
             image: {
@@ -149,5 +118,3 @@ const App = {
         ]
     }
 }
-
-export default App

@@ -8,26 +8,22 @@ import './styles/base.scss'
 // base
 import Vue from 'vue'
 import verge from 'verge'
+import data from '@/data.js'
 import router from '@/router.js'
-import dataStatic from '@/data.js'
-
-// App
-import AppLogo from '@/components/AppLogo/index.vue'
-import AppWindow from '@/components/AppWindow/index.vue'
-import AppHeader from '@/components/AppHeader/index.vue'
-import AppNavigation from '@/components/AppNavigation/index.vue'
 
 // components
-import Heading from '@/components/Heading/index.vue'
-import PagePortfolio from '@/views/PagePortfolio/index.vue'
 
-Vue.component('app-logo', AppLogo)
-Vue.component('app-window', AppWindow)
-Vue.component('app-header', AppHeader)
-Vue.component('app-navigation', AppNavigation)
+const requireComponent = require.context(
+    './components',
+    true,
+    /App[\w-]+\/index\.js$/
+)
 
-Vue.component('heading', Heading)
-Vue.component('page-portfolio', PagePortfolio)
+requireComponent.keys().forEach(fileName => {
+    const componentConfig = requireComponent(fileName)
+    const componentName = fileName.split('/')[1]
+    Vue.component(componentName, componentConfig.default || componentConfig)
+})
 
 Object.defineProperty(Vue.prototype, '$bus', {
     get () {
@@ -39,13 +35,13 @@ Object.defineProperty(Vue.prototype, '$bus', {
 new Vue({
     el: '#app',
     data: {
+        app: data,
         scrollY: 0,
         viewportW: 0,
         mobile: false,
-        app: dataStatic,
+        loaded: false,
         bus: new Vue({}),
-        windowOpened: false,
-        loaded: false
+        windowOpened: false
     },
     router,
     mounted () {

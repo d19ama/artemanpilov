@@ -50,7 +50,7 @@ export default {
             delay: 0,
             step: 200,
             active: false,
-            data: this.$root.app.components.navigation
+            data: this.$root.app.navigation
         }
     },
     methods: {

@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 
 import PageAbout from './views/PageAbout/index.vue'
 import PageContacts from './views/PageContacts/index.vue'
+import PagePortfolio from '@/views/PagePortfolio/index.vue'
 
 Vue.use(VueRouter)
 
@@ -16,6 +17,10 @@ export default new VueRouter({
         {
             path: '/contacts',
             component: PageContacts
+        },
+        {
+            path: '/portfolio',
+            component: PagePortfolio
         }
     ]
 })
