@@ -1,9 +1,5 @@
 // styles
-import './styles/reset.scss'
-import './styles/fonts.scss'
-import './styles/vars.scss'
-import './styles/mixins.scss'
-import './styles/base.scss'
+import './styles/index'
 
 // base
 import Vue from 'vue'
