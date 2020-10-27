@@ -19,22 +19,23 @@
             class="app-navigation__list"
             @before-enter="animationBefore"
         >
-            <li
-                v-if="active"
-                :key="item.id"
-                :data-index="index"
-                class="app-navigation__item"
-                v-for="(item, index) in data"
-            >
-                <router-link
-                    exact
-                    :to="item.link"
-                    class="app-navigation__link"
-                    @click.native="$root.$bus.$emit('window:open')"
+            <template v-if="active">
+                <li
+                    :key="item.id"
+                    :data-index="index"
+                    class="app-navigation__item"
+                    v-for="(item, index) in data"
                 >
-                    <span>{{ item.name }}</span>
-                </router-link>
-            </li>
+                    <router-link
+                        exact
+                        :to="item.link"
+                        class="app-navigation__link"
+                        @click.native="$root.$bus.$emit('window:open')"
+                    >
+                        <span>{{ item.name }}</span>
+                    </router-link>
+                </li>
+            </template>
         </transition-group>
     </nav>
 </template>
@@ -65,13 +66,13 @@ export default {
             el.style.opacity = 0
         },
         animationEnter (el, done) {
-            let delay = el.dataset.index * this.step
+            const delay = el.dataset.index * this.step
 
             this.animate(el, 1, delay, done)
             this.delay = this.delay + this.step
         },
         animationLeave (el, done) {
-            let delay = this.delay - this.step
+            const delay = this.delay - this.step
 
             this.animate(el, 0, delay, done)
             this.delay = this.delay - this.step
@@ -101,7 +102,7 @@ export default {
         background-color: $white;
         background-position: center;
         background-repeat: no-repeat;
-        box-shadow: 0 0 40px rgba($dark-grey, .2);
+        @include box-shadow-main;
         cursor: pointer;
 
         &:hover {

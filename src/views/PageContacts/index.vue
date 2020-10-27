@@ -1,6 +1,8 @@
 <template>
     <div class="content">
-        <page-title>contacts</page-title>
+        <heading
+            brackets
+        >contacts</heading>
         <ul class="page-contacts">
             <li
                 :key="item.id"
@@ -27,13 +29,13 @@
 <script>
 export default {
     name: 'page-contacts',
-    data() {
+    data () {
         return {
             data: this.$root.app.components.contacts
         }
     },
     methods: {
-        buildStyle(src) {
+        buildStyle (src) {
             return {
                 backgroundImage: `url(${src})`
             }

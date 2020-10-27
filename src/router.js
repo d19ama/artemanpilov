@@ -9,7 +9,7 @@ Vue.use(VueRouter)
 export default new VueRouter({
     linkActiveClass: 'is-current',
     routes: [
-    	{
+        {
             path: '/about',
             component: PageAbout
         },

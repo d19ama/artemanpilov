@@ -12,3 +12,7 @@
         @media only screen and (max-width: $breakpoint-v-mobile) { @content; }
     }
 }
+
+@mixin box-shadow-main() {
+    box-shadow: 0 0 40px rgba($dark-grey, .2);
+}

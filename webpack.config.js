@@ -15,11 +15,23 @@ module.exports = {
         extensions: ['.js', '.vue', '.json', '.scss'],
         alias: {
             'vue$': 'vue/dist/vue.esm.js',
-            '@': path.resolve(__dirname, './src'),
+            '@': path.resolve(__dirname, 'src/'),
+            'fonts': path.resolve(__dirname, 'src/fonts/'),
+            'images': path.resolve(__dirname, 'src/images/')
         }
     },
     module: {
-        rules: [{
+        rules: [
+            {
+                test: /\.(js|vue)$/,
+                loader: 'eslint-loader',
+                enforce: 'pre',
+                include: path.resolve(__dirname, 'src/'),
+                options: {
+                    formatter: require('eslint-friendly-formatter')
+                }
+            },
+            {
                 test: /\.vue$/,
                 loader: 'vue-loader',
                 options: {
@@ -88,7 +100,8 @@ module.exports = {
                 loader: 'url-loader',
                 options: {
                     limit: 10000,
-                    esModule: false
+                    esModule: false,
+                    name: './images/[name].[ext]'
                 }
             },
             {
@@ -96,7 +109,8 @@ module.exports = {
                 loader: 'url-loader',
                 options: {
                     limit: 10000,
-                    esModule: false
+                    esModule: false,
+                    name: './fonts/[name].[ext]'
                 }
             }
         ]

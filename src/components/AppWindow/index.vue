@@ -32,16 +32,16 @@ export default {
     props: {
         active: Boolean
     },
-    data() {
+    data () {
         return {
             duration: 300
         }
     },
     methods: {
-        appearAnimationBefore(el) {
+        appearAnimationBefore (el) {
             el.style.opacity = 0
         },
-        appearAnimationEnter(el, done) {
+        appearAnimationEnter (el, done) {
             Velocity(el, {
                 opacity: 1
             }, {
@@ -51,7 +51,7 @@ export default {
                 complete: done
             })
         },
-        appearAnimationLeave(el, done) {
+        appearAnimationLeave (el, done) {
             Velocity(el, {
                 opacity: 0
             }, {

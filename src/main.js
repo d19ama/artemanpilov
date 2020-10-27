@@ -12,27 +12,31 @@ import router from '@/router.js'
 import dataStatic from '@/data.js'
 
 // App
+import AppLogo from '@/components/AppLogo/index.vue'
 import AppWindow from '@/components/AppWindow/index.vue'
 import AppHeader from '@/components/AppHeader/index.vue'
 import AppNavigation from '@/components/AppNavigation/index.vue'
 
 // components
-import PageTitle from '@/components/PageTitle/index.vue'
+import Heading from '@/components/Heading/index.vue'
 import PagePortfolio from '@/views/PagePortfolio/index.vue'
 
-Vue.component('page-title', PageTitle)
+Vue.component('app-logo', AppLogo)
 Vue.component('app-window', AppWindow)
 Vue.component('app-header', AppHeader)
 Vue.component('app-navigation', AppNavigation)
+
+Vue.component('heading', Heading)
 Vue.component('page-portfolio', PagePortfolio)
 
 Object.defineProperty(Vue.prototype, '$bus', {
-    get() {
+    get () {
         return this.$root.bus
     }
 })
 
-const App = new Vue({
+/* eslint-disable no-new */
+new Vue({
     el: '#app',
     data: {
         scrollY: 0,
@@ -44,7 +48,7 @@ const App = new Vue({
         loaded: false
     },
     router,
-    mounted() {
+    mounted () {
         this.loaded = true
         this.checkRoute()
         this.getViewportW()
@@ -54,41 +58,41 @@ const App = new Vue({
 
         window.addEventListener('resize', () => this.getViewportW())
     },
-    beforeDestroy() {
+    beforeDestroy () {
         this.$bus.$off('window:open', () => this.openWindow())
         this.$bus.$off('window:close', () => this.closeWindow())
     },
     watch: {
-        viewportW(newValue) {
-            this.mobile = newValue < 480 ? true : false
+        viewportW (newValue) {
+            this.mobile = newValue < 480
         }
     },
     methods: {
-        checkRoute() {
+        checkRoute () {
             const routes = this.$router.options.routes
             const current = this.$router.history.current
             const isRouteOpened = routes.filter(item => item.path === current.path).length > 0
 
             return isRouteOpened ? this.openWindow() : false
         },
-        getViewportW() {
+        getViewportW () {
             this.viewportW = verge.viewportW()
         },
-        openWindow() {
+        openWindow () {
             this.disableScroll()
             this.windowOpened = true
         },
-        closeWindow() {
+        closeWindow () {
             this.enableScroll()
             this.$router.push('/')
             this.windowOpened = false
         },
-        enableScroll() {
+        enableScroll () {
             document.body.style.position = ''
             document.body.style.top = ''
             window.scroll(0, this.scrollY)
         },
-        disableScroll() {
+        disableScroll () {
             this.scrollY = window.pageYOffset
             document.body.style.position = 'fixed'
             document.body.style.top = `-${this.scrollY}px`

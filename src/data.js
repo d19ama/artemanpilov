@@ -32,7 +32,7 @@ const App = {
                 id: 'gazprom',
                 link: 'https://ir.gazprom-neft.ru/',
                 image: './src/images/logos/logo-gazprom.png'
-            },
+            }
             // too old for this shit =/
             // {
             //     id: 'evraz',

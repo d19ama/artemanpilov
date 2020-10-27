@@ -14,13 +14,13 @@
 <script>
 export default {
     name: 'page-portfolio',
-    data() {
+    data () {
         return {
             data: this.$root.app.components.portfolio
         }
     },
     methods: {
-        buildStyle(image) {
+        buildStyle (image) {
             return {
                 backgroundImage: `url(${image})`
             }
