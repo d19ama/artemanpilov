@@ -58,9 +58,7 @@ export default {
             this.active = !this.active
         },
         animate (el, value, delay, done) {
-            setTimeout(() => {
-                Velocity(el, { opacity: value }, { complete: done })
-            }, delay)
+            Velocity(el, { opacity: value }, { delay: delay }, { complete: done })
         },
         animationBefore (el) {
             el.style.opacity = 0
@@ -130,6 +128,7 @@ export default {
             background-color: $black;
             transform: rotate(0deg);
             transition:
+                background-color .25s ease-in-out,
                 bottom .25s .25s ease-in-out,
                 width .25s .25s ease-in-out,
                 transform .25s ease-in-out,
@@ -159,6 +158,7 @@ export default {
 
             span {
                 transition:
+                    background-color .25s ease-in-out,
                     transform .25s .25s ease-in-out,
                     opacity .25s .25s ease-in-out,
                     width .25s ease-in-out,
@@ -193,12 +193,20 @@ export default {
         right: 7rem;
         bottom: 0;
         z-index: 1;
+
+        @include breakpoint(v-mobile) {
+            right: 6rem;
+        }
     }
 
     &__item {
         padding: 0 .75rem;
         background-color: $white;
-        box-shadow: 0 0 24px 8px $white;
+        box-shadow: 0 0 8px 8px $white;
+
+        @include breakpoint(v-mobile) {
+            padding: 0 .5rem;
+        }
     }
 
     &__link {
@@ -210,10 +218,6 @@ export default {
         line-height: 1.5rem;
         white-space: nowrap;
         transition: opacity .1s;
-
-        @include breakpoint(v-mobile) {
-            font-size: .875rem;
-        }
 
         &:after {
             content: '';
@@ -228,7 +232,8 @@ export default {
             transition: top .3s, opacity .3s;
         }
 
-        &:hover {
+        &:hover,
+        &.is-current {
 
             &:after {
                 opacity: 1;

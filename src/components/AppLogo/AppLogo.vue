@@ -34,10 +34,5 @@ export default {
     background-image: url('~images/lnk-logo.svg');
     @include box-shadow-main;
     cursor: pointer;
-
-    @include breakpoint(v-mobile) {
-        width: 4rem;
-        height: 4rem;
-    }
 }
 </style>

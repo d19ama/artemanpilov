@@ -1,7 +1,7 @@
 <template>
     <div class="content">
         <app-title
-            brackets
+            comment
         >about</app-title>
         <div class="about">
             <div class="about__image">

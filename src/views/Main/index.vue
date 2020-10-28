@@ -1,7 +1,7 @@
 <template>
     <div class="main">
         <app-title
-            brackets
+            comment
         >Frontend developer</app-title>
     </div>
 </template>
@@ -22,7 +22,7 @@ export default {
     display: flex;
     flex-flow: row wrap;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
     height: 100%;
 
     &__image {

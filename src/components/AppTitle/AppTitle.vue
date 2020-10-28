@@ -19,7 +19,7 @@ export default {
             type: String,
             default: ''
         },
-        brackets: Boolean,
+        comment: Boolean,
         bordered: Boolean,
         uppercase: Boolean
     },
@@ -28,7 +28,7 @@ export default {
             return [
                 `app-title app-title--${this.tag}`,
                 {
-                    'app-title--brackets': this.brackets,
+                    'app-title--comment': this.comment,
                     'app-title--bordered': this.bordered,
                     'app-title--uppercase': this.uppercase
                 }
@@ -41,26 +41,17 @@ export default {
 <style lang="scss">
 .app-title {
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: row nowrap;
     align-items: baseline;
     line-height: 1;
     font-weight: 700;
     color: $dark-grey;
 
-    &--brackets {
+    &--comment {
 
         &:before {
-            content: '/*';
+            content: '//';
             margin-right: 1.25rem;
-        }
-
-        &:after {
-            content: '*/';
-            margin-left: 1.25rem;
-        }
-
-        &:before,
-        &:after {
             color: $middle-grey;
         }
     }

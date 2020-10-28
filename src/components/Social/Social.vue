@@ -35,10 +35,13 @@ export default {
         display: block;
         width: 1.5rem;
         height: 1.5rem;
-        margin-left: 2rem;
         background-size: 100%;
         background-position: center;
         background-repeat: no-repeat;
+
+        &+& {
+            margin-left: 1rem;
+        }
 
         &--vk {
             background-image: url('~images/icons/vk.svg');

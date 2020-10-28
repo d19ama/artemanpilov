@@ -1,7 +1,3 @@
-// styles
-import './styles/index'
-
-// base
 import Vue from 'vue'
 import verge from 'verge'
 import data from '@/data.js'

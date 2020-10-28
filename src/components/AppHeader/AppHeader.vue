@@ -42,8 +42,7 @@ export default {
     pointer-events: none;
 
     @include breakpoint(v-mobile) {
-        top: 1rem;
-        left: 1rem;
+        padding: 1rem;
     }
 
     > * {

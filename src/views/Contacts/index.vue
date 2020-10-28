@@ -1,7 +1,7 @@
 <template>
     <div class="content">
         <app-title
-            brackets
+            comment
         >contacts</app-title>
         <ul class="contacts">
             <li
