@@ -203,6 +203,7 @@ export default {
         padding: 0 .75rem;
         background-color: $white;
         box-shadow: 0 0 8px 8px $white;
+        user-select: none;
 
         @include breakpoint(v-mobile) {
             padding: 0 .5rem;

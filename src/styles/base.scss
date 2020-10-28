@@ -12,6 +12,18 @@ html {
     }
 }
 
+::selection {
+    color: $white;
+    background: $red;
+    text-shadow: none;
+}
+
+::-moz-selection {
+    color: $white;
+    background: $red;
+    text-shadow: none;
+}
+
 body {
     display: flex;
     flex-direction: column;

@@ -6,10 +6,7 @@
             :href="item.link"
             :title="item.name"
             v-for="item in data"
-            :class="[
-                'social__item',
-                `social__item--${item.name}`
-            ]"
+            :class="`social__item icon icon-${item.name}`"
         ></a>
     </div>
 </template>
@@ -35,33 +32,19 @@ export default {
         display: block;
         width: 1.5rem;
         height: 1.5rem;
+        font-size: 1.25rem;
+        text-align: center;
         background-size: 100%;
         background-position: center;
         background-repeat: no-repeat;
+        transition: color .3s ease-in-out;
 
         &+& {
             margin-left: 1rem;
         }
 
-        &--vk {
-            background-image: url('~images/icons/vk.svg');
-        }
-
-        &--facebook {
-            background-image: url('~images/icons/facebook.svg');
-        }
-
-        &--instagram {
-            background-size: 85%;
-            background-image: url('~images/icons/instagram.svg');
-        }
-
-        &--telegram {
-            background-image: url('~images/icons/telegram.svg');
-        }
-
-        &--github {
-            background-image: url('~images/icons/github.svg');
+        &:hover {
+            color: $red;
         }
     }
 }

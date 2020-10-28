@@ -1,7 +1,7 @@
 <template>
     <footer class="app-footer">
         <div class="app-footer__inner">
-            <span class="app-footer__text">&#169; {{ currentYear }} Builded with love</span>
+            <span class="app-footer__text">&#169; {{ currentYear }} Builded with <span class="love">love</span></span>
             <social class="app-footer__social" />
         </div>
     </footer>
@@ -53,6 +53,20 @@ export default {
 
     &__text {
         font-size: .875rem;
+        pointer-events: auto;
+        user-select: none;
+        cursor: default;
+
+        .love {
+            transition: color .3s;
+        }
+
+        &:hover {
+
+            .love {
+                color: $red;
+            }
+        }
     }
 
     &__social {

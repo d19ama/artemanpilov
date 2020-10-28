@@ -18,7 +18,7 @@ export default {
     ],
     social: [
         {
-            name: 'vk',
+            name: 'vkontakte',
             link: 'https://vk.com/blind_resist'
         },
         {
