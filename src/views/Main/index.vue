@@ -2,6 +2,7 @@
     <div class="main">
         <app-title
             comment
+            class="main__title"
         >Frontend developer</app-title>
     </div>
 </template>
@@ -23,16 +24,9 @@ export default {
     flex-flow: row wrap;
     align-items: center;
     justify-content: flex-start;
-    height: 100%;
 
-    &__image {
-        width: calc(50% - 3rem);
-        overflow: hidden;
-
-        img {
-            vertical-align: middle;
-            max-width: 100%;
-        }
+    &__title {
+        margin-top: 20rem;
     }
 }
 </style>

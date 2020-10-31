@@ -1,30 +1,65 @@
 <template>
-    <div class="content">
-        <app-title
-            comment
-        >about</app-title>
-        <div class="about">
-            <div class="about__image">
+    <div class="about row">
+        <div class="col-default-4">
+            <div class="about__image margin-bottom--s">
                 <img
                     :src="data.image.src"
                     :alt="data.image.alt"
                 />
             </div>
+            <list no-markers>
+                <list-item>
+                    <a
+                        class="link"
+                        :title="data.personal.email"
+                        :href="`mailto:${data.personal.email}`"
+                    >
+                        <i class="icon icon-mail2"></i>
+                        {{ data.personal.email }}
+                    </a>
+                </list-item>
+                <list-item>
+                    <a
+                        class="link"
+                        target="_blank"
+                        title="Download CV"
+                        :href="data.personal.cv"
+                    >
+                        <i class="icon icon-download"></i>
+                        Download CV
+                    </a>
+                </list-item>
+            </list>
+        </div>
+        <div class="col-default-8">
             <div class="about__info">
-                <div
-                    :key="index"
-                    class="about__info-block"
-                    v-for="(item, index) in data.info"
-                >
-                    <app-title
-                        tag="h2"
-                    >{{ item.title }}</app-title>
-                    <ul class="ul-list">
-                        <li
-                            :key="index2"
-                            v-for="(data, index2) in item.data"
-                        >{{ data }}</li>
-                    </ul>
+                <app-title
+                    tag="h3"
+                    bordered
+                    class="margin-bottom--xs"
+                >Personal</app-title>
+                <list class="margin-bottom--l">
+                    <list-item
+                        :key="index"
+                        v-for="(item, index) in data.personal.detail"
+                    >{{ item }}</list-item>
+                </list>
+                <app-title
+                    tag="h3"
+                    bordered
+                    class="margin-bottom--xs"
+                >Skills</app-title>
+                <div class="row">
+                    <div
+                        :key="key.name"
+                        class="col-default-3"
+                        v-for="key in data.skills"
+                    >
+                        <key-indicator
+                            :name="key.name"
+                            :value="key.experience"
+                        />
+                    </div>
                 </div>
             </div>
         </div>
@@ -44,21 +79,8 @@ export default {
 
 <style lang="scss">
 .about {
-    display: flex;
-    flex-flow: row wrap;
-    align-items: flex-start;
-    justify-content: space-between;
 
     &__info {
-        width: 50%;
-
-        @include breakpoint(mobile) {
-            width: 100%;
-        }
-
-        @include breakpoint(v-mobile) {
-            padding: 0 1rem;
-        }
 
         &-block {
 
@@ -69,17 +91,7 @@ export default {
     }
 
     &__image {
-        width: calc(50% - 3rem);
         overflow: hidden;
-
-        @include breakpoint(mobile) {
-            width: 100%;
-            margin-bottom: 3rem;
-        }
-
-        @include breakpoint(v-mobile) {
-            margin-bottom: 1rem;
-        }
 
         img {
             vertical-align: middle;

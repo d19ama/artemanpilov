@@ -30,7 +30,6 @@
                         exact
                         :to="item.link"
                         class="app-navigation__link"
-                        @click.native="$root.$bus.$emit('window:open')"
                     >
                         <span>{{ item.name }}</span>
                     </router-link>
@@ -201,8 +200,6 @@ export default {
 
     &__item {
         padding: 0 .75rem;
-        background-color: $white;
-        box-shadow: 0 0 8px 8px $white;
         user-select: none;
 
         @include breakpoint(v-mobile) {
@@ -218,6 +215,7 @@ export default {
         font-size: .875rem;
         line-height: 1.5rem;
         white-space: nowrap;
+        text-shadow: 1px 1px 1px $white;
         transition: opacity .1s;
 
         &:after {

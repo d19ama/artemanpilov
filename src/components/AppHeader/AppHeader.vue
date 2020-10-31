@@ -1,28 +1,15 @@
 <template>
     <header class="app-header">
         <app-logo />
-        <app-navigation
-            :active="hovered"
-        />
+        <app-navigation />
     </header>
 </template>
 
 <script>
 export default {
     name: 'app-header',
-    props: {
-        mobile: Boolean
-    },
     data () {
-        return {
-            viewportW: 0,
-            hovered: this.mobile
-        }
-    },
-    watch: {
-        mobile (newValue) {
-            this.hovered = newValue
-        }
+        return {}
     }
 }
 </script>

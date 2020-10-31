@@ -3,7 +3,7 @@
         exact
         to="/"
         class="app-logo"
-        @click.native="$root.$bus.$emit('window:open')"
+        @click.native="$bus.$emit('window:open')"
     ></router-link>
 </template>
 

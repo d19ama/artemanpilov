@@ -12,16 +12,10 @@
 <body>
     <div
         id="app"
-        :class="{
-            loaded: loaded
-        }"
+        :class="{ loaded: loaded }"
     >
-        <app-header
-            :mobile="mobile"
-        ></app-header>
-        <app-window
-            :active="windowOpened"
-        ></app-window>
+        <app-header></app-header>
+        <app-window></app-window>
         <app-footer></app-footer>
     </div>
     <script src="./dist/build.js"></script>

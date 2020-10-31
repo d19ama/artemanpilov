@@ -72,9 +72,14 @@ ul {
 }
 
 .container {
-    max-width: 1240px;
-    width: 100%;
+    max-width: 77.5rem;
+    min-height: 100%;
     margin: auto;
+
+    @include breakpoint(tablet) {
+        max-width: none;
+        width: 100%;
+    }
 }
 
 .content {
@@ -86,17 +91,25 @@ ul {
     p+p {
         margin: 1rem 0 0;
     }
+
+    .row {
+        margin-top: -1.875rem;
+
+        &>[class^="col"] {
+            margin-top: 1.875rem;
+        }
+    }
 }
 
 .link {
-    color: $red;
+    color: $black;
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.5rem;
-    border-bottom: 1px solid rgba($red, .5);
+    transition: color .3s;
 
     &:hover {
-        border-bottom-color: transparent;
+        color: $red;
     }
 }
 

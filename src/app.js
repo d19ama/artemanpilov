@@ -4,9 +4,19 @@ import data from '@/data.js'
 import router from '@/router.js'
 
 // components
+import List from '@/components/List'
 import Social from '@/components/Social'
+import ListItem from '@/components/ListItem'
+import TextBlock from '@/components/TextBlock'
+import Portfolio from '@/components/Portfolio'
+import KeyIndicator from '@/components/KeyIndicator'
 
+Vue.component('list', List)
 Vue.component('social', Social)
+Vue.component('list-item', ListItem)
+Vue.component('portfolio', Portfolio)
+Vue.component('text-block', TextBlock)
+Vue.component('key-indicator', KeyIndicator)
 
 const requireComponent = require.context(
     './components',
@@ -31,62 +41,13 @@ new Vue({
     el: '#app',
     data: {
         app: data,
-        scrollY: 0,
         viewportW: 0,
-        mobile: false,
         loaded: false,
-        bus: new Vue({}),
-        windowOpened: false
+        bus: new Vue({})
     },
     router,
     mounted () {
         this.loaded = true
-        this.checkRoute()
-        this.getViewportW()
-
-        this.$bus.$on('window:open', () => this.openWindow())
-        this.$bus.$on('window:close', () => this.closeWindow())
-
-        window.addEventListener('resize', () => this.getViewportW())
-    },
-    beforeDestroy () {
-        this.$bus.$off('window:open', () => this.openWindow())
-        this.$bus.$off('window:close', () => this.closeWindow())
-    },
-    watch: {
-        viewportW (newValue) {
-            this.mobile = newValue < 480
-        }
-    },
-    methods: {
-        checkRoute () {
-            const routes = this.$router.options.routes
-            const current = this.$router.history.current
-            const isRouteOpened = routes.filter(item => item.path === current.path).length > 0
-
-            return isRouteOpened ? this.openWindow() : false
-        },
-        getViewportW () {
-            this.viewportW = verge.viewportW()
-        },
-        openWindow () {
-            this.disableScroll()
-            this.windowOpened = true
-        },
-        closeWindow () {
-            this.enableScroll()
-            this.$router.push('/')
-            this.windowOpened = false
-        },
-        enableScroll () {
-            document.body.style.position = ''
-            document.body.style.top = ''
-            window.scroll(0, this.scrollY)
-        },
-        disableScroll () {
-            this.scrollY = window.pageYOffset
-            document.body.style.position = 'fixed'
-            document.body.style.top = `-${this.scrollY}px`
-        }
+        this.viewportW = verge.viewportW()
     }
 })
