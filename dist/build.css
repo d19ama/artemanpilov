@@ -3624,10 +3624,12 @@ ul {
     stroke-width: 1px;
     stroke-dasharray: 2200px;
     stroke-dashoffset: 2200px;
-    -webkit-animation: stroke 2s infinite;
-    animation: stroke 2s infinite;
-    -webkit-animation-play-state: paused;
-    animation-play-state: paused;
+}
+.background-svg__path.animate {
+      -webkit-animation: stroke 2s infinite both;
+      animation: stroke 2s infinite both;
+      -webkit-animation-play-state: paused;
+      animation-play-state: paused;
 }
 .background-svg__path.active {
       -webkit-animation-play-state: running;

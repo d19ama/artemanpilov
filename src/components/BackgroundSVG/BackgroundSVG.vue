@@ -10,7 +10,7 @@
                 class="background-svg__path"
                 v-for="(path, index) in paths"
                 :class="{
-                    active: currentPath === index
+                    'animate active': currentPath === index
                 }"
             />
         </svg>
@@ -72,8 +72,11 @@ export default {
         stroke-width: 1px;
         stroke-dasharray: 2200px;
         stroke-dashoffset: 2200px;
-        animation: stroke 2s infinite;
-        animation-play-state: paused;
+
+        &.animate {
+            animation: stroke 2s infinite both;
+            animation-play-state: paused;
+        }
 
         &.active {
             animation-play-state: running;
