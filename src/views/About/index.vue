@@ -11,11 +11,11 @@
                 <list-item>
                     <a
                         class="link"
-                        :title="data.personal.email"
-                        :href="`mailto:${data.personal.email}`"
+                        :title="data.email"
+                        :href="`mailto:${data.email}`"
                     >
                         <i class="icon icon-mail2"></i>
-                        {{ data.personal.email }}
+                        {{ data.email }}
                     </a>
                 </list-item>
                 <list-item>
@@ -23,7 +23,7 @@
                         class="link"
                         target="_blank"
                         title="Download CV"
-                        :href="data.personal.cv"
+                        :href="data.cv"
                     >
                         <i class="icon icon-download"></i>
                         Download CV
@@ -32,18 +32,23 @@
             </list>
         </div>
         <div class="col-default-8">
-            <div class="about__info">
+            <div class="about__info margin-bottom--l">
                 <app-title
-                    tag="h3"
+                    tag="h2"
                     bordered
                     class="margin-bottom--xs"
-                >Personal</app-title>
-                <list class="margin-bottom--l">
-                    <list-item
-                        :key="index"
-                        v-for="(item, index) in data.personal.detail"
-                    >{{ item }}</list-item>
-                </list>
+                >{{ data.name }}</app-title>
+                <app-title
+                    tag="h3"
+                    weight="normal"
+                    class="margin-bottom--xs"
+                >{{ data.experience }}</app-title>
+                <app-title
+                    tag="h4"
+                    weight="normal"
+                >{{ data.location }}</app-title>
+            </div>
+            <div class="about__info margin-bottom--l">
                 <app-title
                     tag="h3"
                     bordered
@@ -61,6 +66,19 @@
                         />
                     </div>
                 </div>
+            </div>
+            <div class="about__info">
+                <app-title
+                    tag="h3"
+                    bordered
+                    class="margin-bottom--xs"
+                >Hobby</app-title>
+                <list>
+                    <list-item
+                        :key="index"
+                        v-for="(item, index) in data.hobby"
+                    >{{ item }}</list-item>
+                </list>
             </div>
         </div>
     </div>

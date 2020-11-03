@@ -25,7 +25,6 @@ export default {
 .key-indicator {
     padding: 2rem;
     background-color: $lite-grey;
-    box-shadow: .5rem .5rem rgba($dark-grey, .2);
 
     &__name {
         display: block;

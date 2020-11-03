@@ -3,7 +3,7 @@
         <app-title
             comment
             class="main__title"
-        >Frontend developer</app-title>
+        >Frontend developer<br/>with team lead skills</app-title>
     </div>
 </template>
 

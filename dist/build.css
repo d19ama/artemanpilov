@@ -3595,8 +3595,6 @@ ul {
 .key-indicator {
   padding: 2rem;
   background-color: #f1f1f1;
-  -webkit-box-shadow: 0.5rem 0.5rem rgba(45, 45, 45, 0.2);
-  box-shadow: 0.5rem 0.5rem rgba(45, 45, 45, 0.2);
 }
 .key-indicator__name {
     display: block;
@@ -3609,6 +3607,59 @@ ul {
     display: block;
     font-size: .875rem;
     color: rgba(45, 45, 45, 0.8);
+}
+
+.background-svg {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+.background-svg__path {
+    opacity: 0;
+    fill: none;
+    stroke: #212121;
+    stroke-width: 1px;
+    stroke-dasharray: 2200px;
+    stroke-dashoffset: 2200px;
+    -webkit-animation: stroke 2s infinite;
+    animation: stroke 2s infinite;
+    -webkit-animation-play-state: paused;
+    animation-play-state: paused;
+}
+.background-svg__path.active {
+      -webkit-animation-play-state: running;
+      animation-play-state: running;
+}
+@-webkit-keyframes stroke {
+0% {
+    stroke-dashoffset: 2200px;
+}
+25% {
+    opacity: 1;
+}
+75% {
+    opacity: 0;
+}
+100% {
+    stroke-dashoffset: 0px;
+}
+}
+@keyframes stroke {
+0% {
+    stroke-dashoffset: 2200px;
+}
+25% {
+    opacity: 1;
+}
+75% {
+    opacity: 0;
+}
+100% {
+    stroke-dashoffset: 0px;
+}
 }
 
 .app-footer {
@@ -3922,7 +3973,6 @@ ul {
   -ms-flex-align: baseline;
   align-items: baseline;
   line-height: 1;
-  font-weight: 700;
   color: #2d2d2d;
 }
 .app-title--comment:before {
@@ -3936,6 +3986,12 @@ ul {
 }
 .app-title--uppercase {
     text-transform: uppercase;
+}
+.app-title--normal {
+    font-weight: 400;
+}
+.app-title--bold {
+    font-weight: 700;
 }
 .app-title--h1 {
     font-size: 4rem;
@@ -3964,7 +4020,6 @@ ul {
   top: 0;
   left: 0;
   z-index: 90;
-  background-color: #fff;
 }
 @media only screen and (max-width: 1024px) {
 .app-window {

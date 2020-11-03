@@ -26,7 +26,6 @@ export default {
     top: 0;
     left: 0;
     z-index: 90;
-    background-color: $white;
 
     @include breakpoint(tablet) {
         overflow: auto;

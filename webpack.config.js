@@ -43,23 +43,27 @@ module.exports = {
                         js: 'babel-loader',
                         scss: [
                             {
-                                loader: 'vue-style-loader'
-                            },
-                            {
-                                loader: 'css-loader'
-                            },
-                            {
-                                loader: 'sass-loader'
-                            },
-                            {
-                                loader: 'sass-resources-loader',
-                                options: {
-                                    sourceMap: true,
-                                    resources: [
-                                        './src/styles/vars.scss',
-                                        './src/styles/mixins.scss'
-                                    ]
-                                }
+                                loader: [
+                                    MiniCssExtractPlugin.loader,
+                                    'css-loader',
+                                    {
+                                        loader: 'sass-loader',
+                                        options: {
+                                            sourceMap: true
+                                        }
+                                    },
+                                    {
+                                        loader: 'sass-resources-loader',
+                                        options: {
+                                            sourceMap: true,
+                                            resources: [
+                                                './src/styles/vars.scss',
+                                                './src/styles/mixins.scss'
+                                            ]
+                                        }
+                                    },
+                                    'postcss-loader'
+                                ]
                             }
                         ]
                     }

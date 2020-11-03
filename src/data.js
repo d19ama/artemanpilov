@@ -69,25 +69,16 @@ export default {
                 src: './src/images/itsme.jpg',
                 alt: 'Its me :)'
             },
-            personal: {
-                email: 'blind.resist@gmail.com',
-                cv: '#',
-                detail: [
-                    'Anpilov Artem Mihajlovich',
-                    'Born in 1987',
-                    'St. Petersburg',
-                    'front-end since 2014'
-                ]
-            },
+            name: 'Anpilov Artem',
+            experience: 'Frontend dev since 2014',
+            location: 'Saint-Petersburg, Russia',
+            email: 'blind.resist@gmail.com',
+            cv: '#',
             hobby: [
                 'Music',
                 'Travel',
                 '3D printing'
             ],
-            cv: {
-                name: 'Full CV',
-                link: ''
-            },
             skills: [
                 {
                     name: 'JavaScript',

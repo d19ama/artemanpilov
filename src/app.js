@@ -10,6 +10,7 @@ import ListItem from '@/components/ListItem'
 import TextBlock from '@/components/TextBlock'
 import Portfolio from '@/components/Portfolio'
 import KeyIndicator from '@/components/KeyIndicator'
+import BackgroundSVG from '@/components/BackgroundSVG'
 
 Vue.component('list', List)
 Vue.component('social', Social)
@@ -17,6 +18,7 @@ Vue.component('list-item', ListItem)
 Vue.component('portfolio', Portfolio)
 Vue.component('text-block', TextBlock)
 Vue.component('key-indicator', KeyIndicator)
+Vue.component('background-svg', BackgroundSVG)
 
 const requireComponent = require.context(
     './components',

@@ -19,6 +19,10 @@ export default {
             type: String,
             default: ''
         },
+        weight: {
+            type: String,
+            default: 'bold'
+        },
         comment: Boolean,
         bordered: Boolean,
         uppercase: Boolean
@@ -26,7 +30,9 @@ export default {
     computed: {
         classObject () {
             return [
-                `app-title app-title--${this.tag}`,
+                'app-title',
+                `app-title--${this.tag}`,
+                `app-title--${this.weight}`,
                 {
                     'app-title--comment': this.comment,
                     'app-title--bordered': this.bordered,
@@ -44,7 +50,6 @@ export default {
     flex-flow: row nowrap;
     align-items: baseline;
     line-height: 1;
-    font-weight: 700;
     color: $dark-grey;
 
     &--comment {
@@ -63,6 +68,14 @@ export default {
 
     &--uppercase {
         text-transform: uppercase;
+    }
+
+    &--normal {
+        font-weight: 400;
+    }
+
+    &--bold {
+        font-weight: 700;
     }
 
     &--h1 {
