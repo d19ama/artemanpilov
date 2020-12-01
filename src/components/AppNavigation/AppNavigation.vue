@@ -30,6 +30,7 @@
                         exact
                         :to="item.link"
                         class="app-navigation__link"
+                        @click.native="$bus.$emit('blast')"
                     >
                         <span>{{ item.name }}</span>
                     </router-link>

@@ -29,7 +29,6 @@ export default {
     pointer-events: none;
 
     &:before {
-        content: '';
         display: block;
         width: 100%;
         height: 120%;
@@ -41,6 +40,10 @@ export default {
         background: linear-gradient(to bottom,  rgba(255,255,255,0) 0%,rgba(255,255,255,1) 31%);
         filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=0 );
         pointer-events: none;
+
+        @include breakpoint(mobile) {
+            content: '';
+        }
     }
 
     &__inner {

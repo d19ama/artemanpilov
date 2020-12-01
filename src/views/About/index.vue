@@ -1,13 +1,16 @@
 <template>
     <div class="about row">
-        <div class="col-default-4">
+        <div class="col-default-4 col-v-mobile-12">
             <div class="about__image margin-bottom--s">
                 <img
                     :src="data.image.src"
                     :alt="data.image.alt"
                 />
             </div>
-            <list no-markers>
+            <list
+                no-markers
+                class="margin-bottom--s"
+            >
                 <list-item>
                     <a
                         class="link"
@@ -31,10 +34,10 @@
                 </list-item>
             </list>
         </div>
-        <div class="col-default-8">
+        <div class="col-default-8 col-v-mobile-12">
             <div class="about__info margin-bottom--l">
                 <app-title
-                    tag="h2"
+                    tag="h1"
                     bordered
                     class="margin-bottom--xs"
                 >{{ data.name }}</app-title>
@@ -57,8 +60,8 @@
                 <div class="row">
                     <div
                         :key="key.name"
-                        class="col-default-3"
                         v-for="key in data.skills"
+                        class="col-default-3 col-tablet-4 col-mobile-6"
                     >
                         <key-indicator
                             :name="key.name"
@@ -67,18 +70,42 @@
                     </div>
                 </div>
             </div>
-            <div class="about__info">
+            <div class="about__info margin-bottom--l">
+                <app-title
+                    tag="h3"
+                    bordered
+                    class="margin-bottom--xs"
+                >Tools</app-title>
+                <div class="row">
+                    <div
+                        :key="key.name"
+                        v-for="key in data.tools"
+                        class="col-default-3 col-tablet-4 col-mobile-6"
+                    >
+                        <key-indicator
+                            :name="key.name"
+                        />
+                    </div>
+                </div>
+            </div>
+            <div class="about__info margin-bottom--l">
                 <app-title
                     tag="h3"
                     bordered
                     class="margin-bottom--xs"
                 >Hobby</app-title>
-                <list>
-                    <list-item
-                        :key="index"
-                        v-for="(item, index) in data.hobby"
-                    >{{ item }}</list-item>
-                </list>
+                <div class="row">
+                    <div
+                        :key="key.name"
+                        v-for="key in data.hobby"
+                        class="col-default-3 col-tablet-4 col-mobile-6"
+                    >
+                        <key-indicator
+                            :name="key.name"
+                            :value="key.experience"
+                        />
+                    </div>
+                </div>
             </div>
         </div>
     </div>

@@ -21,6 +21,7 @@ export default {
 .app-window {
     width: 100vw;
     height: 100vh;
+    overflow: auto;
     padding: 9rem 0 6rem;
     position: fixed;
     top: 0;
@@ -39,11 +40,11 @@ export default {
     .fade-enter-active,
     .fade-leave-active {
         transition-property: opacity;
-        transition-duration: .25s;
+        transition-duration: .3s;
     }
 
     .fade-enter-active {
-        transition-delay: .25s;
+        transition-delay: 1s;
     }
 
     .fade-enter,

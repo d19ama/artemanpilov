@@ -75,14 +75,20 @@ export default {
             email: 'blind.resist@gmail.com',
             cv: '#',
             hobby: [
-                'Music',
-                'Travel',
-                '3D printing'
+                {
+                    name: 'Music'
+                },
+                {
+                    name: 'Traveling'
+                },
+                {
+                    name: 'Gaming'
+                }
             ],
             skills: [
                 {
                     name: 'JavaScript',
-                    experience: '4 years'
+                    experience: '5 years'
                 },
                 {
                     name: 'Vue.js',
@@ -111,6 +117,20 @@ export default {
                 {
                     name: 'Jest',
                     experience: '3 months'
+                }
+            ],
+            tools: [
+                {
+                    name: 'Figma'
+                },
+                {
+                    name: 'Adobe Ps'
+                },
+                {
+                    name: 'Adobe Ai'
+                },
+                {
+                    name: 'Sublime Text'
                 }
             ]
         }

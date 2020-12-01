@@ -57,7 +57,6 @@ export default {
         height: 50%;
         overflow: hidden;
         position: relative;
-        background-color: $white;
         background-position: center;
         background-repeat: no-repeat;
         filter: grayscale(100%);
@@ -88,6 +87,7 @@ export default {
         &:hover {
             z-index: 2;
             filter: grayscale(0%);
+            background-color: $white;
             box-shadow: 0 1.875rem 4.75rem 0.25rem rgba(4, 20, 38, 0.1);
         }
     }

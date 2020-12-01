@@ -3280,17 +3280,17 @@ html {
 
 ::-moz-selection {
   color: #fff;
-  background: #ed174b;
+  background: #212121;
   text-shadow: none; }
 
 ::selection {
   color: #fff;
-  background: #ed174b;
+  background: #212121;
   text-shadow: none; }
 
 ::-moz-selection {
   color: #fff;
-  background: #ed174b;
+  background: #212121;
   text-shadow: none; }
 
 body {
@@ -3351,6 +3351,8 @@ ul {
 .container {
   max-width: 77.5rem;
   min-height: 100%;
+  padding-left: 2rem;
+  padding-right: 2rem;
   margin: auto; }
   @media only screen and (max-width: 1024px) {
     .container {
@@ -3417,9 +3419,16 @@ ul {
   -webkit-justify-content: flex-start;
   -ms-flex-pack: start;
   justify-content: flex-start;
+  -webkit-transform: translate(0, -webkit-calc(50vh - 100%));
+  -ms-transform: translate(0, calc(50vh - 100%));
+  transform: translate(0, calc(50vh - 100%));
 }
-.main__title {
-    margin-top: 20rem;
+.main__title.app-title {
+    font-size: 4rem;
+}
+.main__title.app-title span {
+      color: #fff;
+      background-color: #ed174b;
 }
 
 .about__info-block + .about__info-block {
@@ -3539,7 +3548,6 @@ ul {
     height: 50%;
     overflow: hidden;
     position: relative;
-    background-color: #fff;
     background-position: center;
     background-repeat: no-repeat;
     -webkit-filter: grayscale(100%);
@@ -3579,6 +3587,7 @@ ul {
       z-index: 2;
       -webkit-filter: grayscale(0%);
       filter: grayscale(0%);
+      background-color: #fff;
       -webkit-box-shadow: 0 1.875rem 4.75rem 0.25rem rgba(4, 20, 38, 0.1);
       box-shadow: 0 1.875rem 4.75rem 0.25rem rgba(4, 20, 38, 0.1);
 }
@@ -3598,13 +3607,13 @@ ul {
 }
 .key-indicator__name {
     display: block;
-    margin-bottom: 1.25rem;
     font-size: 1rem;
     font-weight: 700;
     color: #2d2d2d;
 }
 .key-indicator__value {
     display: block;
+    margin-top: 1.25rem;
     font-size: .875rem;
     color: rgba(45, 45, 45, 0.8);
 }
@@ -3617,10 +3626,13 @@ ul {
   left: 0;
   z-index: 1;
 }
+.background-svg__parent {
+    height: 100%;
+}
 .background-svg__path {
     opacity: 0;
     fill: none;
-    stroke: #212121;
+    stroke: rgba(33, 33, 33, 0.5);
     stroke-width: 1px;
     stroke-dasharray: 2200px;
     stroke-dashoffset: 2200px;
@@ -3674,7 +3686,6 @@ ul {
   pointer-events: none;
 }
 .app-footer:before {
-    content: '';
     display: block;
     width: 100%;
     height: 120%;
@@ -3686,6 +3697,11 @@ ul {
     background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, white 31%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=0 );
     pointer-events: none;
+}
+@media only screen and (max-width: 768px) {
+.app-footer:before {
+        content: '';
+}
 }
 .app-footer__inner {
     display: -webkit-box;
@@ -3961,26 +3977,20 @@ ul {
 }
 
 .app-title {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -webkit-flex-flow: row nowrap;
-  -ms-flex-flow: row nowrap;
-  flex-flow: row nowrap;
-  -webkit-box-align: baseline;
-  -webkit-align-items: baseline;
-  -ms-flex-align: baseline;
-  align-items: baseline;
-  line-height: 1;
+  line-height: 1.25;
   color: #2d2d2d;
 }
+.app-title--comment {
+    padding-left: 6rem;
+    position: relative;
+}
 .app-title--comment:before {
-    content: '//';
-    margin-right: 1.25rem;
-    color: #E6E6E6;
+      content: '//';
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      color: #E6E6E6;
 }
 .app-title--bordered {
     padding-bottom: 1rem;
@@ -3996,7 +4006,7 @@ ul {
     font-weight: 700;
 }
 .app-title--h1 {
-    font-size: 4rem;
+    font-size: 3rem;
 }
 .app-title--h2 {
     font-size: 2rem;
@@ -4017,6 +4027,7 @@ ul {
 .app-window {
   width: 100vw;
   height: 100vh;
+  overflow: auto;
   padding: 9rem 0 6rem;
   position: fixed;
   top: 0;
@@ -4039,14 +4050,14 @@ ul {
     -webkit-transition-property: opacity;
     -o-transition-property: opacity;
     transition-property: opacity;
-    -webkit-transition-duration: .25s;
-    -o-transition-duration: .25s;
-    transition-duration: .25s;
+    -webkit-transition-duration: .3s;
+    -o-transition-duration: .3s;
+    transition-duration: .3s;
 }
 .app-window .fade-enter-active {
-    -webkit-transition-delay: .25s;
-    -o-transition-delay: .25s;
-    transition-delay: .25s;
+    -webkit-transition-delay: 1s;
+    -o-transition-delay: 1s;
+    transition-delay: 1s;
 }
 .app-window .fade-enter,
   .app-window .fade-leave-active {

@@ -1,7 +1,10 @@
 <template>
     <div class="key-indicator">
         <span class="key-indicator__name">{{ name }}</span>
-        <span class="key-indicator__value">{{ value }}</span>
+        <span
+            v-if="value"
+            class="key-indicator__value"
+        >{{ value }}</span>
     </div>
 </template>
 
@@ -28,7 +31,6 @@ export default {
 
     &__name {
         display: block;
-        margin-bottom: 1.25rem;
         font-size: 1rem;
         font-weight: 700;
         color: $dark-grey;
@@ -36,6 +38,7 @@ export default {
 
     &__value {
         display: block;
+        margin-top: 1.25rem;
         font-size: .875rem;
         color: rgba($dark-grey, .8);
     }

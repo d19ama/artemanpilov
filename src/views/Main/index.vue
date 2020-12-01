@@ -3,7 +3,7 @@
         <app-title
             comment
             class="main__title"
-        >Frontend developer<br/>with team lead skills</app-title>
+        ><span>Frontend</span> developer<br/>with lead skills</app-title>
     </div>
 </template>
 
@@ -24,9 +24,15 @@ export default {
     flex-flow: row wrap;
     align-items: center;
     justify-content: flex-start;
+    transform: translate(0, calc(50vh - 100%));
 
-    &__title {
-        margin-top: 20rem;
+    &__title.app-title {
+        font-size: 4rem;
+
+        span {
+            color: $white;
+            background-color: $red;
+        }
     }
 }
 </style>

@@ -14,13 +14,13 @@ html {
 
 ::selection {
     color: $white;
-    background: $red;
+    background: $black;
     text-shadow: none;
 }
 
 ::-moz-selection {
     color: $white;
-    background: $red;
+    background: $black;
     text-shadow: none;
 }
 
@@ -74,6 +74,8 @@ ul {
 .container {
     max-width: 77.5rem;
     min-height: 100%;
+    padding-left: 2rem;
+    padding-right: 2rem;
     margin: auto;
 
     @include breakpoint(tablet) {

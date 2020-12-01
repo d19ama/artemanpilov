@@ -46,17 +46,19 @@ export default {
 
 <style lang="scss">
 .app-title {
-    display: flex;
-    flex-flow: row nowrap;
-    align-items: baseline;
-    line-height: 1;
+    line-height: 1.25;
     color: $dark-grey;
 
     &--comment {
+        padding-left: 6rem;
+        position: relative;
 
         &:before {
             content: '//';
-            margin-right: 1.25rem;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
             color: $middle-grey;
         }
     }
@@ -79,7 +81,7 @@ export default {
     }
 
     &--h1 {
-        font-size: 4rem;
+        font-size: 3rem;
     }
 
     &--h2 {

@@ -2,6 +2,7 @@
     <div class="background-svg">
         <svg
             viewBox="0 0 1920 1080"
+            class="background-svg__parent"
             xmlns="http://www.w3.org/2000/svg"
         >
             <path
@@ -10,7 +11,7 @@
                 class="background-svg__path"
                 v-for="(path, index) in paths"
                 :class="{
-                    'animate active': currentPath === index
+                    'animate active': currentPath === index || blasted
                 }"
             />
         </svg>
@@ -24,6 +25,8 @@ export default {
         return {
             delay: 2000,
             currentPath: 0,
+            blasted: false,
+            timing: '',
             paths: [
                 'm-1,-1.125l1155,565.125l766,-444',
                 'm1919,232.875l-943,563.125l530,282',
@@ -39,6 +42,11 @@ export default {
     },
     mounted () {
         setInterval(() => this.animate(), this.delay)
+
+        this.$bus.$on('blast', () => this.blast())
+    },
+    beforeDestroy () {
+        this.$bus.$off('blast', () => this.blast())
     },
     methods: {
         animate () {
@@ -51,6 +59,16 @@ export default {
             const number = Math.floor(Math.random() * (max - min)) + min
 
             return this.currentPath === number ? this.getRandomInt(0, 10) : number
+        },
+        timeout () {
+            this.blasted = true
+
+            return new Promise(resolve => setTimeout(() => {
+                this.blasted = false
+            }, this.delay))
+        },
+        async blast () {
+            if (!this.blasted) await this.timeout()
         }
     }
 }
@@ -65,10 +83,14 @@ export default {
     left: 0;
     z-index: 1;
 
+    &__parent {
+        height: 100%;
+    }
+
     &__path {
         opacity: 0;
         fill: none;
-        stroke: $black;
+        stroke: rgba($black, .5);
         stroke-width: 1px;
         stroke-dasharray: 2200px;
         stroke-dashoffset: 2200px;

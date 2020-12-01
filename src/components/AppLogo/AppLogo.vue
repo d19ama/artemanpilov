@@ -3,7 +3,7 @@
         exact
         to="/"
         class="app-logo"
-        @click.native="$bus.$emit('window:open')"
+        @click.native="$bus.$emit('blast')"
     ></router-link>
 </template>
 
@@ -12,8 +12,7 @@ export default {
     name: 'app-logo',
     data () {
         return {}
-    },
-    computed: {}
+    }
 }
 </script>
 
