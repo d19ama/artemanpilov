@@ -50,7 +50,7 @@ export default {
     },
     methods: {
         animate () {
-            this.currentPath = this.getRandomInt(0, 10)
+            this.currentPath = this.getRandomInt(0, 9)
         },
         getRandomInt (min, max) {
             min = Math.ceil(min)
@@ -58,7 +58,7 @@ export default {
 
             const number = Math.floor(Math.random() * (max - min)) + min
 
-            return this.currentPath === number ? this.getRandomInt(0, 10) : number
+            return this.currentPath === number ? this.getRandomInt(0, 9) : number
         },
         timeout () {
             this.blasted = true
@@ -84,7 +84,10 @@ export default {
     z-index: 1;
 
     &__parent {
-        height: 100%;
+
+        @include breakpoint(tablet) {
+            height: 100%;
+        }
     }
 
     &__path {

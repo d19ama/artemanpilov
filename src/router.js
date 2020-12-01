@@ -1,10 +1,10 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
-import Main from './views/Main/index.vue'
-import About from './views/About/index.vue'
-import MyProjects from '@/views/MyProjects/index.vue'
-import WorkProjects from '@/views/WorkProjects/index.vue'
+import Main from '@/pages/Main/index.vue'
+import About from '@/pages/About/index.vue'
+import MyProjects from '@/pages/MyProjects/index.vue'
+import WorkProjects from '@/pages/WorkProjects/index.vue'
 
 Vue.use(VueRouter)
 
