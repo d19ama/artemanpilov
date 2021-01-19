@@ -1,7 +1,10 @@
 <template>
     <section class="app-window">
         <div class="container">
-            <transition name="fade">
+            <transition
+                name="fade"
+                mode="out-in"
+            >
                 <router-view class="content" />
             </transition>
         </div>

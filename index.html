@@ -7,12 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="preload" as="script" href="./dist/build.js">
+    <link rel="preload" as="style" href="./dist/build.css">
     <link rel="stylesheet" type="text/css" href="./dist/build.css">
 </head>
 <body>
     <div
         id="app"
-        :class="{ loaded: loaded }"
+        :class="{ loaded }"
     >
         <app-header></app-header>
         <app-window></app-window>
