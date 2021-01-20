@@ -3602,7 +3602,7 @@ ul {
 }
 
 .key-indicator {
-  padding: 2rem;
+  padding: 1.5rem;
   background-color: #f1f1f1;
 }
 .key-indicator__name {
@@ -3784,20 +3784,26 @@ ul {
 
 .app-logo {
   display: block;
-  width: 5rem;
-  height: 5rem;
+  width: 7rem;
+  height: 7rem;
   position: relative;
   z-index: 2;
   text-align: center;
   text-decoration: none;
   border-radius: 50%;
-  background-size: 44%;
+  background-size: 70%;
   background-color: #fff;
   background-position: 50% 50%;
   background-repeat: no-repeat;
-  background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiIHdpZHRoPSI0NTFweCIgaGVpZ2h0PSI2MDYuNXB4IiB2aWV3Qm94PSIwIDAgNDUxIDYwNi41IiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA0NTEgNjA2LjUiIHhtbDpzcGFjZT0icHJlc2VydmUiPjxnPjxwb2x5bGluZSBmaWxsPSJub25lIiBzdHJva2U9IiMwMDAwMDAiIHN0cm9rZS13aWR0aD0iNzEiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLW1pdGVybGltaXQ9IjEwIiBwb2ludHM9IjM1LjUsMzUuNSAzNS41LDU3MSA0MTUsNTcxICIvPjxwb2x5bGluZSBmaWxsPSJub25lIiBzdHJva2U9IiMwMDAwMDAiIHN0cm9rZS13aWR0aD0iNzEiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLW1pdGVybGltaXQ9IjEwIiBwb2ludHM9IjE0Ni41LDQ2Ni41IDE0Ni41LDMwMy41IDQxNS41LDQ2Ni44MTggNDE1LjUsMzAzLjUgIi8+PGc+PHBvbHlsaW5lIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzAwMDAwMCIgc3Ryb2tlLXdpZHRoPSI3MSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBzdHJva2UtbWl0ZXJsaW1pdD0iMTAiIHBvaW50cz0iMTQ2LjUsMzUuNSAxNDYuNSwxMjEuOTU1IDE0Ni41LDE5OC41IDI4MSwxMTcgNDE1LjUsMzUuNSAiLz48bGluZSBmaWxsPSJub25lIiBzdHJva2U9IiMwMDAwMDAiIHN0cm9rZS13aWR0aD0iNzEiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLW1pdGVybGltaXQ9IjEwIiB4MT0iMjgxIiB5MT0iMTE3IiB4Mj0iNDE1LjUiIHkyPSIxOTguNSIvPjwvZz48L2c+PC9zdmc+);
+  background-image: url(data:image/svg+xml;base64,PHN2ZyBpZD0iZGlnYU1hIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNjk5LjcxIDc0NC43Ij48dGl0bGU+bG9nb19ibGFja19vbl93aGl0ZTwvdGl0bGU+PHBhdGggZD0iTTMwNC43Miw2MjdIMzY4VjEyNDIuMkgzMDQuNzJ2LTMwLjNxLTEwLjExLDMwLjMtNTAuNDgsMzAuM0gyMTcuNTNxLTcyLjUxLDAtNzIuNS03Mi41M1Y4NjguNTFRMTQ1LDc5NiwyMTcuNTMsNzk2aDM2LjcxcTQwLjM3LDAsNTAuNDgsMzAuM1Y2MjdaTTIzNi44LDExODhoMzYuNzFxMTYuNTIsMCwyMy44Ni03LjM1dDcuMzQtMjUuNzFWODgzLjIxcTAtMTguMzYtNy4zNC0yNS43MXQtMjMuODYtNy4zNUgyMzYuOHEtMTguMzcsMC0yMy40LDV0LTUsMjMuNDF2MjgxcTAsMTguMzgsNSwyMy40MVQyMzYuOCwxMTg4WiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTE0NS4wMiAtNjI2Ljk2KSIvPjxwYXRoIGQ9Ik00NDkuMTIsNzAxLjQxVjYyN2g2N3Y3NC4zN2gtNjdabTY1LjE2LDU0MC43OUg0NTFWNzk2LjloNjMuMzN2NDQ1LjNaIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMTQ1LjAyIC02MjYuOTYpIi8+PHBhdGggZD0iTTc1MS45MSw3OTYuOWg2My4zM3Y1MDIuMjNxMCw3Mi41Mi03Mi41LDcyLjUzSDYwNnYtNTQuMTdINzIzLjQ1cTE3LjQyLDAsMjIuOTQtNS41MXQ1LjUxLTIzVjEyMTEuOXEtMTAuMTEsMzAuMy01MC40OCwzMC4zSDY2NC43MnEtNzIuNTEsMC03Mi41LTcyLjUzVjg2OS40M3EwLTcyLjUyLDcyLjUtNzIuNTNoMzYuNzFxNDAuMzcsMCw1MC40OCwzMC4zVjc5Ni45Wk02ODQsMTE4OEg3MjAuN3ExNi41MiwwLDIzLjg2LTcuMzV0Ny4zNC0yNS43MVY4ODQuMTJxMC0xOC4zNi03LjM0LTI1LjcxdC0yMy44Ni03LjM0SDY4NHEtMTguMzcsMC0yMy40LDUuNTF0LTUsMjN2MjgwcTAsMTguMzgsNSwyMy40MVQ2ODQsMTE4OFoiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0xNDUuMDIgLTYyNi45NikiLz48cGF0aCBkPSJNMTA1My4yNSw3OTYuOWg2My4zM3Y0NDUuM2gtNjMuMzN2LTMwLjNxLTEwLjExLDMwLjMtNTAuNDgsMzAuM0g5NjYuMDZxLTcyLjUxLDAtNzIuNS03Mi41M1Y4NjkuNDNxMC03Mi41Miw3Mi41LTcyLjUzaDM2LjcxcTQwLjM3LDAsNTAuNDgsMzAuM1Y3OTYuOVpNOTg1LjMzLDExODhIMTAyMnExNi41MiwwLDIzLjg2LTcuMzV0Ny4zNC0yNS43MVY4ODQuMTJxMC0xOC4zNi03LjM0LTI1LjcxVDEwMjIsODUxLjA3SDk4NS4zM3EtMTguMzcsMC0yMy40LDUuNTF0LTUsMjN2MjgwcTAsMTguMzgsNSwyMy40MVQ5ODUuMzMsMTE4OFoiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0xNDUuMDIgLTYyNi45NikiLz48cGF0aCBkPSJNMTI3MS40NCwxMzcxLjU3aC02My43OVY3OTYuOWg2My4xN2wxMDAuNTMsMzE1Ljk1TDE0NzIuNzgsNzk2LjloNjMuMTd2NTc0LjY3aC02My43OVYxMDEwbC02Ny41MywyMDQuNzRIMTMzOWwtNjcuNTMtMjA5djM2NS44OFoiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0xNDUuMDIgLTYyNi45NikiLz48cGF0aCBkPSJNMTc4MS40LDc5Ni45aDYzLjMzdjQ0NS4zSDE3ODEuNHYtMzAuM3EtMTAuMTEsMzAuMy01MC40OCwzMC4zaC0zNi43MXEtNzIuNTEsMC03Mi41LTcyLjUzVjg2OS40M3EwLTcyLjUyLDcyLjUtNzIuNTNoMzYuNzFxNDAuMzcsMCw1MC40OCwzMC4zVjc5Ni45Wk0xNzEzLjQ5LDExODhoMzYuNzFxMTYuNTIsMCwyMy44Ni03LjM1dDcuMzQtMjUuNzFWODg0LjEycTAtMTguMzYtNy4zNC0yNS43MXQtMjMuODYtNy4zNGgtMzYuNzFxLTE4LjM3LDAtMjMuNCw1LjUxdC01LDIzdjI4MHEwLDE4LjM4LDUsMjMuNDFUMTcxMy40OSwxMTg4WiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTE0NS4wMiAtNjI2Ljk2KSIvPjwvc3ZnPg==);
   box-shadow: 0 0 40px rgba(45, 45, 45, 0.2);
   cursor: pointer;
+}
+@media only screen and (max-width: 480px) {
+.app-logo {
+      width: 5rem;
+      height: 5rem;
+}
 }
 
 .app-navigation {
@@ -3833,7 +3839,6 @@ ul {
     background-color: #fff;
     background-position: center;
     background-repeat: no-repeat;
-    box-shadow: 0 0 40px rgba(45, 45, 45, 0.2);
     cursor: pointer;
 }
 .app-navigation__button:hover span {
@@ -3846,8 +3851,8 @@ ul {
 }
 .app-navigation__button span {
       display: block;
-      height: .5rem;
       width: 100%;
+      height: 0.25rem;
       opacity: 1;
       margin: auto;
       position: absolute;
@@ -3892,8 +3897,8 @@ ul {
       transition: background-color .25s ease-in-out, transform .25s .25s ease-in-out, opacity .25s .25s ease-in-out, width .25s ease-in-out, bottom .25s ease-in-out, top .25s ease-in-out, -webkit-transform .25s .25s ease-in-out;
 }
 .app-navigation__button.active span:nth-child(1) {
-        top: -webkit-calc(50% - .25rem);
-        top: calc(50% - .25rem);
+        top: -webkit-calc(50% - 0.25rem/2);
+        top: calc(50% - 0.25rem/2);
         -webkit-transform: rotate(45deg);
         -ms-transform: rotate(45deg);
         transform: rotate(45deg);
@@ -3903,8 +3908,8 @@ ul {
         opacity: 0;
 }
 .app-navigation__button.active span:nth-child(3) {
-        bottom: -webkit-calc(50% - .25rem);
-        bottom: calc(50% - .25rem);
+        bottom: -webkit-calc(50% - 0.25rem/2);
+        bottom: calc(50% - 0.25rem/2);
         -webkit-transform: rotate(-45deg);
         -ms-transform: rotate(-45deg);
         transform: rotate(-45deg);
@@ -3926,7 +3931,7 @@ ul {
     margin: auto;
     position: absolute;
     top: 0;
-    right: 7rem;
+    right: 6rem;
     bottom: 0;
     z-index: 1;
 }

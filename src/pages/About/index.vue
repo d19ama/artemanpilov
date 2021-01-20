@@ -21,7 +21,7 @@
                         {{ data.email }}
                     </a>
                 </list-item>
-                <list-item>
+                <!-- <list-item>
                     <a
                         class="link"
                         target="_blank"
@@ -31,7 +31,7 @@
                         <i class="icon icon-download"></i>
                         Download CV
                     </a>
-                </list-item>
+                </list-item> -->
             </list>
         </div>
         <div class="col-default-8 col-v-mobile-12">
@@ -45,18 +45,18 @@
                     tag="h3"
                     weight="normal"
                     class="margin-bottom--xs"
-                >{{ data.experience }}</app-title>
+                ><i class="icon icon-clock"></i> {{ data.experience }}</app-title>
                 <app-title
                     tag="h4"
                     weight="normal"
-                >{{ data.location }}</app-title>
+                ><i class="icon icon-location"></i> {{ data.location }}</app-title>
             </div>
             <div class="about__info margin-bottom--l">
                 <app-title
                     tag="h3"
                     bordered
                     class="margin-bottom--xs"
-                >Skills</app-title>
+                ><i class="icon icon-magic-wand"></i> Skills</app-title>
                 <div class="row">
                     <div
                         :key="key.name"
@@ -75,7 +75,7 @@
                     tag="h3"
                     bordered
                     class="margin-bottom--xs"
-                >Tools</app-title>
+                ><i class="icon icon-wrench"></i> Tools</app-title>
                 <div class="row">
                     <div
                         :key="key.name"
@@ -93,7 +93,7 @@
                     tag="h3"
                     bordered
                     class="margin-bottom--xs"
-                >Hobby</app-title>
+                ><i class="icon icon-pacman"></i> Hobby</app-title>
                 <div class="row">
                     <div
                         :key="key.name"

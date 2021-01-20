@@ -26,7 +26,7 @@ export default {
 
 <style lang="scss">
 .key-indicator {
-    padding: 2rem;
+    padding: 1.5rem;
     background-color: $lite-grey;
 
     &__name {

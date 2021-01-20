@@ -19,19 +19,24 @@ export default {
 <style lang="scss">
 .app-logo {
     display: block;
-    width: 5rem;
-    height: 5rem;
+    width: 7rem;
+    height: 7rem;
     position: relative;
     z-index: 2;
     text-align: center;
     text-decoration: none;
     border-radius: 50%;
-    background-size: 44%;
+    background-size: 70%;
     background-color: $white;
     background-position: 50% 50%;
     background-repeat: no-repeat;
-    background-image: url('~images/lnk-logo.svg');
+    background-image: url('~images/digama-logo.svg');
     @include box-shadow-main;
     cursor: pointer;
+
+    @include breakpoint(v-mobile) {
+        width: 5rem;
+        height: 5rem;
+    }
 }
 </style>

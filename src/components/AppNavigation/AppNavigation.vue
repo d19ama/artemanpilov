@@ -81,6 +81,8 @@ export default {
 
 <style lang="scss">
 .app-navigation {
+    $dash-height: .25rem;
+
     position: relative;
     z-index: 2;
 
@@ -100,7 +102,6 @@ export default {
         background-color: $white;
         background-position: center;
         background-repeat: no-repeat;
-        @include box-shadow-main;
         cursor: pointer;
 
         &:hover {
@@ -118,8 +119,8 @@ export default {
 
         span {
             display: block;
-            height: .5rem;
             width: 100%;
+            height: $dash-height;
             opacity: 1;
             margin: auto;
             position: absolute;
@@ -166,7 +167,7 @@ export default {
                     top .25s ease-in-out;
 
                 &:nth-child(1) {
-                    top: calc(50% - .25rem);
+                    top: calc(50% - #{$dash-height}/2);
                     transform: rotate(45deg);
                 }
 
@@ -176,7 +177,7 @@ export default {
                 }
 
                 &:nth-child(3) {
-                    bottom: calc(50% - .25rem);
+                    bottom: calc(50% - #{$dash-height}/2);
                     transform: rotate(-45deg);
                 }
             }
@@ -190,7 +191,7 @@ export default {
         margin: auto;
         position: absolute;
         top: 0;
-        right: 7rem;
+        right: 6rem;
         bottom: 0;
         z-index: 1;
 
