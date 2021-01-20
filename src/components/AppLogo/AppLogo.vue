@@ -4,7 +4,7 @@
         to="/"
         class="app-logo"
         @click.native="$bus.$emit('blast')"
-    ></router-link>
+    />
 </template>
 
 <script>
