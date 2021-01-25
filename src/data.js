@@ -40,33 +40,33 @@ export default {
     ],
     pages: {
         main: {
-            image: './src/images/itsme.jpg'
+            image: './images/itsme.jpg'
         },
         portfolio: [
             {
                 id: 'magnit',
                 link: 'https://www.magnit.com/ru/',
-                image: './src/images/logos/logo-magnit.png'
+                image: './images/logos/logo-magnit.png'
             },
             {
                 id: 'globalports',
                 link: 'https://www.globalports.com/ru/',
-                image: './src/images/logos/logo-globalports.png'
+                image: './images/logos/logo-globalports.png'
             },
             {
                 id: 'gazprom',
                 link: 'https://ir.gazprom-neft.ru/',
-                image: './src/images/logos/logo-gazprom.png'
+                image: './images/logos/logo-gazprom.png'
             },
             {
                 id: 'evraz',
                 link: 'https://www.evraz.com/',
-                image: './src/images/logos/logo-evraz.png'
+                image: './images/logos/logo-evraz.png'
             }
         ],
         about: {
             image: {
-                src: './src/images/itsme.jpg',
+                src: './images/itsme.jpg',
                 alt: 'Its me :)'
             },
             name: 'Anpilov Artem',

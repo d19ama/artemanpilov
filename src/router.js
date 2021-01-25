@@ -15,28 +15,28 @@ const router = new VueRouter({
             path: '/',
             component: Main,
             meta: {
-                title: '// AA: Main page'
+                title: '// Digama - Main page'
             }
         },
         {
             path: '/about',
             component: About,
             meta: {
-                title: '// AA: About'
+                title: '// Digama - About'
             }
         },
         {
             path: '/work_projects',
             component: WorkProjects,
             meta: {
-                title: '// AA: My work projects'
+                title: '// Digama - My work projects'
             }
         },
         {
             path: '/my_projects',
             component: MyProjects,
             meta: {
-                title: '// AA: My own projects'
+                title: '// Digama - My own projects'
             }
         }
     ]

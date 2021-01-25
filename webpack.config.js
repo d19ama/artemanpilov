@@ -3,9 +3,10 @@
 const path = require('path')
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const mode = process.env.NODE_ENV === 'prod' ? 'production' : 'development'
 
 module.exports = {
-    mode: 'development',
+    mode: mode,
     entry: [
         './src/styles.js',
         './src/app.js'
@@ -20,7 +21,7 @@ module.exports = {
             'vue$': 'vue/dist/vue.esm.js',
             '@': path.resolve(__dirname, 'src/'),
             'fonts': path.resolve(__dirname, 'src/fonts/'),
-            'images': path.resolve(__dirname, 'src/images/')
+            'images': path.resolve(__dirname, 'images/')
         }
     },
     module: {
@@ -107,8 +108,7 @@ module.exports = {
                 loader: 'url-loader',
                 options: {
                     limit: 10000,
-                    esModule: false,
-                    name: './images/[name].[ext]'
+                    esModule: false
                 }
             },
             {

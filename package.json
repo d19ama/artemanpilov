@@ -1,14 +1,15 @@
 {
-  "name": "blindresist",
+  "name": "digama",
   "version": "1.0.0",
   "author": "Anpilov Artem",
-  "description": "my page",
+  "description": "Digama portfolio",
   "main": "index.js",
   "license": "ISC",
   "scripts": {
     "build": "webpack",
     "watch": "webpack --watch",
-    "lint": "eslint --ext .js,.vue src"
+    "lint": "eslint --ext .js,.vue src",
+    "prod": "NODE_ENV=prod webpack"
   },
   "repository": {
     "type": "git",
