@@ -1,10 +1,10 @@
 export default {
     navigation: [
-        {
-            id: 'my projects',
-            link: '/my_projects',
-            name: 'my_projects'
-        },
+        // {
+        //     id: 'my projects',
+        //     link: '/my_projects',
+        //     name: 'my_projects'
+        // },
         {
             id: 'work projects',
             link: '/work_projects',
