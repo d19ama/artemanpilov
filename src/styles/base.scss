@@ -2,6 +2,26 @@ html {
     font-size: 16px;
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
+
+    @include breakpoint(tablet) {
+        font-size: 14px;
+    }
+
+    @include breakpoint(v-mobile) {
+        font-size: 10px;
+    }
+}
+
+::selection {
+    color: $white;
+    background: $black;
+    text-shadow: none;
+}
+
+::-moz-selection {
+    color: $white;
+    background: $black;
+    text-shadow: none;
 }
 
 body {
@@ -11,7 +31,8 @@ body {
     min-width: 20rem;
     width: 100%;
     color: $black;
-    font-family: 'Roboto Mono', Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    font-family: 'jb', Arial, Helvetica, sans-serif;
     background-color: $white;
 }
 
@@ -38,9 +59,28 @@ ul {
     display: flex;
     flex-direction: column;
     flex: 1 1 100%;
+    opacity: 0;
+    transition: opacity .5s 1s ease;
+
+    &.loaded {
+        opacity: 1;
+    }
 
     @include breakpoint(v-mobile) {
         padding-top: 6rem;
+    }
+}
+
+.container {
+    max-width: 77.5rem;
+    min-height: 100%;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    margin: auto;
+
+    @include breakpoint(tablet) {
+        max-width: none;
+        width: 100%;
     }
 }
 
@@ -53,17 +93,25 @@ ul {
     p+p {
         margin: 1rem 0 0;
     }
+
+    .row {
+        margin-top: -1.875rem;
+
+        &>[class^="col"] {
+            margin-top: 1.875rem;
+        }
+    }
 }
 
 .link {
-    color: $red;
+    color: $black;
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.5rem;
-    border-bottom: 1px solid rgba($red, .5);
+    transition: color .3s;
 
     &:hover {
-        border-bottom-color: transparent;
+        color: $red;
     }
 }
 

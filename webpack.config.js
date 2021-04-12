@@ -3,10 +3,14 @@
 const path = require('path')
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const mode = process.env.NODE_ENV === 'prod' ? 'production' : 'development'
 
 module.exports = {
-    mode: 'development',
-    entry: './src/main.js',
+    mode: mode,
+    entry: [
+        './src/styles.js',
+        './src/app.js'
+    ],
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: 'build.js'
@@ -15,11 +19,23 @@ module.exports = {
         extensions: ['.js', '.vue', '.json', '.scss'],
         alias: {
             'vue$': 'vue/dist/vue.esm.js',
-            '@': path.resolve(__dirname, 'src'),
+            '@': path.resolve(__dirname, 'src/'),
+            'fonts': path.resolve(__dirname, 'src/fonts/'),
+            'images': path.resolve(__dirname, 'images/')
         }
     },
     module: {
-        rules: [{
+        rules: [
+            {
+                test: /\.(js|vue)$/,
+                loader: 'eslint-loader',
+                enforce: 'pre',
+                include: path.resolve(__dirname, 'src/'),
+                options: {
+                    formatter: require('eslint-friendly-formatter')
+                }
+            },
+            {
                 test: /\.vue$/,
                 loader: 'vue-loader',
                 options: {
@@ -28,23 +44,27 @@ module.exports = {
                         js: 'babel-loader',
                         scss: [
                             {
-                                loader: 'vue-style-loader'
-                            },
-                            {
-                                loader: 'css-loader'
-                            },
-                            {
-                                loader: 'sass-loader'
-                            },
-                            {
-                                loader: 'sass-resources-loader',
-                                options: {
-                                    sourceMap: true,
-                                    resources: [
-                                        './src/styles/vars.scss',
-                                        './src/styles/mixins.scss'
-                                    ]
-                                }
+                                loader: [
+                                    MiniCssExtractPlugin.loader,
+                                    'css-loader',
+                                    {
+                                        loader: 'sass-loader',
+                                        options: {
+                                            sourceMap: true
+                                        }
+                                    },
+                                    {
+                                        loader: 'sass-resources-loader',
+                                        options: {
+                                            sourceMap: true,
+                                            resources: [
+                                                './src/styles/vars.scss',
+                                                './src/styles/mixins.scss'
+                                            ]
+                                        }
+                                    },
+                                    'postcss-loader'
+                                ]
                             }
                         ]
                     }
@@ -82,6 +102,23 @@ module.exports = {
                     },
                     'postcss-loader'
                 ]
+            },
+            {
+                test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
+                loader: 'url-loader',
+                options: {
+                    limit: 10000,
+                    esModule: false
+                }
+            },
+            {
+                test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
+                loader: 'url-loader',
+                options: {
+                    limit: 10000,
+                    esModule: false,
+                    name: './fonts/[name].[ext]'
+                }
             }
         ]
     },
