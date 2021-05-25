@@ -9,7 +9,7 @@ export default {
     name: 'my-projects',
     data () {
         return {
-            data: this.$root.app.pages.portfolio
+            data: this.$root.app.pages.projects
         }
     }
 }

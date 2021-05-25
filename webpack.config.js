@@ -62,8 +62,7 @@ module.exports = {
                                                 './src/styles/mixins.scss'
                                             ]
                                         }
-                                    },
-                                    'postcss-loader'
+                                    }
                                 ]
                             }
                         ]
@@ -99,8 +98,7 @@ module.exports = {
                                 './src/styles/mixins.scss'
                             ]
                         }
-                    },
-                    'postcss-loader'
+                    }
                 ]
             },
             {

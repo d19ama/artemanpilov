@@ -1,16 +1,16 @@
 import Vue from 'vue'
 import verge from 'verge'
-import data from '@/data.js'
-import router from '@/router.js'
+import data from '@/data'
+import router from '@/router'
 
 // components
-import List from '@/components/List'
-import Social from '@/components/Social'
-import ListItem from '@/components/ListItem'
-import TextBlock from '@/components/TextBlock'
-import Portfolio from '@/components/Portfolio'
-import KeyIndicator from '@/components/KeyIndicator'
-import BackgroundSVG from '@/components/BackgroundSVG'
+import List from '@/components/List/index.vue'
+import Social from '@/components/Social/index.vue'
+import ListItem from '@/components/ListItem/index.vue'
+import TextBlock from '@/components/TextBlock/index.vue'
+import Portfolio from '@/components/Portfolio/index.vue'
+import KeyIndicator from '@/components/KeyIndicator/index.vue'
+import BackgroundSVG from '@/components/BackgroundSVG/index.vue'
 
 Vue.component('list', List)
 Vue.component('social', Social)
@@ -23,7 +23,7 @@ Vue.component('background-svg', BackgroundSVG)
 const requireComponent = require.context(
     './components',
     true,
-    /App[\w-]+\/index\.js$/
+    /App[\w-]+\/index\.vue$/
 )
 
 requireComponent.keys().forEach(fileName => {
@@ -38,16 +38,15 @@ Object.defineProperty(Vue.prototype, '$bus', {
     }
 })
 
-/* eslint-disable no-new */
-new Vue({
+window.vm = new Vue({
     el: '#app',
+    router,
     data: {
         app: data,
         viewportW: 0,
         loaded: false,
         bus: new Vue({})
     },
-    router,
     mounted () {
         this.loaded = true
         this.viewportW = verge.viewportW()

@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "author": "Anpilov Artem",
   "description": "Digama portfolio",
-  "main": "index.js",
+  "main": "app.js",
   "license": "ISC",
   "scripts": {
     "build": "webpack",

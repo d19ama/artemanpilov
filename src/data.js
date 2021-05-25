@@ -1,10 +1,10 @@
 export default {
     navigation: [
-        // {
-        //     id: 'my projects',
-        //     link: '/my_projects',
-        //     name: 'my_projects'
-        // },
+        {
+            id: 'my projects',
+            link: '/my_projects',
+            name: 'my_projects'
+        },
         {
             id: 'work projects',
             link: '/work_projects',
@@ -62,6 +62,13 @@ export default {
                 id: 'evraz',
                 link: 'https://www.evraz.com/',
                 image: './images/logos/logo-evraz.png'
+            }
+        ],
+        projects: [
+            {
+                id: 'fast!cv',
+                link: 'http://fastcv.digama.online/',
+                image: './images/logos/logo-fast!cv.png'
             }
         ],
         about: {
