@@ -1,79 +1,31 @@
 <template>
     <nav class="app-navigation">
-        <div
-            role="button"
-            @click="toggleNav"
-            :class="{ active: active }"
-            class="app-navigation__button"
-        >
-            <div class="app-navigation__button-inner">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-        <transition-group
-            tag="ul"
-            @enter="animationEnter"
-            @leave="animationLeave"
-            class="app-navigation__list"
-            @before-enter="animationBefore"
-        >
-            <template v-if="active">
-                <li
-                    :key="item.id"
-                    :data-index="index"
-                    class="app-navigation__item"
-                    v-for="(item, index) in data"
+        <ul class="app-navigation__list">
+            <li
+                :key="item.id"
+                :data-index="index"
+                class="app-navigation__item"
+                v-for="(item, index) in data"
+            >
+                <router-link
+                    exact
+                    :to="item.link"
+                    class="app-navigation__link"
+                    @click.native="$bus.$emit('blast')"
                 >
-                    <router-link
-                        exact
-                        :to="item.link"
-                        class="app-navigation__link"
-                        @click.native="$bus.$emit('blast')"
-                    >
-                        <span>{{ item.name }}</span>
-                    </router-link>
-                </li>
-            </template>
-        </transition-group>
+                    <span>{{ item.name }}</span>
+                </router-link>
+            </li>
+        </ul>
     </nav>
 </template>
 
 <script>
-import Velocity from 'velocity-animate'
-
 export default {
     name: 'app-navigation',
     data () {
         return {
-            delay: 0,
-            step: 200,
-            active: false,
             data: this.$root.app.navigation
-        }
-    },
-    methods: {
-        toggleNav () {
-            this.active = !this.active
-        },
-        animate (el, value, delay, done) {
-            Velocity(el, { opacity: value }, { delay: delay }, { complete: done })
-        },
-        animationBefore (el) {
-            el.style.opacity = 0
-        },
-        animationEnter (el, done) {
-            const delay = el.dataset.index * this.step
-
-            this.animate(el, 1, delay, done)
-            this.delay = this.delay + this.step
-        },
-        animationLeave (el, done) {
-            const delay = this.delay - this.step
-
-            this.animate(el, 0, delay, done)
-            this.delay = this.delay - this.step
         }
     }
 }
@@ -154,34 +106,6 @@ export default {
                 transform-origin: center;
             }
         }
-
-        &.active {
-
-            span {
-                transition:
-                    background-color .25s ease-in-out,
-                    transform .25s .25s ease-in-out,
-                    opacity .25s .25s ease-in-out,
-                    width .25s ease-in-out,
-                    bottom .25s ease-in-out,
-                    top .25s ease-in-out;
-
-                &:nth-child(1) {
-                    top: calc(50% - #{$dash-height}/2);
-                    transform: rotate(45deg);
-                }
-
-                &:nth-child(2) {
-                    width: 0%;
-                    opacity: 0;
-                }
-
-                &:nth-child(3) {
-                    bottom: calc(50% - #{$dash-height}/2);
-                    transform: rotate(-45deg);
-                }
-            }
-        }
     }
 
     &__list {
@@ -189,11 +113,6 @@ export default {
         flex-flow: row-reverse nowrap;
         align-items: center;
         margin: auto;
-        position: absolute;
-        top: 0;
-        right: 6rem;
-        bottom: 0;
-        z-index: 1;
 
         @include breakpoint(v-mobile) {
             right: 6rem;
@@ -214,7 +133,7 @@ export default {
         position: relative;
         color: $black;
         font-weight: 300;
-        font-size: .875rem;
+        font-size: 1rem;
         line-height: 1.5rem;
         white-space: nowrap;
         text-shadow: 1px 1px 1px $white;

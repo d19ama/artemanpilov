@@ -18,10 +18,6 @@ export default {
     ],
     social: [
         {
-            name: 'vkontakte',
-            link: 'https://vk.com/blind_resist'
-        },
-        {
             name: 'facebook',
             link: 'https://www.facebook.com/profile.php?id=100002158603006'
         },
@@ -80,8 +76,10 @@ export default {
             experience: 'Frontend dev since 2014',
             location: 'Saint-Petersburg, Russia',
             email: 'blind.resist@gmail.com',
-            cv: '#',
             hobby: [
+                {
+                    name: 'Coding'
+                },
                 {
                     name: 'Music'
                 },
@@ -98,12 +96,16 @@ export default {
                     experience: '5 years'
                 },
                 {
-                    name: 'Vue.js',
-                    experience: '2 years'
+                    name: 'VueJs',
+                    experience: '3 years'
                 },
                 {
                     name: 'React',
                     experience: '1 year'
+                },
+                {
+                    name: 'TypeScript',
+                    experience: '6 months'
                 },
                 {
                     name: 'Webpack',
@@ -116,10 +118,6 @@ export default {
                 {
                     name: 'Git',
                     experience: '5 years'
-                },
-                {
-                    name: 'Docker',
-                    experience: '2 years'
                 },
                 {
                     name: 'Jest',
@@ -137,7 +135,7 @@ export default {
                     name: 'Adobe Ai'
                 },
                 {
-                    name: 'Sublime Text'
+                    name: 'WebStorm'
                 }
             ]
         }

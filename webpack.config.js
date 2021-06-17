@@ -5,6 +5,28 @@ const VueLoaderPlugin = require('vue-loader/lib/plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const mode = process.env.NODE_ENV === 'prod' ? 'production' : 'development'
 
+const scssLoader = [
+    MiniCssExtractPlugin.loader,
+    'css-loader',
+    {
+        loader: 'sass-loader',
+        options: {
+            sourceMap: true
+        }
+    },
+    {
+        loader: 'sass-resources-loader',
+        options: {
+            sourceMap: true,
+            resources: [
+                './src/styles/vars.scss',
+                './src/styles/mixins.scss'
+            ]
+        }
+    },
+    'postcss-loader'
+]
+
 module.exports = {
     mode: mode,
     entry: [
@@ -18,10 +40,10 @@ module.exports = {
     resolve: {
         extensions: ['.js', '.vue', '.json', '.scss'],
         alias: {
-            'vue$': 'vue/dist/vue.esm.js',
+            vue$: 'vue/dist/vue.esm.js',
             '@': path.resolve(__dirname, 'src/'),
-            'fonts': path.resolve(__dirname, 'src/fonts/'),
-            'images': path.resolve(__dirname, 'images/')
+            fonts: path.resolve(__dirname, 'src/fonts/'),
+            images: path.resolve(__dirname, 'images/')
         }
     },
     module: {
@@ -44,26 +66,7 @@ module.exports = {
                         js: 'babel-loader',
                         scss: [
                             {
-                                loader: [
-                                    MiniCssExtractPlugin.loader,
-                                    'css-loader',
-                                    {
-                                        loader: 'sass-loader',
-                                        options: {
-                                            sourceMap: true
-                                        }
-                                    },
-                                    {
-                                        loader: 'sass-resources-loader',
-                                        options: {
-                                            sourceMap: true,
-                                            resources: [
-                                                './src/styles/vars.scss',
-                                                './src/styles/mixins.scss'
-                                            ]
-                                        }
-                                    }
-                                ]
+                                loader: scssLoader
                             }
                         ]
                     }
@@ -76,30 +79,11 @@ module.exports = {
             },
             {
                 test: /\.css$/,
-                loaders: 'style-loader!css-loader!postcss-loader'
+                use: ['style-loader', 'css-loader', 'postcss-loader']
             },
             {
                 test: /\.scss$/,
-                loader: [
-                    MiniCssExtractPlugin.loader,
-                    'css-loader',
-                    {
-                        loader: 'sass-loader',
-                        options: {
-                            sourceMap: true
-                        }
-                    },
-                    {
-                        loader: 'sass-resources-loader',
-                        options: {
-                            sourceMap: true,
-                            resources: [
-                                './src/styles/vars.scss',
-                                './src/styles/mixins.scss'
-                            ]
-                        }
-                    }
-                ]
+                use: scssLoader
             },
             {
                 test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,

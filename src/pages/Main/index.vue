@@ -3,7 +3,7 @@
         <app-title
             comment
             class="main__title"
-        >I am <span>Frontend</span> developer<br/>with team lead skills</app-title>
+        >Hello!<br/>My name is Artem!<br/>I am <span>Frontend</span> developer!</app-title>
     </div>
 </template>
 
@@ -28,6 +28,10 @@ export default {
 
     &__title.app-title {
         font-size: 4rem;
+
+        @include breakpoint(v-mobile) {
+            font-size: 3rem;
+        }
 
         span {
             color: $white;

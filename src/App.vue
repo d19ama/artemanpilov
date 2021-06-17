@@ -1,3 +1,34 @@
+<template>
+    <div
+        id="app"
+        :class="{ loaded }"
+    >
+        <app-header />
+        <app-window />
+        <app-footer />
+        <background-svg />
+    </div>
+</template>
+
+<script>
+import verge from 'verge'
+
+export default {
+    name: 'app',
+    data () {
+        return {
+            viewportW: 0,
+            loaded: false
+        }
+    },
+    mounted () {
+        this.loaded = true
+        this.viewportW = verge.viewportW()
+    }
+}
+</script>
+
+<style lang="scss">
 html {
     font-size: 16px;
     -ms-text-size-adjust: 100%;
@@ -27,7 +58,7 @@ html {
 body {
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    height: 100vh;
     min-width: 20rem;
     width: 100%;
     color: $black;
@@ -43,7 +74,6 @@ a {
     &:visited,
     &:focus,
     &:active {
-        outline: none;
         outline: 0 none;
         text-decoration: none;
     }
@@ -142,3 +172,4 @@ ul {
         margin: .5rem 0 0;
     }
 }
+</style>

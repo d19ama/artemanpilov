@@ -21,7 +21,7 @@ export default {
     flex-flow: row nowrap;
     justify-content: space-between;
     width: 100%;
-    padding: 2rem;
+    padding: 1rem;
     position: fixed;
     top: 0;
     left: 0;
@@ -30,6 +30,7 @@ export default {
 
     @include breakpoint(v-mobile) {
         padding: 1rem;
+        background-color: $white;
     }
 
     > * {

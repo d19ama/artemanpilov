@@ -21,7 +21,7 @@ export default {
 <style lang="scss">
 .app-footer {
     width: 100%;
-    padding: 2rem;
+    padding: 1rem;
     position: fixed;
     left: 0;
     bottom: 0;

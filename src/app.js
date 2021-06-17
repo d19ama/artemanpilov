@@ -1,6 +1,6 @@
 import Vue from 'vue'
-import verge from 'verge'
 import data from '@/data'
+import App from '@/App.vue'
 import router from '@/router'
 
 // components
@@ -38,8 +38,7 @@ Object.defineProperty(Vue.prototype, '$bus', {
     }
 })
 
-window.vm = new Vue({
-    el: '#app',
+new Vue({
     router,
     data: {
         app: data,
@@ -47,8 +46,5 @@ window.vm = new Vue({
         loaded: false,
         bus: new Vue({})
     },
-    mounted () {
-        this.loaded = true
-        this.viewportW = verge.viewportW()
-    }
-})
+    render: h => h(App)
+}).$mount('#app')
