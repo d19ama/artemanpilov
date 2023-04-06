@@ -73,7 +73,7 @@ export default {
                 alt: 'Its me :)'
             },
             name: 'Anpilov Artem',
-            experience: 'Frontend dev since 2014',
+            experience: 'Frontend dev since 2016',
             location: 'Saint-Petersburg, Russia',
             email: 'blind.resist@gmail.com',
             hobby: [
@@ -97,31 +97,23 @@ export default {
                 },
                 {
                     name: 'VueJs',
-                    experience: '3 years'
-                },
-                {
-                    name: 'React',
-                    experience: '1 year'
+                    experience: '4 years'
                 },
                 {
                     name: 'TypeScript',
-                    experience: '6 months'
+                    experience: '1.5 years'
                 },
                 {
                     name: 'Webpack',
-                    experience: '2 years'
-                },
-                {
-                    name: 'Sass',
                     experience: '3 years'
                 },
                 {
-                    name: 'Git',
-                    experience: '5 years'
+                    name: 'Sass',
+                    experience: '4 years'
                 },
                 {
-                    name: 'Jest',
-                    experience: '3 months'
+                    name: 'Git',
+                    experience: '6 years'
                 }
             ],
             tools: [
