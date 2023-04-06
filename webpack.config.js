@@ -1,7 +1,6 @@
 'use strict'
 
 const path = require('path')
-const VueLoaderPlugin = require('vue-loader/lib/plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const mode = process.env.NODE_ENV === 'prod' ? 'production' : 'development'
 
@@ -40,7 +39,7 @@ module.exports = {
     resolve: {
         extensions: ['.js', '.vue', '.json', '.scss'],
         alias: {
-            vue$: 'vue/dist/vue.esm.js',
+            vue: '@vue/compat',
             '@': path.resolve(__dirname, 'src/'),
             fonts: path.resolve(__dirname, 'src/fonts/'),
             images: path.resolve(__dirname, 'images/')
@@ -69,6 +68,11 @@ module.exports = {
                                 loader: scssLoader
                             }
                         ]
+                    },
+                    compilerOptions: {
+                        compatConfig: {
+                            MODE: 2
+                        }
                     }
                 }
             },
@@ -105,7 +109,6 @@ module.exports = {
         ]
     },
     plugins: [
-        new VueLoaderPlugin(),
         new MiniCssExtractPlugin({
             filename: 'build.css',
             chunkFilename: '[id].css'
