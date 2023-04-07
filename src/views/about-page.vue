@@ -3,8 +3,8 @@
     <div class="col-default-4 col-v-mobile-12">
       <div class="about__image margin-bottom--s">
         <img
-          :src="data.image.src"
-          :alt="data.image.alt"
+          src="~@/assets/images/itsme.jpg"
+          alt="data.image.alt"
         />
       </div>
       <list-block
@@ -123,6 +123,7 @@ import AppTitle from '@/components/app-title/app-title.vue'
 import ListItem from '@/components/list-item/list-item.vue'
 import ListBlock from '@/components/list-block/list-block.vue'
 import KeyIndicator from '@/components/key-indicator/key-indicator.vue'
+import { useStore } from 'vuex'
 
 export default defineComponent({
   name: 'about-page',
@@ -132,8 +133,13 @@ export default defineComponent({
     ListBlock,
     KeyIndicator
   },
-  data () {
-    return {}
+  setup () {
+    const { state } = useStore()
+    const data = state.pages.about
+
+    return {
+      data
+    }
   }
 })
 </script>

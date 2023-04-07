@@ -21,12 +21,16 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
+import { useStore } from 'vuex'
 
 export default defineComponent({
   name: 'app-navigation',
-  data () {
+  setup () {
+    const { state } = useStore()
+    const data = state.navigation
+
     return {
-      data: []
+      data
     }
   }
 })

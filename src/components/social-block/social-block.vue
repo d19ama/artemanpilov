@@ -1,31 +1,35 @@
 <template>
-  <div class="social">
+  <div class="social-block">
     <a
       target="_blank"
       :key="item.name"
       :href="item.link"
       :title="item.name"
       v-for="item in data"
-      :class="`social__item icon icon-${item.name}`"
+      :class="`social-block__item icon icon-${item.name}`"
     ></a>
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
+import { useStore } from 'vuex'
 
 export default defineComponent({
   name: 'social-block',
-  data () {
+  setup () {
+    const { state } = useStore()
+    const data = state.social
+
     return {
-      data: []
+      data
     }
   }
 })
 </script>
 
 <style lang="scss">
-.social {
+.social-block {
   display: flex;
   align-items: center;
   flex-flow: row nowrap;

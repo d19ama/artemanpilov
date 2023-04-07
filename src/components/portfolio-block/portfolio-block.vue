@@ -31,9 +31,6 @@ export default defineComponent({
       default: () => []
     }
   },
-  data () {
-    return {}
-  },
   setup () {
     const buildStyle = (image: string): BuildStyle => ({
       height: '300px',
