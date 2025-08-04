@@ -89,11 +89,10 @@ const HOBBY: string[] = [
               tag="h2"
               bordered
               class="margin-bottom--xs"
-            >
-              Anpilov Artem
-            </AppTitle>
+              text="Anpilov Artem"
+            />
             <AppTitle
-              tag="h3"
+              tag="h4"
               weight="normal"
               class="margin-bottom--xs"
             >

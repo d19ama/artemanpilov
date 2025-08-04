@@ -6,6 +6,7 @@ export type AppLinkTheme = 'primary' | 'secondary';
 
 export interface AppLinkProps {
   url?: string;
+  text?: string;
   prevent?: boolean;
   underline?: boolean;
   hover?: AppLinkHover;

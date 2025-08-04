@@ -1,6 +1,7 @@
 export enum RouteNames {
   Home = 'Home',
-  Pets = 'Pets',
   About = 'About',
+  Creation = 'Creation',
   Experience = 'Experience',
+  PetProjects = 'PetProjects',
 }

@@ -1,9 +1,7 @@
 <script setup lang="ts">
-interface Slots {
-  default: [];
-}
+import type { AppNoDataSlots } from './types';
 
-defineSlots<Slots>();
+defineSlots<AppNoDataSlots>();
 </script>
 
 <template>

@@ -29,9 +29,8 @@ const hasHeader = computed<boolean>(() => {
           <AppTitle
             tag="h1"
             comment
-          >
-            {{ props.title }}
-          </AppTitle>
+            :text="props.title"
+          />
         </slot>
       </div>
       <div
