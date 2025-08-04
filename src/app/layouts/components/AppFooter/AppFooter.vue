@@ -6,15 +6,17 @@ const currentYear = new Date().getFullYear();
 
 <template>
   <footer class="app-footer">
-    <div class="app-footer__inner">
-      <span class="app-footer__text">&#169; {{ currentYear }} Builded with <span class="love">love</span></span>
-      <AppSocial class="app-footer__social" />
-    </div>
+    <span class="app-footer__text">&#169; {{ currentYear }} Builded with <span class="love">love</span></span>
+    <AppSocial class="app-footer__social" />
   </footer>
 </template>
 
 <style lang="scss">
 .app-footer {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-between;
   width: 100%;
   padding: 1rem;
   position: fixed;
@@ -37,14 +39,6 @@ const currentYear = new Date().getFullYear();
     @include breakpoint(mobile) {
       content: '';
     }
-  }
-
-  &__inner {
-    display: flex;
-    align-items: center;
-    flex-flow: row wrap;
-    justify-content: space-between;
-    position: relative;
   }
 
   &__text {
