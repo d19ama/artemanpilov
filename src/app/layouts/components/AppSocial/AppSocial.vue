@@ -1,16 +1,12 @@
 <script lang="ts" setup>
 const SOCIAL = [
   {
-    name: 'facebook',
-    link: 'https://www.facebook.com/profile.php?id=100002158603006',
-  },
-  {
     name: 'instagram',
-    link: 'https://www.instagram.com/artem.anpilov/',
+    link: 'https://www.instagram.com/d19ama/',
   },
   {
     name: 'telegram',
-    link: 'https://t.me/BlindResist',
+    link: 'https://t.me/d19ama',
   },
   {
     name: 'github',

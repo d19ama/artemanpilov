@@ -1,12 +1,16 @@
-.font-color-red {
+.text-color-red {
   color: $red;
 }
 
-.font-highlighter {
+.text-highlighter {
   color: $white;
   background-color: $red;
 }
 
 .user-select-none {
   user-select: none;
+}
+
+.align-self-center {
+  align-self: center;
 }

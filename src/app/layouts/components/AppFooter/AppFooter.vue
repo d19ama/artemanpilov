@@ -6,7 +6,7 @@ const currentYear = new Date().getFullYear();
 
 <template>
   <footer class="app-footer">
-    <span class="app-footer__text">&#169; {{ currentYear }} Builded with <span class="love">love</span></span>
+    <span class="app-footer__text">&#169; {{ currentYear }} Created with <span class="love">love</span></span>
     <AppSocial class="app-footer__social" />
   </footer>
 </template>

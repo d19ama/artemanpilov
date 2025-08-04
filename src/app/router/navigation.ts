@@ -5,21 +5,17 @@ interface Navigation {
   routeName: RouteNames;
 }
 
-export const navigation: Record<RouteNames, Navigation> = {
-  Home: {
-    label: 'main',
-    routeName: RouteNames.Home,
-  },
-  About: {
+export const navigation: Navigation[] = [
+  {
     label: 'about',
     routeName: RouteNames.About,
   },
-  Pets: {
+  {
     label: 'pets',
     routeName: RouteNames.Pets,
   },
-  Experience: {
+  {
     label: 'experience',
     routeName: RouteNames.Experience,
   },
-};
+];

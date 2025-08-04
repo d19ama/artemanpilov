@@ -38,9 +38,10 @@ const props = withDefaults(defineProps<Props>(), {
 .app-title {
   line-height: 1.25;
   color: $dark-grey;
+  user-select: none;
 
   &--comment {
-    padding-left: 6rem;
+    padding-left: 5rem;
     position: relative;
 
     &:before {

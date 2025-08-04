@@ -6,6 +6,11 @@
     box-sizing: border-box;
     margin-right: -0.9375rem;
     margin-left: -0.9375rem;
+    margin-top: -1.875rem;
+
+    &>[class*="col"] {
+        margin-top: 1.875rem;
+    }
 
     @include breakpoint(tablet) {
         margin-left: -.75rem;
