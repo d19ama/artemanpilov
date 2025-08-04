@@ -1,13 +1,8 @@
 <script lang="ts" setup>
-interface Props {
-  tag?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
-  weight?: string;
-  comment?: boolean;
-  bordered?: boolean;
-  uppercase?: boolean;
-}
+import type { AppTitleProps } from './types';
 
-const props = withDefaults(defineProps<Props>(), {
+const props = withDefaults(defineProps<AppTitleProps>(), {
+  text: '',
   tag: 'h1',
   weight: 'bold',
   comment: false,
@@ -18,7 +13,7 @@ const props = withDefaults(defineProps<Props>(), {
 
 <template>
   <component
-    :is="tag"
+    :is="props.tag"
     class="app-title"
     :class="[
       `app-title--${props.tag}`,
@@ -30,7 +25,9 @@ const props = withDefaults(defineProps<Props>(), {
       },
     ]"
   >
-    <slot />
+    <slot>
+      {{ props.text }}
+    </slot>
   </component>
 </template>
 

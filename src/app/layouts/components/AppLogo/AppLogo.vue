@@ -2,12 +2,6 @@
 import type { RouteLocationRaw } from 'vue-router';
 import { RouteNames } from '@/app/router/route-names';
 
-interface Emits {
-  blast: [];
-}
-
-const emit = defineEmits<Emits>();
-
 const goTo: RouteLocationRaw = {
   name: RouteNames.Home,
 };
@@ -15,10 +9,8 @@ const goTo: RouteLocationRaw = {
 
 <template>
   <RouterLink
-    exact
     :to="goTo"
     class="app-logo"
-    @click.prevent="emit('blast')"
   />
 </template>
 

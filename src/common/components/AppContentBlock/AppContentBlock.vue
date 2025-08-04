@@ -46,9 +46,10 @@ const hasInfo = computed<boolean>(() => {
           name="title"
           :title="props.title"
         >
-          <AppTitle tag="h3">
-            {{ props.title }}
-          </AppTitle>
+          <AppTitle
+            tag="h3"
+            :text="props.title"
+          />
         </slot>
         <slot
           name="description"

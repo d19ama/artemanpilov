@@ -41,9 +41,8 @@ const projects: Project[] = [
               <AppLink
                 :href="item.link"
                 target="_blank"
-              >
-                Explore!
-              </AppLink>
+                text="Explore!"
+              />
             </template>
           </AppContentBlock>
         </div>

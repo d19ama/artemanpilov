@@ -7,7 +7,6 @@ import { AppTitle } from '@/common';
     comment
     tag="h1"
     class="align-self-center"
-  >
-    Welcome! Dear friend!
-  </AppTitle>
+    text="Welcome! Dear friend!"
+  />
 </template>

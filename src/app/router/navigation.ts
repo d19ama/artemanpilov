@@ -11,11 +11,15 @@ export const navigation: Navigation[] = [
     routeName: RouteNames.About,
   },
   {
-    label: 'pets',
-    routeName: RouteNames.Pets,
+    label: 'pet_projects',
+    routeName: RouteNames.PetProjects,
   },
   {
     label: 'experience',
     routeName: RouteNames.Experience,
+  },
+  {
+    label: 'creation',
+    routeName: RouteNames.Creation,
   },
 ];

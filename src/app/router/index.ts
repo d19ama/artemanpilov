@@ -8,6 +8,7 @@ import { routes } from './routes';
 
 declare module 'vue-router' {
   interface RouteMeta {
+    title: string;
     layout?: ComponentInstance<any>;
   }
 }
@@ -21,4 +22,8 @@ router.beforeEach((to) => {
   if (!to.meta.layout) {
     to.meta.layout = Default;
   }
+});
+
+router.afterEach((to) => {
+  document.title = to.meta.title;
 });

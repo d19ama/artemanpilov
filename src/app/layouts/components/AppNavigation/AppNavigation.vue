@@ -1,5 +1,13 @@
 <script lang="ts" setup>
+import type { RouteLocationRaw } from 'vue-router';
 import { navigation } from '@/app/router/navigation';
+import type { RouteNames } from '@/app/router/route-names';
+
+function goTo(name: RouteNames): RouteLocationRaw {
+  return {
+    name,
+  };
+}
 </script>
 
 <template>
@@ -11,12 +19,11 @@ import { navigation } from '@/app/router/navigation';
         class="app-navigation__item"
       >
         <RouterLink
-          :to="{
-            name: item.routeName,
-          }"
+          :to="goTo(item.routeName)"
           class="app-navigation__link"
+          active-class="app-navigation__link--active"
         >
-          <span>{{ item.label }}</span>
+          {{ item.label }}
         </RouterLink>
       </li>
     </ul>
@@ -53,12 +60,6 @@ import { navigation } from '@/app/router/navigation';
       span {
         background-color: $red;
       }
-    }
-
-    &-inner {
-      width: 2.5rem;
-      height: 2rem;
-      position: relative;
     }
 
     span {
@@ -98,6 +99,12 @@ import { navigation } from '@/app/router/navigation';
         transform-origin: center;
       }
     }
+  }
+
+  &__button-inner {
+    width: 2.5rem;
+    height: 2rem;
+    position: relative;
   }
 
   &__list {
@@ -145,7 +152,7 @@ import { navigation } from '@/app/router/navigation';
     }
 
     &:hover,
-    &.is-current {
+    &--active {
 
       &:after {
         opacity: 1;

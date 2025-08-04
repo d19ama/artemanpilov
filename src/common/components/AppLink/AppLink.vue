@@ -6,6 +6,7 @@ import type {
 
 const props = withDefaults(defineProps<AppLinkProps>(), {
   url: '#',
+  text: '',
   hover: 'red',
   prevent: false,
   underline: true,
@@ -38,7 +39,9 @@ function onClick(event: Event): void {
     :target="props.target"
     @click="onClick"
   >
-    <slot />
+    <slot>
+      {{ props.text }}
+    </slot>
   </a>
 </template>
 

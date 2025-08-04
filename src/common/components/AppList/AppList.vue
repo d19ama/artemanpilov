@@ -1,6 +1,10 @@
 <script lang="ts" setup>
 import { AppListItem } from './components';
-import type { AppListProps } from './types';
+import type {
+  AppListItemType,
+  AppListProps,
+} from './types';
+import { slotName } from '@/common/helpers';
 
 const props = withDefaults(defineProps<AppListProps>(), {
   tag: 'ul',
@@ -24,7 +28,9 @@ const props = withDefaults(defineProps<AppListProps>(), {
         :tag="props.tag"
         :no-markers="props.noMarkers"
       >
-        {{ item.label }}
+        <slot :name="slotName<AppListItemType['id']>('list-item', item.id)">
+          {{ item.label }}
+        </slot>
       </AppListItem>
     </slot>
   </Component>

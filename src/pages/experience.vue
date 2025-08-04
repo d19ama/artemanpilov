@@ -62,9 +62,8 @@ const experience: Experience[] = [
               <AppLink
                 :href="item.link"
                 target="_blank"
-              >
-                Read about
-              </AppLink>
+                text="Read about"
+              />
             </template>
           </AppContentBlock>
         </div>
