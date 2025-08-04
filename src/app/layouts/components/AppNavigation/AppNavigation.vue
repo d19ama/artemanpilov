@@ -74,12 +74,12 @@ import { navigation } from '@/app/router/navigation';
       background-color: $black;
       transform: rotate(0deg);
       transition:
-        background-color .25s ease-in-out,
-        bottom .25s .25s ease-in-out,
-        width .25s .25s ease-in-out,
-        transform .25s ease-in-out,
-        top .25s .25s ease-in-out,
-        opacity .25s ease-in-out;
+        background-color $transition,
+        bottom .3s $transition,
+        width .3s $transition,
+        transform $transition,
+        top .3s $transition,
+        opacity $transition;
 
       &:nth-child(1) {
         top: 0;
@@ -130,7 +130,7 @@ import { navigation } from '@/app/router/navigation';
     line-height: 1.5rem;
     white-space: nowrap;
     text-shadow: 1px 1px 1px $white;
-    transition: opacity .1s;
+    transition: opacity $transition;
 
     &:after {
       content: '';
@@ -142,7 +142,7 @@ import { navigation } from '@/app/router/navigation';
       left: 0;
       top: 70%;
       background-color: $red;
-      transition: top .3s, opacity .3s;
+      transition: top $transition, opacity $transition;
     }
 
     &:hover,

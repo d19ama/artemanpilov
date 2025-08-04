@@ -1,52 +1,34 @@
 <script lang="ts" setup>
 import {
-  AppKeyIndicator,
   AppList,
   AppListItem,
   AppTitle,
 } from '@/common/components';
 import portrait from '@/app/assets/images/portrait.jpg';
 
-const EMAIL = 'blind.resist@gmail.com';
-const HOBBY = [
-  {
-    name: 'Coding',
-  },
-  {
-    name: 'Music',
-  },
-  {
-    name: 'Traveling',
-  },
-  {
-    name: 'Gaming',
-  },
+const EMAIL: string = 'blind.resist@gmail.com';
+const HASH_TAGS: string[] = [
+  'JavaScript',
+  'TypeScript',
+  'VueJs',
+  'VueUse',
+  'SCSS',
+  'Webpack',
+  'Vite',
+  'Jest',
+  'Vitest',
+  'Vuex',
+  'Pinia',
+  'GitLab',
+  'NestJs',
 ];
-const SKILLS = [
-  {
-    name: 'JavaScript',
-    experience: '5 years',
-  },
-  {
-    name: 'VueJs',
-    experience: '4 years',
-  },
-  {
-    name: 'TypeScript',
-    experience: '1.5 years',
-  },
-  {
-    name: 'Webpack',
-    experience: '3 years',
-  },
-  {
-    name: 'Sass',
-    experience: '4 years',
-  },
-  {
-    name: 'Git',
-    experience: '6 years',
-  },
+const HOBBY: string[] = [
+  'Coding',
+  'Music',
+  'Traveling',
+  'Gaming',
+  '3DModeling',
+  '3DPrinting',
 ];
 </script>
 
@@ -108,7 +90,7 @@ const SKILLS = [
           weight="normal"
           class="margin-bottom--xs"
         >
-          <i class="icon icon-clock" /> Frontend dev since 2016
+          <i class="icon icon-clock" /> Senior Software Engineer - since 2016
         </AppTitle>
         <AppTitle
           tag="h4"
@@ -125,16 +107,13 @@ const SKILLS = [
         >
           <i class="icon icon-magic-wand" /> Skills
         </AppTitle>
-        <div class="row">
+        <div class="about__info-tags">
           <div
-            v-for="key in SKILLS"
-            :key="key.name"
-            class="col-default-3 col-tablet-4 col-mobile-6"
+            v-for="item in HASH_TAGS"
+            :key="item"
+            class="about__info-tag"
           >
-            <AppKeyIndicator
-              :name="key.name"
-              :value="key.experience"
-            />
+            <span class="font-color-red">#</span>{{ item.toLowerCase() }}
           </div>
         </div>
       </div>
@@ -146,15 +125,13 @@ const SKILLS = [
         >
           <i class="icon icon-pacman" /> Hobby
         </AppTitle>
-        <div class="row">
+        <div class="about__info-tags">
           <div
-            v-for="key in HOBBY"
-            :key="key.name"
-            class="col-default-3 col-tablet-4 col-mobile-6"
+            v-for="item in HOBBY"
+            :key="item"
+            class="about__info-tag"
           >
-            <AppKeyIndicator
-              :name="key.name"
-            />
+            <span class="font-color-red">#</span>{{ item.toLowerCase() }}
           </div>
         </div>
       </div>
@@ -172,6 +149,21 @@ const SKILLS = [
       vertical-align: middle;
       max-width: 100%;
     }
+  }
+
+  &__info-tags {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 0 8px;
+    cursor: default;
+  }
+
+  &__info-tag {
+    font-size: 1.25rem;
+    line-height: 1.5;
+    font-weight: 300;
   }
 }
 </style>

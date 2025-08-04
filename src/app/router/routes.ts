@@ -29,7 +29,7 @@ export const routes: RouteRecordRaw[] = [
   {
     path: '/experience',
     name: RouteNames.Experience,
-    component: () => import('@/pages/pets.vue'),
+    component: () => import('@/pages/experience.vue'),
     meta: {
       title: '// Digama - My experience',
     },
