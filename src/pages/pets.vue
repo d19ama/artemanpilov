@@ -1,41 +1,53 @@
 <script lang="ts" setup>
-import { computed } from 'vue';
 import {
   AppContentBlock,
   type AppContentBlockProps,
   AppLink,
 } from '@/common';
+import { AppPage } from '@/app/layouts';
 
 interface Project
   extends AppContentBlockProps {
   link: string;
 }
 
-const projects = computed<Project[]>(() => {
-  return [
-    {
-      title: 'fast!cv',
-      link: 'http://fastcv.digama.online/',
-      image: new URL('@/app/assets/images/logos/fastcv.png', import.meta.url).href,
-    },
-  ];
-});
+const projects: Project[] = [
+  {
+    title: 'fast!cv',
+    link: 'http://fastcv.digama.online/',
+    image: new URL('@/app/assets/images/pets/fastcv.png', import.meta.url).href,
+    description: 'Fast!CV is a tool for creating a simple CV containing only the most important information for a potential employer!',
+  },
+];
 </script>
 
 <template>
-  <AppContentBlock
-    v-for="item in projects"
-    :key="item.title"
-    :image="item.image"
-    :title="item.title"
-  >
-    <template #description>
-      <AppLink
-        :href="item.link"
-        target="_blank"
-      >
-        {{ item.title }}
-      </AppLink>
+  <AppPage title="My pet projects">
+    <template #content>
+      <div class="row">
+        <div
+          v-for="item in projects"
+          :key="item.title"
+          class="col-default-12"
+        >
+          <AppContentBlock
+            :image="item.image"
+            :title="item.title"
+          >
+            <template #description>
+              <p>
+                {{ item.description }}
+              </p>
+              <AppLink
+                :href="item.link"
+                target="_blank"
+              >
+                Explore!
+              </AppLink>
+            </template>
+          </AppContentBlock>
+        </div>
+      </div>
     </template>
-  </AppContentBlock>
+  </AppPage>
 </template>

@@ -11,7 +11,6 @@ import { navigation } from '@/app/router/navigation';
         class="app-navigation__item"
       >
         <RouterLink
-          exact
           :to="{
             name: item.routeName,
           }"

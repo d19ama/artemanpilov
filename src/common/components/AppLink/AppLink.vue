@@ -10,6 +10,7 @@ const props = withDefaults(defineProps<AppLinkProps>(), {
   prevent: false,
   underline: true,
   target: '_blank',
+  theme: 'primary',
 });
 
 const emit = defineEmits<AppLinkEmits>();
@@ -28,6 +29,7 @@ function onClick(event: Event): void {
     :href="props.url"
     class="app-link"
     :class="[
+      `app-link--${props.theme}`,
       `app-link--hover-${props.hover}`,
       {
         'app-link--underline': props.underline,
@@ -60,6 +62,14 @@ function onClick(event: Event): void {
 
   &--underline {
     text-decoration: underline;
+  }
+
+  &--primary {
+    color: $red;
+  }
+
+  &--secondary {
+    color: $middle-grey;
   }
 }
 </style>

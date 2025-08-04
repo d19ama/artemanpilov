@@ -11,14 +11,16 @@
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   width: 100vw;
   height: 100vh;
   overflow: auto;
-  padding: 9rem 0 4rem;
+  padding: 10rem 0 4rem;
 
   &__inner {
-    width: 1000px;
+    display: flex;
+    width: 960px;
+    height: 100%;
     padding: 0 1rem;
     margin: 0 auto;
   }

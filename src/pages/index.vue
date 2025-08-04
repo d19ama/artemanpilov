@@ -1,13 +1,13 @@
 <script lang="ts" setup>
-import { AppTitle } from '@/common/components';
+import { AppTitle } from '@/common';
 </script>
 
 <template>
   <AppTitle
     comment
     tag="h1"
-    class="user-select-none"
+    class="align-self-center"
   >
-    Hello!<br>My name is Artem!<br>I am <span class="font-highlighter">Frontend</span> developer!
+    Welcome! Dear friend!
   </AppTitle>
 </template>

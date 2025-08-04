@@ -1,24 +1,55 @@
 <script lang="ts" setup>
-interface Props {
-  name: string;
-  value?: string;
-}
+import { computed } from 'vue';
+import { AppNoData } from '../AppNoData';
+import type {
+  AppKeyIndicatorProps,
+  AppKeyIndicatorSlots,
+} from './types';
 
-const props = defineProps<Props>();
+const props = defineProps<AppKeyIndicatorProps>();
+
+const slots = defineSlots<AppKeyIndicatorSlots>();
+
+const hasName = computed<boolean>(() => {
+  return !!slots.label || props.label;
+});
+
+const hasValue = computed<boolean>(() => {
+  return !!slots.value || props.value;
+});
 </script>
 
 <template>
-  <div class="key-indicator">
-    <span class="key-indicator__name">{{ props.name }}</span>
-    <span
-      v-if="props.value"
-      class="key-indicator__value"
-    >{{ value }}</span>
+  <div class="app-key-indicator">
+    <AppNoData>
+      <span
+        v-if="hasName"
+        class="app-key-indicator__name"
+      >
+        <slot
+          name="label"
+          :label="props.label"
+        >
+          {{ props.label }}
+        </slot>
+      </span>
+      <span
+        v-if="hasValue"
+        class="app-key-indicator__value"
+      >
+        <slot
+          name="value"
+          :value="props.value"
+        >
+          {{ value }}
+        </slot>
+      </span>
+    </AppNoData>
   </div>
 </template>
 
 <style lang="scss">
-.key-indicator {
+.app-key-indicator {
   padding: 1.5rem;
   background-color: $lite-grey;
 
