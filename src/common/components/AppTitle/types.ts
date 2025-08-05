@@ -10,3 +10,7 @@ export interface AppTitleProps {
   tag?: AppTitleTags;
   weight?: AppTitleWeight;
 }
+
+export interface AppTitleSlots {
+  default: [];
+}

@@ -1,5 +1,8 @@
 <script lang="ts" setup>
-import type { AppTitleProps } from './types';
+import type {
+  AppTitleProps,
+  AppTitleSlots,
+} from './types';
 
 const props = withDefaults(defineProps<AppTitleProps>(), {
   text: '',
@@ -9,6 +12,8 @@ const props = withDefaults(defineProps<AppTitleProps>(), {
   bordered: false,
   uppercase: false,
 });
+
+defineSlots<AppTitleSlots>();
 </script>
 
 <template>

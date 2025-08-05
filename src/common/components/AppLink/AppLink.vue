@@ -2,6 +2,7 @@
 import type {
   AppLinkEmits,
   AppLinkProps,
+  AppLinkSlots,
 } from './types';
 
 const props = withDefaults(defineProps<AppLinkProps>(), {
@@ -15,6 +16,8 @@ const props = withDefaults(defineProps<AppLinkProps>(), {
 });
 
 const emit = defineEmits<AppLinkEmits>();
+
+defineSlots<AppLinkSlots>();
 
 function onClick(event: Event): void {
   if (props.prevent) {
