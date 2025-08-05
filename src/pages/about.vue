@@ -89,8 +89,9 @@ const HOBBY: string[] = [
               tag="h2"
               bordered
               class="margin-bottom--xs"
-              text="Anpilov Artem"
-            />
+            >
+              My name is <span class="text-color-red">Anpilov Artem</span>
+            </AppTitle>
             <AppTitle
               tag="h4"
               weight="normal"
