@@ -17,3 +17,7 @@ export interface AppLinkProps {
 export interface AppLinkEmits {
   click: [event: Event];
 }
+
+export interface AppLinkSlots {
+  default: [];
+}
