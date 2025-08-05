@@ -69,7 +69,7 @@ const props = withDefaults(defineProps<AppTitleProps>(), {
   }
 
   &--h1 {
-    font-size: 3rem;
+    font-size: 2.5rem;
   }
 
   &--h2 {
@@ -77,15 +77,15 @@ const props = withDefaults(defineProps<AppTitleProps>(), {
   }
 
   &--h3 {
-    font-size: 1.5rem;
+    font-size: 1.75rem;
   }
 
   &--h4 {
-    font-size: 1.25rem;
+    font-size: 1.5rem;
   }
 
   &--h5 {
-    font-size: 1.125rem;
+    font-size: 1.25rem;
   }
 
   &--h6 {
