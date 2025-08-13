@@ -51,7 +51,7 @@ body {
   width: 100%;
   color: $black;
   font-weight: 400;
-  font-family: 'jb', Arial, Helvetica, sans-serif;
+  font-family: 'Zapus Sans', Arial, Helvetica, sans-serif;
   background-color: $white;
 }
 

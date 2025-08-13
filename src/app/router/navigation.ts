@@ -7,15 +7,15 @@ interface Navigation {
 
 export const navigation: Navigation[] = [
   {
-    label: 'about',
+    label: 'кратко',
     routeName: RouteNames.About,
   },
   {
-    label: 'projects',
+    label: 'проекты',
     routeName: RouteNames.PetProjects,
   },
   {
-    label: 'experience',
+    label: 'опыт',
     routeName: RouteNames.Experience,
   },
   // {

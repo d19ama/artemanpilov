@@ -23,5 +23,10 @@ const goTo: RouteLocationRaw = {
   line-height: 1;
   text-decoration: none;
   user-select: none;
+  transition: color $transition;
+
+  &:hover {
+    color: $red;
+  }
 }
 </style>

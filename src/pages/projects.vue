@@ -13,10 +13,10 @@ interface Project
 
 const projects: Project[] = [
   {
-    title: 'simple!cv',
+    title: 'Simple!CV',
     link: 'http://simplecv.ru/',
     image: new URL('@/app/assets/images/pets/simplecv.png', import.meta.url).href,
-    description: 'Simple!CV is a tool for creating a simple CV containing only the most important information for a potential employer!',
+    description: 'Simple!CV — это твой быстрый и лёгкий способ создать идеальное резюме без лишних усилий.',
   },
 ];
 </script>
@@ -41,7 +41,7 @@ const projects: Project[] = [
               <AppLink
                 :href="item.link"
                 target="_blank"
-                text="Explore!"
+                text="Смотреть"
               />
             </template>
           </AppContentBlock>

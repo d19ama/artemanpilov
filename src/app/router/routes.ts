@@ -7,7 +7,7 @@ export const routes: RouteRecordRaw[] = [
     name: RouteNames.Home,
     component: () => import('@/pages/index.vue'),
     meta: {
-      title: '// Digama - Main page',
+      title: '// Артём Анпилов - Главная страница',
     },
   },
   {
@@ -15,15 +15,15 @@ export const routes: RouteRecordRaw[] = [
     name: RouteNames.About,
     component: () => import('@/pages/about.vue'),
     meta: {
-      title: '// Digama - About me',
+      title: '// Артём Анпилов - Кратко',
     },
   },
   {
     path: '/pets',
     name: RouteNames.PetProjects,
-    component: () => import('@/pages/pets.vue'),
+    component: () => import('@/pages/projects.vue'),
     meta: {
-      title: '// Digama - My pet projects',
+      title: '// Артём Анпилов - Проекты',
     },
   },
   {
@@ -31,15 +31,15 @@ export const routes: RouteRecordRaw[] = [
     name: RouteNames.Experience,
     component: () => import('@/pages/experience.vue'),
     meta: {
-      title: '// Digama - My experience',
+      title: '// Артём Анпилов - Опыт',
     },
   },
-  {
-    path: '/creation',
-    name: RouteNames.Creation,
-    component: () => import('@/pages/creation.vue'),
-    meta: {
-      title: '// Digama - My creativity',
-    },
-  },
+  // {
+  //   path: '/creation',
+  //   name: RouteNames.Creation,
+  //   component: () => import('@/pages/creation.vue'),
+  //   meta: {
+  //     title: '// Артём Анпилов - Творчество',
+  //   },
+  // },
 ];

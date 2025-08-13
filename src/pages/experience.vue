@@ -16,25 +16,25 @@ const experience: Experience[] = [
     title: 'Eyetronic',
     link: 'https://art.su/',
     image: new URL('@/app/assets/images/experience/eyetronic-logo.svg', import.meta.url).href,
-    description: '2014 - 2018',
+    description: 'с 2014 по 2018',
   },
   {
     title: 'Zebra',
     link: 'https://zebra-group.ru/',
     image: new URL('@/app/assets/images/experience/zebra-logo.svg', import.meta.url).href,
-    description: '2018 - 2021',
+    description: 'с 2018 по 2021',
   },
   {
     title: 'Delivery Club',
     link: 'https://market-delivery.yandex.ru/',
     image: new URL('@/app/assets/images/experience/delivery-club-logo.svg', import.meta.url).href,
-    description: '2021 - 2023',
+    description: 'с 2021 по 2023',
   },
   {
     title: 'Sportmaster Lab',
     link: 'https://xn----8sbd2bd3a.xn--p1ai/',
     image: new URL('@/app/assets/images/experience/sm-lab-logo.svg', import.meta.url).href,
-    description: '2023 - present day',
+    description: 'с 2023 по настоящее время',
   },
 ];
 </script>
@@ -59,7 +59,7 @@ const experience: Experience[] = [
               <AppLink
                 :href="item.link"
                 target="_blank"
-                text="Read about"
+                text="Смотреть"
               />
             </template>
           </AppContentBlock>

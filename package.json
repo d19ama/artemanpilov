@@ -1,8 +1,8 @@
 {
-  "name": "digama",
+  "name": "Artem Anpilov",
   "version": "2.0.0",
   "private": true,
-  "description": "Digama portfolio",
+  "description": "Artem Anpilov portfolio",
   "author": "Anpilov Artem",
   "scripts": {
     "dev": "vite",
