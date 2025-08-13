@@ -1,0 +1,180 @@
+@font-face {
+  font-family: 'Zapus Sans';
+  src: url('@/app/assets/fonts/zapus/ZapusSans-Black.woff2') format('woff2'),
+  url('@/app/assets/fonts/zapus/ZapusSans-Black.woff') format('woff'),
+  url('@/app/assets/fonts/zapus/ZapusSans-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Zapus Sans';
+  src: url('@/app/assets/fonts/zapus/ZapusSans-BoldItalic.woff2') format('woff2'),
+  url('@/app/assets/fonts/zapus/ZapusSans-BoldItalic.woff') format('woff'),
+  url('@/app/assets/fonts/zapus/ZapusSans-BoldItalic.ttf') format('truetype');
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Zapus Sans';
+  src: url('@/app/assets/fonts/zapus/ZapusSans-BlackItalic.woff2') format('woff2'),
+  url('@/app/assets/fonts/zapus/ZapusSans-BlackItalic.woff') format('woff'),
+  url('@/app/assets/fonts/zapus/ZapusSans-BlackItalic.ttf') format('truetype');
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Zapus Sans';
+  src: url('@/app/assets/fonts/zapus/ZapusSans-Italic.woff2') format('woff2'),
+  url('@/app/assets/fonts/zapus/ZapusSans-Italic.woff') format('woff'),
+  url('@/app/assets/fonts/zapus/ZapusSans-Italic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Zapus Sans';
+  src: url('@/app/assets/fonts/zapus/ZapusSans-Medium.woff2') format('woff2'),
+  url('@/app/assets/fonts/zapus/ZapusSans-Medium.woff') format('woff'),
+  url('@/app/assets/fonts/zapus/ZapusSans-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Zapus Sans';
+  src: url('@/app/assets/fonts/zapus/ZapusSans-Regular.woff2') format('woff2'),
+  url('@/app/assets/fonts/zapus/ZapusSans-Regular.woff') format('woff'),
+  url('@/app/assets/fonts/zapus/ZapusSans-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Zapus Sans';
+  src: url('@/app/assets/fonts/zapus/ZapusSans-Light.woff2') format('woff2'),
+  url('@/app/assets/fonts/zapus/ZapusSans-Light.woff') format('woff'),
+  url('@/app/assets/fonts/zapus/ZapusSans-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Zapus Sans';
+  src: url('@/app/assets/fonts/zapus/ZapusSans-Bold.woff2') format('woff2'),
+  url('@/app/assets/fonts/zapus/ZapusSans-Bold.woff') format('woff'),
+  url('@/app/assets/fonts/zapus/ZapusSans-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Zapus Sans';
+  src: url('@/app/assets/fonts/zapus/ZapusSans-ExtraLight.woff2') format('woff2'),
+  url('@/app/assets/fonts/zapus/ZapusSans-ExtraLight.woff') format('woff'),
+  url('@/app/assets/fonts/zapus/ZapusSans-ExtraLight.ttf') format('truetype');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Zapus Sans';
+  src: url('@/app/assets/fonts/zapus/ZapusSans-ExtraLightItalic.woff2') format('woff2'),
+  url('@/app/assets/fonts/zapus/ZapusSans-ExtraLightItalic.woff') format('woff'),
+  url('@/app/assets/fonts/zapus/ZapusSans-ExtraLightItalic.ttf') format('truetype');
+  font-weight: 200;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Zapus Sans';
+  src: url('@/app/assets/fonts/zapus/ZapusSans-ExtraBoldItalic.woff2') format('woff2'),
+  url('@/app/assets/fonts/zapus/ZapusSans-ExtraBoldItalic.woff') format('woff'),
+  url('@/app/assets/fonts/zapus/ZapusSans-ExtraBoldItalic.ttf') format('truetype');
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Zapus Sans';
+  src: url('@/app/assets/fonts/zapus/ZapusSans-ExtraBold.woff2') format('woff2'),
+  url('@/app/assets/fonts/zapus/ZapusSans-ExtraBold.woff') format('woff'),
+  url('@/app/assets/fonts/zapus/ZapusSans-ExtraBold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Zapus Sans';
+  src: url('@/app/assets/fonts/zapus/ZapusSans-MediumItalic.woff2') format('woff2'),
+  url('@/app/assets/fonts/zapus/ZapusSans-MediumItalic.woff') format('woff'),
+  url('@/app/assets/fonts/zapus/ZapusSans-MediumItalic.ttf') format('truetype');
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Zapus Sans';
+  src: url('@/app/assets/fonts/zapus/ZapusSans-LightItalic.woff2') format('woff2'),
+  url('@/app/assets/fonts/zapus/ZapusSans-LightItalic.woff') format('woff'),
+  url('@/app/assets/fonts/zapus/ZapusSans-LightItalic.ttf') format('truetype');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Zapus Sans';
+  src: url('@/app/assets/fonts/zapus/ZapusSans-SemiBold.woff2') format('woff2'),
+  url('@/app/assets/fonts/zapus/ZapusSans-SemiBold.woff') format('woff'),
+  url('@/app/assets/fonts/zapus/ZapusSans-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Zapus Sans';
+  src: url('@/app/assets/fonts/zapus/ZapusSans-Thin.woff2') format('woff2'),
+  url('@/app/assets/fonts/zapus/ZapusSans-Thin.woff') format('woff'),
+  url('@/app/assets/fonts/zapus/ZapusSans-Thin.ttf') format('truetype');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Zapus Sans';
+  src: url('@/app/assets/fonts/zapus/ZapusSans-ThinItalic.woff2') format('woff2'),
+  url('@/app/assets/fonts/zapus/ZapusSans-ThinItalic.woff') format('woff'),
+  url('@/app/assets/fonts/zapus/ZapusSans-ThinItalic.ttf') format('truetype');
+  font-weight: 100;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Zapus Sans';
+  src: url('@/app/assets/fonts/zapus/ZapusSans-SemiBoldItalic.woff2') format('woff2'),
+  url('@/app/assets/fonts/zapus/ZapusSans-SemiBoldItalic.woff') format('woff'),
+  url('@/app/assets/fonts/zapus/ZapusSans-SemiBoldItalic.ttf') format('truetype');
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+

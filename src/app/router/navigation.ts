@@ -7,19 +7,19 @@ interface Navigation {
 
 export const navigation: Navigation[] = [
   {
-    label: 'about',
+    label: 'кратко',
     routeName: RouteNames.About,
   },
   {
-    label: 'pet_projects',
+    label: 'проекты',
     routeName: RouteNames.PetProjects,
   },
   {
-    label: 'experience',
+    label: 'опыт',
     routeName: RouteNames.Experience,
   },
-  {
-    label: 'creation',
-    routeName: RouteNames.Creation,
-  },
+  // {
+  //   label: 'creation',
+  //   routeName: RouteNames.Creation,
+  // },
 ];

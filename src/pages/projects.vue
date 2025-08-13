@@ -13,16 +13,16 @@ interface Project
 
 const projects: Project[] = [
   {
-    title: 'fast!cv',
-    link: 'http://fastcv.digama.online/',
-    image: new URL('@/app/assets/images/pets/fastcv.png', import.meta.url).href,
-    description: 'Fast!CV is a tool for creating a simple CV containing only the most important information for a potential employer!',
+    title: 'Simple!CV',
+    link: 'http://simplecv.ru/',
+    image: new URL('@/app/assets/images/pets/simplecv.png', import.meta.url).href,
+    description: 'Simple!CV — это твой быстрый и лёгкий способ создать идеальное резюме без лишних усилий.',
   },
 ];
 </script>
 
 <template>
-  <AppPage title="My pet projects">
+  <AppPage>
     <template #content>
       <div class="row">
         <div
@@ -41,7 +41,7 @@ const projects: Project[] = [
               <AppLink
                 :href="item.link"
                 target="_blank"
-                text="Explore!"
+                text="Смотреть"
               />
             </template>
           </AppContentBlock>

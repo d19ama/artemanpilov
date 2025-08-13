@@ -19,17 +19,15 @@ import {
   flex-flow: row nowrap;
   justify-content: space-between;
   width: 100%;
-  padding: 1rem;
+  height: 5rem;
+  padding: 0 1rem;
   position: fixed;
   top: 0;
   left: 0;
   z-index: 100;
+  border-bottom: 1px solid $black;
+  backdrop-filter: blur(2px);
   pointer-events: none;
-
-  @include breakpoint(v-mobile) {
-    padding: 1rem;
-    background-color: $white;
-  }
 
   > * {
     pointer-events: auto;

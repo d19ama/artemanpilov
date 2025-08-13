@@ -4,110 +4,271 @@ import {
   ref,
 } from 'vue';
 
-const DELAY: number = 2000;
-const PATHS: string[] = [
-  'm-1,-1.125l1155,565.125l766,-444',
-  'm1919,232.875l-943,563.125l530,282',
-  'm-1,848.875l1449,-848.875',
-  'm1,138.875l855,411.125l-856,526',
-  'm709,-1.125l1209,571.125',
-  'm1921,574.875l-799,503.125',
-  'm237,1076.875l659,-428.875l884,436',
-  'm-3,420.875l189,87.125l908,-514',
-  'm1,630.875l879,449.125',
-];
-
-const currentPath = ref<number>(0);
-const blasted = ref<boolean>(false);
-
-onMounted(() => {
-  setInterval(animate, DELAY);
-});
-
-function animate(): void {
-  currentPath.value = getRandomInt(0, 9);
+interface Coordinates {
+  xCoordinate: number;
+  yCoordinate: number;
 }
 
-function getRandomInt(min: number, max: number): number {
-  const number: number = Math.floor(Math.random() * (Math.floor(max) - Math.ceil(min))) + Math.ceil(min);
+type Callback = (ctx: CanvasRenderingContext2D) => void;
 
-  return currentPath.value === number
-    ? getRandomInt(0, 9)
-    : number;
+const canvasRef = ref<HTMLCanvasElement | null>(null);
+
+onMounted(() => {
+  // drawer(drawRoom);
+  drawer(drawCross);
+  drawer(drawCircles);
+});
+
+function drawer(callback: Callback): void {
+  if (!canvasRef.value) {
+    return;
+  }
+
+  const ctx: CanvasRenderingContext2D | null = canvasRef.value.getContext('2d');
+
+  if (ctx === null) {
+    return;
+  }
+
+  ctx.imageSmoothingQuality = 'high';
+  ctx.imageSmoothingEnabled = true;
+  ctx.strokeStyle = '#000' || '#e6e6e6';
+  ctx.lineWidth = 2;
+  ctx.lineCap = 'round';
+  ctx.lineDashOffset = 20;
+
+  callback(ctx);
+
+  ctx.drawImage(
+    canvasRef.value,
+    0,
+    0,
+    canvasRef.value.width,
+    canvasRef.value.height,
+  );
+}
+
+function drawLine(
+  ctx: CanvasRenderingContext2D,
+  moveTo: Coordinates,
+  lineTo: Coordinates,
+): void {
+  ctx.beginPath();
+  ctx.moveTo(moveTo.xCoordinate, moveTo.yCoordinate);
+  ctx.lineTo(lineTo.xCoordinate, lineTo.yCoordinate);
+  ctx.closePath();
+  ctx.stroke();
+}
+
+function drawCircle(
+  ctx: CanvasRenderingContext2D,
+  xCoordinate: number,
+  yCoordinate: number,
+  radius: number,
+  startAngle: number = 0,
+  endAngle: number = 2 * Math.PI,
+): void {
+  ctx.beginPath();
+  ctx.arc(
+    xCoordinate,
+    yCoordinate,
+    radius,
+    startAngle,
+    endAngle,
+  );
+  ctx.stroke();
+}
+
+function drawCross(ctx: CanvasRenderingContext2D): void {
+  const yCoordinate: number = ctx.canvas.height;
+
+  drawLine(
+    ctx,
+    {
+      xCoordinate: ctx.canvas.width / 2,
+      yCoordinate: 0,
+    },
+    {
+      xCoordinate: ctx.canvas.width / 2,
+      yCoordinate,
+    },
+  );
+
+  drawLine(
+    ctx,
+    {
+      xCoordinate: 0,
+      yCoordinate: ctx.canvas.height / 2,
+    },
+    {
+      xCoordinate: ctx.canvas.width,
+      yCoordinate: ctx.canvas.height / 2,
+    },
+  );
+}
+
+function drawRoom(ctx: CanvasRenderingContext2D): void {
+  const width: number = ctx.canvas.width / 2;
+  const height: number = ctx.canvas.height / 2;
+  const xCoordinate: number = width / 2;
+  const yCoordinate: number = height / 2;
+
+  ctx.strokeRect(
+    xCoordinate,
+    yCoordinate,
+    width,
+    height,
+  );
+
+  drawLine(
+    ctx,
+    {
+      xCoordinate: 0,
+      yCoordinate: 0,
+    },
+    {
+      xCoordinate,
+      yCoordinate,
+    },
+  );
+
+  drawLine(
+    ctx,
+    {
+      xCoordinate: ctx.canvas.width,
+      yCoordinate: 0,
+    },
+    {
+      xCoordinate: xCoordinate * 3,
+      yCoordinate,
+    },
+  );
+
+  drawLine(
+    ctx,
+    {
+      xCoordinate: 0,
+      yCoordinate: ctx.canvas.height,
+    },
+    {
+      xCoordinate,
+      yCoordinate: xCoordinate * 3,
+    },
+  );
+
+  drawLine(
+    ctx,
+    {
+      xCoordinate: ctx.canvas.width,
+      yCoordinate: ctx.canvas.height,
+    },
+    {
+      xCoordinate: yCoordinate * 3,
+      yCoordinate: xCoordinate * 3,
+    },
+  );
+}
+
+function drawCircles(ctx: CanvasRenderingContext2D): void {
+  const canvasWidth: number = ctx.canvas.width;
+  const canvasHeight: number = ctx.canvas.height;
+  const canvasWidthHalf: number = canvasWidth / 2;
+  const canvasHeightHalf: number = canvasHeight / 2;
+  const canvasWidthQuarter: number = canvasWidthHalf / 2;
+  const canvasHeightQuarter: number = canvasHeightHalf / 2;
+
+  drawCircle(
+    ctx,
+    canvasWidthQuarter,
+    canvasHeightQuarter,
+    canvasWidthHalf,
+  );
+
+  drawCircle(
+    ctx,
+    canvasWidthQuarter + canvasWidthHalf,
+    canvasHeightQuarter,
+    canvasWidthHalf,
+  );
+
+  drawCircle(
+    ctx,
+    canvasWidthQuarter,
+    canvasHeightQuarter + canvasHeightHalf,
+    canvasWidthHalf,
+  );
+
+  drawCircle(
+    ctx,
+    canvasWidthQuarter + canvasWidthHalf,
+    canvasHeightQuarter + canvasHeightHalf,
+    canvasWidthHalf,
+  );
+
+  drawCircle(
+    ctx,
+    0,
+    0,
+    canvasWidthHalf,
+  );
+
+  drawCircle(
+    ctx,
+    canvasWidth,
+    0,
+    canvasWidthHalf,
+  );
+
+  drawCircle(
+    ctx,
+    0,
+    canvasHeight,
+    canvasWidthHalf,
+  );
+
+  drawCircle(
+    ctx,
+    canvasWidth,
+    canvasHeight,
+    canvasWidthHalf,
+  );
+
+  drawCircle(
+    ctx,
+    0,
+    canvasHeightHalf,
+    canvasHeight,
+  );
+
+  drawCircle(
+    ctx,
+    canvasWidth,
+    canvasHeightHalf,
+    canvasHeight,
+  );
 }
 </script>
 
 <template>
-  <div class="app-background">
-    <svg
-      viewBox="0 0 1920 1080"
-      class="app-background__parent"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        v-for="(path, index) in PATHS"
-        :key="index"
-        :d="path"
-        class="app-background__path"
-        :class="{
-          'app-background__path--animate app-background__path--active': currentPath === index || blasted,
-        }"
-      />
-    </svg>
-  </div>
+  <canvas
+    ref="canvasRef"
+    class="app-background"
+    width="2000"
+    height="2000"
+  />
 </template>
 
 <style lang="scss">
+$offset: 0rem;
+
 .app-background {
   width: 100%;
-  height: 100%;
-  position: fixed;
-  top: 0;
+  height: calc(100% - ($offset * 2));
+  position: absolute;
+  top: $offset;
   left: 0;
-  z-index: 1;
-  pointer-events: none;
-
-  &__parent {
-
-    @include breakpoint(tablet) {
-      height: 100%;
-    }
-  }
-
-  &__path {
-    opacity: 0;
-    fill: none;
-    stroke: rgba($black, .5);
-    stroke-width: 1px;
-    stroke-dasharray: 2200px;
-    stroke-dashoffset: 2200px;
-
-    &--animate {
-      animation: stroke 2s infinite both;
-      animation-play-state: paused;
-    }
-
-    &--active {
-      animation-play-state: running;
-    }
-  }
-}
-
-@keyframes stroke {
-  0% {
-    stroke-dashoffset: 2200px;
-  }
-
-  25% {
-    opacity: 1;
-  }
-
-  75% {
-    opacity: 0;
-  }
-
-  100% {
-    stroke-dashoffset: 0;
-  }
+  right: 0;
+  bottom: $offset;
+  z-index: -1;
 }
 </style>

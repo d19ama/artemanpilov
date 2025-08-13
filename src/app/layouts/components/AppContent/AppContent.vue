@@ -1,7 +1,13 @@
+<script setup lang="ts">
+import { AppTransition } from '@/common';
+</script>
+
 <template>
   <section class="app-content">
     <div class="app-content__inner">
-      <RouterView />
+      <AppTransition>
+        <RouterView />
+      </AppTransition>
     </div>
   </section>
 </template>
@@ -15,14 +21,23 @@
   width: 100vw;
   height: 100vh;
   overflow: auto;
-  padding: 10rem 0 4rem;
+  padding: 5rem 0;
 
   &__inner {
     display: flex;
-    width: 960px;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+    max-width: 960px;
+    width: 100%;
     height: 100%;
-    padding: 0 1rem;
+    min-width: 400px;
+    padding: 1rem;
     margin: 0 auto;
+
+    @include breakpoint(tablet) {
+      align-items: flex-start;
+    }
   }
 }
 </style>

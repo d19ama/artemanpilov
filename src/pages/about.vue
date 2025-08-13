@@ -1,13 +1,9 @@
 <script lang="ts" setup>
-import {
-  AppList,
-  AppListItem,
-  AppTitle,
-} from '@/common/components';
+import { computed } from 'vue';
+import { AppTitle } from '@/common/components';
 import portrait from '@/app/assets/images/portrait.jpg';
 import { AppPage } from '@/app/layouts';
 
-const EMAIL: string = 'blind.resist@gmail.com';
 const HASH_TAGS: string[] = [
   'JavaScript',
   'TypeScript',
@@ -23,21 +19,23 @@ const HASH_TAGS: string[] = [
   'GitLab',
   'NestJs',
 ];
+
 const HOBBY: string[] = [
-  'Coding',
-  'Music',
-  'Traveling',
-  'Gaming',
-  '3DModeling',
-  '3DPrinting',
+  'Кодинг',
+  'Музыка',
+  'Путешествия',
+  'Гейминг',
+  '3DМоделирование',
+  '3DПечать',
 ];
+
+const age = computed<number>(() => {
+  return new Date().getFullYear() - 1987;
+});
 </script>
 
 <template>
-  <AppPage
-    title="Briefly about me"
-    class="about-page"
-  >
+  <AppPage class="about-page">
     <template #content>
       <div class="row">
         <div class="col-default-4 col-v-mobile-12">
@@ -48,40 +46,6 @@ const HOBBY: string[] = [
               class="about-page__image"
             >
           </div>
-          <AppList
-            no-markers
-            class="margin-bottom--s"
-          >
-            <template #default="{ tag, noMarkers }">
-              <AppListItem
-                :tag="tag"
-                :no-markers="noMarkers"
-              >
-                <a
-                  class="link"
-                  :title="EMAIL"
-                  :href="`mailto:${EMAIL}`"
-                >
-                  <i class="icon icon-mail2" />
-                  {{ EMAIL }}
-                </a>
-              </AppListItem>
-              <AppListItem
-                :tag="tag"
-                :no-markers="noMarkers"
-              >
-                <a
-                  class="link"
-                  target="_blank"
-                  title="Download CV"
-                  href="/"
-                >
-                  <i class="icon icon-download" />
-                  Download CV
-                </a>
-              </AppListItem>
-            </template>
-          </AppList>
         </div>
         <div class="col-default-8 col-v-mobile-12">
           <div class="about-page__info margin-bottom--l">
@@ -90,20 +54,27 @@ const HOBBY: string[] = [
               bordered
               class="margin-bottom--xs"
             >
-              My name is <span class="text-color-red">Anpilov Artem</span>
+              Меня зовут <span class="text-color-red">Артём Анпилов</span>
             </AppTitle>
             <AppTitle
               tag="h4"
               weight="normal"
               class="margin-bottom--xs"
             >
-              <i class="icon icon-clock" /> Senior Software Engineer - since 2016
+              <i class="icon icon-clock" /> Мне {{ age }} лет
+            </AppTitle>
+            <AppTitle
+              tag="h4"
+              weight="normal"
+              class="margin-bottom--xs"
+            >
+              <i class="icon icon-user-tie" /> Senior Frontend Developer
             </AppTitle>
             <AppTitle
               tag="h4"
               weight="normal"
             >
-              <i class="icon icon-location" /> Saint-Petersburg, Russia
+              <i class="icon icon-location" /> Санкт-Петербург, Россия
             </AppTitle>
           </div>
           <div class="about-page__info margin-bottom--l">
@@ -112,7 +83,7 @@ const HOBBY: string[] = [
               bordered
               class="margin-bottom--xs"
             >
-              <i class="icon icon-magic-wand" /> Skills
+              <i class="icon icon-magic-wand" /> Навыки
             </AppTitle>
             <div class="about-page__info-tags">
               <div
@@ -130,7 +101,7 @@ const HOBBY: string[] = [
               bordered
               class="margin-bottom--xs"
             >
-              <i class="icon icon-pacman" /> Hobby
+              <i class="icon icon-pacman" /> Хобби
             </AppTitle>
             <div class="about-page__info-tags">
               <div

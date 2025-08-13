@@ -1,8 +1,8 @@
 <script lang="ts" setup>
 const SOCIAL = [
   {
-    name: 'instagram',
-    link: 'https://www.instagram.com/d19ama/',
+    name: 'mail4',
+    link: 'mailto:mr.anpilov@vk.com',
   },
   {
     name: 'telegram',
