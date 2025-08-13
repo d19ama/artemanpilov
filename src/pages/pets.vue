@@ -22,7 +22,7 @@ const projects: Project[] = [
 </script>
 
 <template>
-  <AppPage title="Projects">
+  <AppPage>
     <template #content>
       <div class="row">
         <div

@@ -14,7 +14,9 @@ type Callback = (ctx: CanvasRenderingContext2D) => void;
 const canvasRef = ref<HTMLCanvasElement | null>(null);
 
 onMounted(() => {
-  drawer(drawRoom);
+  // drawer(drawRoom);
+  drawer(drawCross);
+  drawer(drawCircles);
 });
 
 function drawer(callback: Callback): void {
@@ -30,17 +32,10 @@ function drawer(callback: Callback): void {
 
   ctx.imageSmoothingQuality = 'high';
   ctx.imageSmoothingEnabled = true;
-  ctx.strokeStyle = '#e6e6e6';
+  ctx.strokeStyle = '#000' || '#e6e6e6';
   ctx.lineWidth = 2;
   ctx.lineCap = 'round';
   ctx.lineDashOffset = 20;
-
-  // ctx.clearRect(
-  //   0,
-  //   0,
-  //   canvasRef.value.width,
-  //   canvasRef.value.height,
-  // );
 
   callback(ctx);
 
@@ -51,8 +46,6 @@ function drawer(callback: Callback): void {
     canvasRef.value.width,
     canvasRef.value.height,
   );
-
-  requestAnimationFrame(() => drawer(callback));
 }
 
 function drawLine(
@@ -67,34 +60,52 @@ function drawLine(
   ctx.stroke();
 }
 
-// function drawCross(ctx: CanvasRenderingContext2D): void {
-//   const xCoordinate: number = ctx.canvas.width;
-//   const yCoordinate: number = ctx.canvas.height;
-//
-//   drawLine(
-//     ctx,
-//     {
-//       xCoordinate: ctx.canvas.width / 2,
-//       yCoordinate: 0,
-//     },
-//     {
-//       xCoordinate: ctx.canvas.width / 2,
-//       yCoordinate,
-//     },
-//   );
-//
-//   drawLine(
-//     ctx,
-//     {
-//       xCoordinate: 0,
-//       yCoordinate: ctx.canvas.height / 2,
-//     },
-//     {
-//       xCoordinate: ctx.canvas.width,
-//       yCoordinate: ctx.canvas.height / 2,
-//     },
-//   );
-// }
+function drawCircle(
+  ctx: CanvasRenderingContext2D,
+  xCoordinate: number,
+  yCoordinate: number,
+  radius: number,
+  startAngle: number = 0,
+  endAngle: number = 2 * Math.PI,
+): void {
+  ctx.beginPath();
+  ctx.arc(
+    xCoordinate,
+    yCoordinate,
+    radius,
+    startAngle,
+    endAngle,
+  );
+  ctx.stroke();
+}
+
+function drawCross(ctx: CanvasRenderingContext2D): void {
+  const yCoordinate: number = ctx.canvas.height;
+
+  drawLine(
+    ctx,
+    {
+      xCoordinate: ctx.canvas.width / 2,
+      yCoordinate: 0,
+    },
+    {
+      xCoordinate: ctx.canvas.width / 2,
+      yCoordinate,
+    },
+  );
+
+  drawLine(
+    ctx,
+    {
+      xCoordinate: 0,
+      yCoordinate: ctx.canvas.height / 2,
+    },
+    {
+      xCoordinate: ctx.canvas.width,
+      yCoordinate: ctx.canvas.height / 2,
+    },
+  );
+}
 
 function drawRoom(ctx: CanvasRenderingContext2D): void {
   const width: number = ctx.canvas.width / 2;
@@ -157,6 +168,85 @@ function drawRoom(ctx: CanvasRenderingContext2D): void {
     },
   );
 }
+
+function drawCircles(ctx: CanvasRenderingContext2D): void {
+  const canvasWidth: number = ctx.canvas.width;
+  const canvasHeight: number = ctx.canvas.height;
+  const canvasWidthHalf: number = canvasWidth / 2;
+  const canvasHeightHalf: number = canvasHeight / 2;
+  const canvasWidthQuarter: number = canvasWidthHalf / 2;
+  const canvasHeightQuarter: number = canvasHeightHalf / 2;
+
+  drawCircle(
+    ctx,
+    canvasWidthQuarter,
+    canvasHeightQuarter,
+    canvasWidthHalf,
+  );
+
+  drawCircle(
+    ctx,
+    canvasWidthQuarter + canvasWidthHalf,
+    canvasHeightQuarter,
+    canvasWidthHalf,
+  );
+
+  drawCircle(
+    ctx,
+    canvasWidthQuarter,
+    canvasHeightQuarter + canvasHeightHalf,
+    canvasWidthHalf,
+  );
+
+  drawCircle(
+    ctx,
+    canvasWidthQuarter + canvasWidthHalf,
+    canvasHeightQuarter + canvasHeightHalf,
+    canvasWidthHalf,
+  );
+
+  drawCircle(
+    ctx,
+    0,
+    0,
+    canvasWidthHalf,
+  );
+
+  drawCircle(
+    ctx,
+    canvasWidth,
+    0,
+    canvasWidthHalf,
+  );
+
+  drawCircle(
+    ctx,
+    0,
+    canvasHeight,
+    canvasWidthHalf,
+  );
+
+  drawCircle(
+    ctx,
+    canvasWidth,
+    canvasHeight,
+    canvasWidthHalf,
+  );
+
+  drawCircle(
+    ctx,
+    0,
+    canvasHeightHalf,
+    canvasHeight,
+  );
+
+  drawCircle(
+    ctx,
+    canvasWidth,
+    canvasHeightHalf,
+    canvasHeight,
+  );
+}
 </script>
 
 <template>
@@ -169,14 +259,16 @@ function drawRoom(ctx: CanvasRenderingContext2D): void {
 </template>
 
 <style lang="scss">
+$offset: 0rem;
+
 .app-background {
   width: 100%;
-  height: 100%;
-  position: fixed;
-  top: 0;
+  height: calc(100% - ($offset * 2));
+  position: absolute;
+  top: $offset;
   left: 0;
   right: 0;
-  bottom: 0;
+  bottom: $offset;
   z-index: -1;
 }
 </style>

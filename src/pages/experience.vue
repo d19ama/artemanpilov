@@ -40,10 +40,7 @@ const experience: Experience[] = [
 </script>
 
 <template>
-  <AppPage
-    title="Experience"
-    class="experience-page"
-  >
+  <AppPage class="experience-page">
     <template #content>
       <div class="row">
         <div

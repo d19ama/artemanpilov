@@ -29,10 +29,7 @@ const HOBBY: string[] = [
 </script>
 
 <template>
-  <AppPage
-    title="About"
-    class="about-page"
-  >
+  <AppPage class="about-page">
     <template #content>
       <div class="row">
         <div class="col-default-4 col-v-mobile-12">
