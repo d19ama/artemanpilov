@@ -70,6 +70,7 @@ const hasInfo = computed<boolean>(() => {
   justify-content: flex-start;
   gap: 0 1rem;
   padding: 1rem;
+  background-color: $white;
   @include box-shadow-main;
 
   &__image-wrapper {

@@ -41,7 +41,7 @@ const experience: Experience[] = [
 
 <template>
   <AppPage
-    title="My experience"
+    title="Experience"
     class="experience-page"
   >
     <template #content>

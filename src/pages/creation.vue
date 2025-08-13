@@ -4,7 +4,7 @@ import { AppPage } from '@/app/layouts';
 
 <template>
   <AppPage
-    title="My creativity"
+    title="Creation"
     class="creation-page"
   />
 </template>

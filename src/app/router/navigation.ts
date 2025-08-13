@@ -11,7 +11,7 @@ export const navigation: Navigation[] = [
     routeName: RouteNames.About,
   },
   {
-    label: 'pet_projects',
+    label: 'projects',
     routeName: RouteNames.PetProjects,
   },
   {
