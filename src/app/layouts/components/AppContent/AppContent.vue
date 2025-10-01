@@ -29,9 +29,8 @@ import { AppTransition } from '@/common';
     align-items: center;
     justify-content: center;
     max-width: 960px;
-    width: 100%;
-    height: 100%;
-    min-width: 400px;
+    width: 100vw;
+    height: 100vh;
     padding: 1rem;
     margin: 0 auto;
 
